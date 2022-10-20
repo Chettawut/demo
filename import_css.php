@@ -12,7 +12,8 @@ define('PATH_CSS', ROOT_CSS == $_SERVER['DOCUMENT_ROOT']
 <!-- Ionicons -->
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <!-- Tempusdominus Bootstrap 4 -->
-<link rel="stylesheet" href="<?php echo PATH_CSS; ?>/AdminLTE-3.2.0/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+<link rel="stylesheet"
+    href="<?php echo PATH_CSS; ?>/AdminLTE-3.2.0/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
 <!-- iCheck -->
 <link rel="stylesheet" href="<?php echo PATH_CSS; ?>/AdminLTE-3.2.0/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
 <!-- JQVMap -->
@@ -20,8 +21,13 @@ define('PATH_CSS', ROOT_CSS == $_SERVER['DOCUMENT_ROOT']
 <!-- Theme style -->
 <link rel="stylesheet" href="<?php echo PATH_CSS; ?>/AdminLTE-3.2.0/dist/css/adminlte.min.css">
 <!-- overlayScrollbars -->
-<link rel="stylesheet" href="<?php echo PATH_CSS; ?>/AdminLTE-3.2.0/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+<link rel="stylesheet"
+    href="<?php echo PATH_CSS; ?>/AdminLTE-3.2.0/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
 <!-- Daterange picker -->
 <link rel="stylesheet" href="<?php echo PATH_CSS; ?>/AdminLTE-3.2.0/plugins/daterangepicker/daterangepicker.css">
 <!-- summernote -->
 <link rel="stylesheet" href="<?php echo PATH_CSS; ?>/AdminLTE-3.2.0/plugins/summernote/summernote-bs4.min.css">
+
+<link rel="stylesheet" href="<?php echo PATH_CSS; ?>/AdminLTE-3.2.0/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="<?php echo PATH_CSS; ?>/AdminLTE-3.2.0/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+<link rel="stylesheet" href="<?php echo PATH_CSS; ?>/AdminLTE-3.2.0/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
