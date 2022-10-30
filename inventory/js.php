@@ -16,9 +16,7 @@ $(function() {
                         count] + '" data-whatever="' + result.code[
                         count] + '">.<td>' + result.stcode[count] + '</td><td>' +
                     result.stname1[count] + '</td><td style="text-align:right">' +
-                    result.amount1[count] + '</td><td style="text-align:right">' +
-                    result.amount2[count] + '</td><td style="text-align:right">' +
-                    result.amount3[count] + '</td><td  style="text-align:center">' + result
+                    result.amount1[count] + '</td><td  style="text-align:center">' + result
                     .unit[count] + '</td></tr>');
             }
 

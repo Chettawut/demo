@@ -93,9 +93,7 @@
                                             <tr>
                                                 <th width="10%">รหัสพัสดุ</th>
                                                 <th width="40%">ชื่อพัสดุ</th>
-                                                <th width="12%" style="text-align:right">จำนวนสต๊อก1</th>
-                                                <th width="12%" style="text-align:right">จำนวนสต๊อก2</th>
-                                                <th width="12%" style="text-align:right">จำนวนสต๊อก3</th>
+                                                <th width="12%" style="text-align:right">จำนวนสต๊อก</th>
                                                 <th width="14%" style="text-align:center">หน่วย</th>
 
                                             </tr>
