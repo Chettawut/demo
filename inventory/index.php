@@ -54,8 +54,8 @@
                                 <div data-role="fieldcontain">
 
                                     <div class="btn-group" id="btnAddSO" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-success"><i class="fa fa fa-tags"
-                                                aria-hidden="true"></i>
+                                        <button type="button" class="btn btn-success" data-toggle="modal"
+                                            data-target="#modal_add"><i class="fa fa fa-tags" aria-hidden="true"></i>
                                             เพิ่มรหัสวัสดุ</button>
                                         <button type="button" id="btnRefresh" class="btn btn-primary"><i
                                                 class="fas fa-sync-alt" aria-hidden="true"></i> Refresh</button>
@@ -106,16 +106,22 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </section>
         </div>
+
         <?php include_once ROOT . '/menu_footer.php'; ?>
 
         <?php include_once ROOT . '/menu_right.php'; ?>
 
-
+        <?php 
+        // include_once('modal/modal_edit.php');
+        ?>
+        <?php include_once('modal/modal_add.php');?>
 
     </div>
+
     <?php
     include_once ROOT . '/import_js.php';
     
