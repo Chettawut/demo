@@ -1,6 +1,9 @@
 <script type="text/javascript">
 $(function() {
 
+    
+    $("#navStore").show()
+
     $.ajax({
         type: "POST",
         url: "ajax/get_stock.php",

@@ -9,7 +9,7 @@
     <?php include_once('import_css.php'); ?>
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini sidebar-collapse">
     <div class="wrapper">
 
         <div class="preloader flex-column justify-content-center align-items-center">
