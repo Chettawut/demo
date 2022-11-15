@@ -20,8 +20,8 @@ $.widget.bridge('uibutton', $.ui.button)
 <!-- Sparkline -->
 <script src="<?php echo PATH_JS; ?>/AdminLTE-3.2.0/plugins/sparklines/sparkline.js"></script>
 <!-- JQVMap -->
-<script src="<?php echo PATH_JS; ?>/AdminLTE-3.2.0/plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="<?php echo PATH_JS; ?>/AdminLTE-3.2.0/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- <script src="<?php echo PATH_JS; ?>/AdminLTE-3.2.0/plugins/jqvmap/jquery.vmap.min.js"></script> -->
+<!-- <script src="<?php echo PATH_JS; ?>/AdminLTE-3.2.0/plugins/jqvmap/maps/jquery.vmap.usa.js"></script> -->
 <!-- jQuery Knob Chart -->
 <script src="<?php echo PATH_JS; ?>/AdminLTE-3.2.0/plugins/jquery-knob/jquery.knob.min.js"></script>
 <!-- daterangepicker -->

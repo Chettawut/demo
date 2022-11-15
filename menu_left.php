@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <nav class="mt-2" id="navStore" style="display:none;">
+        <nav class="mt-2" id="sideStore" style="display:none;">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/store/rr" class="nav-link">
@@ -47,6 +47,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/store/unit" class="nav-link">
+                        <i class="nav-icon 	fa fa-tag"></i>
+                        <p>
+                        หน่วยวัสดุ (Unit)
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="<?php echo PATH; ?>" class="nav-link">
                         <i class="nav-icon 	fa fa-book"></i>
                         <p>
@@ -59,7 +67,7 @@
             </ul>
         </nav>
 
-        <nav class="mt-2" id="navPurhcase" style="display:none;">
+        <nav class="mt-2" id="sidePurhcase" style="display:none;">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>" class="nav-link">
@@ -98,7 +106,7 @@
             </ul>
         </nav>
 
-        <nav class="mt-2" id="navHR" style="display:none;">
+        <nav class="mt-2" id="sideHR" style="display:none;">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>" class="nav-link">

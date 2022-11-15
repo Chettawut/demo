@@ -8,7 +8,7 @@ include_once('../../conn.php');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ข้อมูลวัสดุ</title>
+    <title>หน่วยวัสดุ</title>
 
     <?php 
     include_once('css.php'); 
@@ -38,12 +38,12 @@ include_once('../../conn.php');
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">ข้อมูลวัสดุ</h1>
+                            <h1 class="m-0">หน่วยวัสดุ</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Store</a></li>
-                                <li class="breadcrumb-item active">Inventory</li>
+                                <li class="breadcrumb-item active">Unit</li>
                             </ol>
                         </div>
                     </div>
@@ -60,7 +60,7 @@ include_once('../../conn.php');
                                     <div class="btn-group" id="btnAddSO" role="group" aria-label="Basic example">
                                         <button type="button" class="btn btn-success" data-toggle="modal"
                                             data-target="#modal_add"><i class="fa fa fa-tags" aria-hidden="true"></i>
-                                            เพิ่มรหัสวัสดุ</button>
+                                            เพิ่มหน่วยวัสดุ</button>
                                         <button type="button" id="btnRefresh" class="btn btn-primary"><i
                                                 class="fas fa-sync-alt" aria-hidden="true"></i> Refresh</button>
                                     </div>
@@ -91,13 +91,12 @@ include_once('../../conn.php');
                     <div class="row">
                         <div class="col-lg-12 col-12">
                             <div id="mainStock">
-                                <table name="tableStock" id="tableStock" class="table table-bordered table-striped">
+                                <table name="tableUnit" id="tableUnit" class="table table-bordered table-striped">
                                     <thead style=" background-color:#D6EAF8;">
                                         <tr>
-                                            <th width="10%">รหัสวัสดุ</th>
-                                            <th width="40%">ชื่อวัสดุ</th>
-                                            <th width="12%" style="text-align:right">จำนวนสต๊อก</th>
-                                            <th width="14%" style="text-align:center">หน่วย</th>
+                                            
+                                            <th width="70%">ชื่อหน่วยวัสดุ</th>
+                                            <th width="30%" style="text-align:center">สถานะการใช้งาน</th>
 
                                         </tr>
                                     </thead>
