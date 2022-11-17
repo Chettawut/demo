@@ -55,6 +55,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/store/warehouse" class="nav-link">
+                        <i class="nav-icon fas fa-warehouse"></i>
+                        <p>
+                        คลังสินค้า (Warehouse)
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="<?php echo PATH; ?>" class="nav-link">
                         <i class="nav-icon 	fa fa-book"></i>
                         <p>

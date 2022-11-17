@@ -71,18 +71,7 @@ include_once('../../conn.php');
                                             ย้อนกลับ</button>
                                     </div>
 
-                                    <button type="button" id="btnCancle" style="display:none;" class="btn btn-danger"><i
-                                            class="fa fa-check-circle" aria-hidden="true"></i>
-                                        ยกเลิกใบสั่งขาย</button>
-                                    <button type="submit" formaction="invoice-print.php" id="btnPrint"
-                                        style="display:none;" class="btn btn-primary"><i class="fa fa-print"
-                                            aria-hidden="true"></i> Print ใบสั่งขาย </button>
-                                    <button type="submit" formaction="../so_approve/invoice-print.php" id="btnInvoice"
-                                        style="display:none;" class="btn btn-primary"><i class="fa fa-print"
-                                            aria-hidden="true"></i> Print ใบกำกับภาษี </button>
-                                    <input type="hidden" id="printsocode" class="btn btn-default" name="printsocode"
-                                        value="John">
-                                    <input type="hidden" id="editsalecode" class="btn btn-default" value="John">
+                                    
 
                                 </div>
                             </form>
