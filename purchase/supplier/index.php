@@ -1,6 +1,4 @@
 <?php
-session_start();
-$_SESSION["menu"] = "store";
 include_once('../../conn.php');
 ?>
 <!DOCTYPE html>
@@ -10,7 +8,7 @@ include_once('../../conn.php');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>คลังสินค้า</title>
+    <title>ผู้ขาย</title>
 
     <?php 
     include_once('css.php'); 
@@ -40,12 +38,12 @@ include_once('../../conn.php');
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">คลังสินค้า</h1>
+                            <h1 class="m-0">ผู้ขาย</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Store</a></li>
-                                <li class="breadcrumb-item active">Warehouse</li>
+                                <li class="breadcrumb-item"><a href="<?php echo PATH; ?>/purchase">Purchase</a></li>
+                                <li class="breadcrumb-item active">Supplier</li>
                             </ol>
                         </div>
                     </div>
@@ -58,11 +56,10 @@ include_once('../../conn.php');
                         <div class="col-lg-6 col-6">
                             <form data-ajax="false" target="_blank" method="post">
                                 <div data-role="fieldcontain">
-
-                                    <div class="btn-group" id="btnAddPlaces" role="group" aria-label="Basic example">
+                                    <div class="btn-group" id="btnAddSO" role="group" aria-label="Basic example">
                                         <button type="button" class="btn btn-success" data-toggle="modal"
                                             data-target="#modal_add"><i class="fa fa fa-tags" aria-hidden="true"></i>
-                                            เพิ่มคลังสินค้า</button>
+                                            เพิ่มผู้ขาย</button>
                                         <button type="button" id="btnRefresh" class="btn btn-primary"><i
                                                 class="fas fa-sync-alt" aria-hidden="true"></i> Refresh</button>
                                     </div>
@@ -72,34 +69,36 @@ include_once('../../conn.php');
                                                 aria-hidden="true"></i>
                                             ย้อนกลับ</button>
                                     </div>
-
-
                                 </div>
                             </form>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-12">
-                            <table name="tablePlaces" id="tablePlaces" class="table table-bordered table-striped">
-                                <thead style=" background-color:#D6EAF8;">
-                                    <tr>
+                            <div id="mainStock">
+                                <table name="tableSupplier" id="tableSupplier"
+                                    class="table table-bordered table-striped">
+                                    <thead style=" background-color:#D6EAF8;">
+                                        <tr>
+                                            <th width="10%">รหัสผู้ขาย</th>
+                                            <th width="40%">ชื่อผู้ขาย</th>
+                                            <th width="20%">จังหวัด</th>
+                                            <th width="20%">ที่อยู่</th>
+                                            <th width="10%" style="text-align:center">สถานะการใช้งาน</th>
 
-                                        <th width="70%">ชื่อคลังสินค้า</th>
-                                        <th width="30%" style="text-align:center">สถานะการใช้งาน</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
 
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
 
                 </div>
             </section>
         </div>
-
 
 
         <?php include_once('modal/modal_add.php');?>

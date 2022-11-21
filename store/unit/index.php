@@ -1,4 +1,6 @@
 <?php
+session_start();
+$_SESSION["menu"] = "store";
 include_once('../../conn.php');
 ?>
 <!DOCTYPE html>
@@ -100,10 +102,6 @@ include_once('../../conn.php');
                 </div>
             </section>
         </div>
-
-        <?php include_once ROOT . '/menu_footer.php'; ?>
-
-        <?php include_once ROOT . '/menu_right.php'; ?>
 
 
         <?php include_once('modal/modal_add.php');?>

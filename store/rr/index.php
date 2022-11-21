@@ -1,3 +1,8 @@
+<?php
+session_start();
+$_SESSION["menu"] = "store";
+include_once('../../conn.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -86,9 +91,6 @@
                 </div>
             </section>
         </div>
-        <?php include_once ROOT . '/menu_footer.php'; ?>
-
-        <?php include_once('menu_right.php'); ?>
 
 
     </div>

@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="<?php echo PATH; ?>" class="brand-link">
         <img src="<?php echo PATH; ?>/AdminLTE-3.2.0/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
             class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">Demo</span>
@@ -74,8 +74,8 @@
 
             </ul>
         </nav>
-
-        <nav class="mt-2" id="sidePurhcase" style="display:none;">
+        
+        <nav class="mt-2" id="sidePurchase" style="display:none;">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>" class="nav-link">
@@ -89,15 +89,15 @@
                     <a href="<?php echo PATH; ?>" class="nav-link">
                         <i class="nav-icon fas fa-light fa-cubes"></i>
                         <p>
-                            คลังสินค้า (Store)
+                        จัดซื้อ (Purchase)
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?php echo PATH; ?>" class="nav-link">
+                    <a href="<?php echo PATH; ?>/purchase/supplier" class="nav-link">
                         <i class="nav-icon fas fa fa-shopping-cart"></i>
                         <p>
-                            จัดซื้อ (Purchase)
+                        ผู้ขาย (Supplier)
                         </p>
                     </a>
                 </li>

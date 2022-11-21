@@ -105,10 +105,6 @@
             </section>
         </div>
 
-        <?php include_once('footer.php'); ?>
-
-        <?php include_once('menu_right.php'); ?>
-
 
     </div>
     <?php include_once('import_js.php'); ?>
