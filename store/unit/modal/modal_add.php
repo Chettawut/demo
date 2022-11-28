@@ -14,7 +14,7 @@
                         <div class="form-group col-lg-6 col-12">
                             <label class="col-form-label">ชื่อหน่วยวัสดุ</label>
                             <input type="text" class="form-control" name="add_unit" id="add_unit" required>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -24,8 +24,7 @@
                     </div>
                 </div>
 
+            </form>
         </div>
-        </form>
     </div>
-</div>
 </div>

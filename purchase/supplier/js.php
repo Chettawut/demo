@@ -54,13 +54,23 @@ $('#modal_edit').on('show.bs.modal', function(event) {
 
     $.ajax({
         type: "POST",
-        url: "ajax/getsup_unit.php",
+        url: "ajax/getsup_supplier.php",
         data: "idcode=" + recipient,
         success: function(result) {            
-            modal.find('.modal-body #unitcode').val(result.unitcode);
-            modal.find('.modal-body #unit').val(result.unit);
+            modal.find('.modal-body #supcode').val(result.supcode);
+            modal.find('.modal-body #supname').val(result.supname);
+            modal.find('.modal-body #idno').val(result.idno);
+            modal.find('.modal-body #road').val(result.road);
+            modal.find('.modal-body #subdistrict').val(result.subdistrict);
+            modal.find('.modal-body #district').val(result.district);
+            modal.find('.modal-body #province').val(result.province);
+            modal.find('.modal-body #zipcode').val(result.zipcode);
+            modal.find('.modal-body #tel').val(result.tel);
+            modal.find('.modal-body #fax').val(result.fax);
+            modal.find('.modal-body #taxnumber').val(result.taxnumber);
             modal.find('.modal-body #status').val(result.status);
-
+            modal.find('.modal-body #email').val(result.email);
+            
 
         }
     });

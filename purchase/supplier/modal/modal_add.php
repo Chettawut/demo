@@ -8,24 +8,79 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form name="frmAddUnit" id="frmAddUnit" method="POST" style="padding:10px;" action="javascript:void(0);">
-                <div class="modal-body">
+            <div class="modal-body">
+                <form name="frmAddUnit" id="frmAddUnit" method="POST" style="padding:10px;"
+                    action="javascript:void(0);">
                     <div class="row">
-                        <div class="form-group col-lg-6 col-12">
-                            <label class="col-form-label">ชื่อหน่วยวัสดุ</label>
-                            <input type="text" class="form-control" name="add_unit" id="add_unit" required>
-                        </div>                        
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="col text-center">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                        <button type="submit" id="btnAddUnit" form="frmAddUnit" class="btn btn-primary">ตกลง</button>
-                    </div>
-                </div>
+                        <label for="recipient-name" class="col-form-label">รหัสผู้ขาย</label>
+                        <input type="text" class="form-control" name="add_supcode" id="add_supcode" minlength="4" maxlength="4"
+                            required>
 
+                        <div class="form-group col-md-9">
+                            <label for="recipient-name" class="col-form-label">ชื่อผู้ขาย</label>
+                            <input type="text" class="form-control" name="add_supname" id="add_supname" required>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">เลขที่</label>
+                            <input type="text" class="form-control" name="add_idno" id="add_idno">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">ถนน</label>
+                            <input type="text" class="form-control" name="add_road" id="add_road">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">ตำบล</label>
+                            <input type="text" class="form-control" name="add_subdistrict" id="add_subdistrict">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">อำเภอ</label>
+                            <input type="text" class="form-control" name="add_district" id="add_district">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">จังหวัด</label>
+                            <select class="form-control" name="add_province" id="add_province">
+                                <?php getProvince();?>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">รหัสไปรษณีย์</label>
+                            <input type="text" class="form-control" name="add_zipcode" id="add_zipcode">
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label for="recipient-name" class="col-form-label">เบอร์โทรศัพท์</label>
+                            <input type="text" class="form-control" name="add_tel" id="add_tel">
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label for="recipient-name" class="col-form-label">เบอร์แฟ็ค</label>
+                            <input type="text" class="form-control" name="add_fax" id="add_fax">
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label for="recipient-name" class="col-form-label">เลขผู้เสียภาษี</label>
+                            <input type="text" class="form-control" name="add_taxnumber" id="add_taxnumber">
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label for="recipient-name" class="col-form-label">Email</label>
+                            <input type="text" class="form-control" name="add_email" id="add_email">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="col text-center">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                    <button type="submit" id="btnEditUnit" form="frmEditUnit" class="btn btn-primary">แก้ไข</button>
+                </div>
+            </div>
         </div>
-        </form>
     </div>
-</div>
 </div>
