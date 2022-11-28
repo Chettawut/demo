@@ -57,6 +57,7 @@ $('#modal_edit').on('show.bs.modal', function(event) {
         url: "ajax/getsup_supplier.php",
         data: "idcode=" + recipient,
         success: function(result) {            
+            modal.find('.modal-body #code').val(result.code);
             modal.find('.modal-body #supcode').val(result.supcode);
             modal.find('.modal-body #supname').val(result.supname);
             modal.find('.modal-body #idno').val(result.idno);
@@ -84,13 +85,13 @@ $("#btnRefresh").click(function() {
     window.location.reload();
 });
 
-//เพิ่มวัสดุ
-$("#frmAddUnit").submit(function(e) {
+//เพิ่มผู้ขาย
+$("#frmAddSupplier").submit(function(e) {
     e.preventDefault();
     $.ajax({
         type: "POST",
-        url: "ajax/add_unit.php",
-        data: $("#frmAddUnit").serialize(),
+        url: "ajax/add_supplier.php",
+        data: $("#frmAddSupplier").serialize(),
         success: function(result) {
             if (result.status == 1) // Success
             {
@@ -106,15 +107,15 @@ $("#frmAddUnit").submit(function(e) {
 
 });
 
-$("#frmEditUnit").submit(function(e) {
+$("#frmEditSupplier").submit(function(e) {
     e.preventDefault();
     $(':disabled').each(function(e) {
         $(this).removeAttr('disabled');
     })
     $.ajax({
         type: "POST",
-        url: "ajax/edit_unit.php",
-        data: $("#frmEditUnit").serialize(),
+        url: "ajax/edit_supplier.php",
+        data: $("#frmEditSupplier").serialize(),
         success: function(result) {
 
             if (result.status == 1) // Success

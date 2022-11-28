@@ -3,20 +3,21 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content w3-flat-turquoise">
             <div class="modal-header bg-gradient-secondary">
-                <h5 class="modal-title">เพิ่มหน่วยวัสดุ</h5>
+                <h5 class="modal-title">เพิ่มผู้ขาย</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form name="frmAddUnit" id="frmAddUnit" method="POST" style="padding:10px;"
+                <form name="frmAddSupplier" id="frmAddSupplier" method="POST" style="padding:10px;"
                     action="javascript:void(0);">
                     <div class="row">
-                        <label for="recipient-name" class="col-form-label">รหัสผู้ขาย</label>
-                        <input type="text" class="form-control" name="add_supcode" id="add_supcode" minlength="4" maxlength="4"
-                            required>
-
-                        <div class="form-group col-md-9">
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">รหัสผู้ขาย</label>
+                            <input type="text" class="form-control" name="add_supcode" id="add_supcode" minlength="4"
+                                maxlength="4" required>
+                        </div>
+                        <div class="form-group col-md-6">
                             <label for="recipient-name" class="col-form-label">ชื่อผู้ขาย</label>
                             <input type="text" class="form-control" name="add_supname" id="add_supname" required>
                         </div>
@@ -78,7 +79,8 @@
             <div class="modal-footer">
                 <div class="col text-center">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                    <button type="submit" id="btnEditUnit" form="frmEditUnit" class="btn btn-primary">แก้ไข</button>
+                    <button type="submit" id="frmAddSupplier" form="frmAddSupplier"
+                        class="btn btn-primary">แก้ไข</button>
                 </div>
             </div>
         </div>

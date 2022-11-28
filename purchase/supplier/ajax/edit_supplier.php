@@ -6,13 +6,11 @@
     
     $strSQL = "UPDATE supplier SET ";
     $strSQL .= "supcode='".$_POST["supcode"]."',supname='".$_POST["supname"]."' ";
-    $strSQL .= "idno='".$_POST["idno"]."',road='".$_POST["road"]."',subdistrict='".$_POST["subdistrict"]."' ";
-    $strSQL .= "district='".$_POST["district"]."',province='".$_POST["province"]."',zipcode='".$_POST["zipcode"]."' ";
-    $strSQL .= "tel='".$_POST["tel"]."',fax='".$_POST["fax"]."',taxnumber='".$_POST["taxnumber"]."' ";
-    $strSQL .= "email='".$_POST["email"]."',status='".$_POST["status"]."' ";
+    $strSQL .= ",idno='".$_POST["idno"]."',road='".$_POST["road"]."',subdistrict='".$_POST["subdistrict"]."' ";
+    $strSQL .= ",district='".$_POST["district"]."',province='".$_POST["province"]."',zipcode='".$_POST["zipcode"]."' ";
+    $strSQL .= ",tel='".$_POST["tel"]."',fax='".$_POST["fax"]."',taxnumber='".$_POST["taxnumber"]."' ";
+    $strSQL .= ",email='".$_POST["email"]."',status='".$_POST["status"]."' ";
     $strSQL .= "WHERE code= '".$_POST["code"]."' ";
-
-
     
 	$query = mysqli_query($conn,$strSQL);
     

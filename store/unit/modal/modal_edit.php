@@ -15,21 +15,20 @@
                             <label class="col-form-label">ชื่อหน่วยวัสดุ</label>
                             <input type="text" class="form-control" name="unit" id="unit" required>
                         </div>
-
                         <div class="form-group col-lg-3 col-6">
-                                <label for="recipient-name" class="col-form-label">สถานะการใช้งาน</label>
-                                <select class="form-control" name="status" id="status">                                    
-                                    <option value="Y">เปิดการใช้งาน</option>
-                                    <option value="N">ปิดการใช้งาน</option>
-                                </select>
-
-                            </div>
+                            <label for="recipient-name" class="col-form-label">สถานะการใช้งาน</label>
+                            <select class="form-control" name="status" id="status">
+                                <option value="Y">เปิดการใช้งาน</option>
+                                <option value="N">ปิดการใช้งาน</option>
+                            </select>
+                        </div>
                     </div>
                     <input type="hidden" id="unitcode" name="unitcode">
                     <div class="modal-footer">
                         <div class="col text-center">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                            <button type="submit" id="btnEditUnit" form="frmEditUnit" class="btn btn-primary">แก้ไข</button>
+                            <button type="submit" id="btnEditUnit" form="frmEditUnit"
+                                class="btn btn-primary">แก้ไข</button>
                         </div>
                     </div>
                 </div>
