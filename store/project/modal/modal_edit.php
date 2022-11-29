@@ -14,11 +14,11 @@
                     <div class="row">
                         <div class="form-group col-lg-3 col-12">
                             <label class="col-form-label">รหัส Project</label>
-                            <input type="text" class="form-control" name="projectname" id="projectname" required>
+                            <input type="text" class="form-control" name="projectcode" id="projectcode" required>
                         </div>
                         <div class="form-group col-lg-6 col-12">
                             <label class="col-form-label">ชื่อ Project</label>
-                            <input type="text" class="form-control" name="projectcode" id="projectcode" required>
+                            <input type="text" class="form-control" name="projectname" id="projectname" required>
                         </div>
                         <div class="form-group col-lg-3 col-6">
                             <label for="recipient-name" class="col-form-label">สถานะการใช้งาน</label>
@@ -28,7 +28,6 @@
                             </select>
                         </div>
                     </div>
-                    <input type="hidden" id="projectcode" name="projectcode">
                     <div class="modal-footer">
                         <div class="col text-center">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>

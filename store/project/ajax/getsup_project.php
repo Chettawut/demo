@@ -2,8 +2,8 @@
 	header('Content-Type: application/json');
 	include('../../../conn.php');
 	
-	$strSQL = "SELECT projectcode,projectname,status,s_date,s_time,s_user";
-	$strSQL .= "where projectcode = '".$_POST['idcode']."'";
+	$strSQL = "SELECT projectcode,projectname,status,s_date,s_time,s_user from project";
+	$strSQL .= " where projectcode = '".$_POST['idcode']."'";
 	$query = mysqli_query($conn,$strSQL);
 	
 	$json_result=array(

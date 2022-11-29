@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ใบรับสินค้า</title>
+    <title>ใบสั่งซื้อ (Purchase Order)</title>
 
     <?php 
     include_once('css.php'); 
@@ -18,8 +18,8 @@
     <div class="wrapper">
 
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="<?php echo PATH; ?>/AdminLTE-3.2.0/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60"
-                width="60">
+            <img class="animation__shake" src="<?php echo PATH; ?>/AdminLTE-3.2.0/dist/img/AdminLTELogo.png"
+                alt="AdminLTELogo" height="60" width="60">
         </div>
 
         <?php include_once ROOT . '/menu_head.php'; ?>
@@ -27,19 +27,19 @@
         <?php include_once ROOT . '/menu_left.php'; ?>
 
 
-        
+
         <div class="content-wrapper">
-            
+
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">ใบรับสินค้า</h1>
+                            <h1 class="m-0">ใบสั่งซื้อ (Purchase Order)</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Store</a></li>
-                                <li class="breadcrumb-item active">ใบรับสินค้า</li>
+                                <li class="breadcrumb-item"><a href="#">Purchase</a></li>
+                                <li class="breadcrumb-item active">Purchase Order</li>
                             </ol>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                                     <div class="btn-group" id="btnAddSO" role="group" aria-label="Basic example">
                                         <button type="button" class="btn btn-success"><i class="fa fa fa-tags"
                                                 aria-hidden="true"></i>
-                                            เพิ่มใบรับของ</button>
+                                            เพิ่มใบสั่งซื้อ</button>
                                     </div>
                                     <div class="btn-group" id="btnBack" style="display:none;" role="group"
                                         aria-label="Basic example">
@@ -71,16 +71,34 @@
                                         ยกเลิกใบสั่งขาย</button>
                                     <button type="submit" formaction="invoice-print.php" id="btnPrint"
                                         style="display:none;" class="btn btn-primary"><i class="fa fa-print"
-                                            aria-hidden="true"></i> Print ใบสั่งขาย </button>
-                                    <button type="submit" formaction="../so_approve/invoice-print.php" id="btnInvoice"
-                                        style="display:none;" class="btn btn-primary"><i class="fa fa-print"
-                                            aria-hidden="true"></i> Print ใบกำกับภาษี </button>
+                                            aria-hidden="true"></i> Print ใบสั่งซื้อ </button>
                                     <input type="hidden" id="printsocode" class="btn btn-default" name="printsocode"
                                         value="John">
                                     <input type="hidden" id="editsalecode" class="btn btn-default" value="John">
 
                                 </div>
                             </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-12">
+                            <table name="tablePurchase" id="tablePurchase" class="table table-bordered table-striped">
+                                <thead style=" background-color:#D6EAF8;">
+                                    <tr>
+                                        <th width="10%">รหัสผู้ขาย</th>
+                                        <th>เลขที่ใบสั่งซื้อ</th>
+                                        <th>วันที่สั่งซื้อ</th>
+                                        <th>รหัสพัสดุ</th>
+                                        <th>รายงานสินค้า</th>
+                                        <th>ผู้ขาย</th>
+                                        <th>สถานะ</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

@@ -3,12 +3,6 @@
 	include('../../../conn.php');
     
     date_default_timezone_set("Asia/Bangkok");
-    
-    
-	// $strSQL = "UPDATE user SET ";
-    // $strSQL .= "username='".$_POST["editusername"]."',password='".$_POST["editpassword"]."',firstname='".$_POST["editfirstname"]."',lastname='".$_POST["editlastname"]."',tel='".$_POST["edittel"]."' ";
-    // $strSQL .= ",email='".$_POST["editemail"]."',type='".$_POST["edittype"]."',bankcode='".$_POST["editbankcode"]."',bankname='".$_POST["editbankname"]."',date='' ";
-    // $strSQL .= "WHERE username= '".$_POST["editusername"]."' ";
 
     $strSQL = "UPDATE unit SET ";
     $strSQL .= "unit='".$_POST["unit"]."',status='".$_POST["status"]."' ";

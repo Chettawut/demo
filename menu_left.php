@@ -16,7 +16,7 @@
                     alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="#" class="d-block">Chayapat Niropas</a>
             </div>
         </div>
 
@@ -84,17 +84,9 @@
         </nav>
         
         <nav class="mt-2" id="sidePurchase" style="display:none;">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">                
                 <li class="nav-item">
-                    <a href="<?php echo PATH; ?>" class="nav-link">
-                        <i class="nav-icon fas fa-home"></i>
-                        <p>
-                            หน้าหลัก (Dashboard)
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?php echo PATH; ?>" class="nav-link">
+                    <a href="<?php echo PATH; ?>/purchase/po" class="nav-link">
                         <i class="nav-icon fas fa-light fa-cubes"></i>
                         <p>
                         จัดซื้อ (Purchase)
@@ -109,14 +101,14 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="<?php echo PATH; ?>" class="nav-link">
                         <i class="nav-icon fas fa fa-users"></i>
                         <p>
                             บุคคล (HR)
                         </p>
                     </a>
-                </li>
+                </li> -->
 
 
             </ul>

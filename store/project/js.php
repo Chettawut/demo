@@ -66,21 +66,17 @@ $('#modal_edit').on('show.bs.modal', function(event) {
     });
 });
 
-$('#modelEdit').on('hidden.bs.modal', function() {
-    $("#frmEditInventory *").prop('disabled', true);
-});
-
 $("#btnRefresh").click(function() {
     window.location.reload();
 });
 
 //เพิ่มวัสดุ
-$("#frmAddUnit").submit(function(e) {
+$("#frmAddProject").submit(function(e) {
     e.preventDefault();
     $.ajax({
         type: "POST",
-        url: "ajax/add_unit.php",
-        data: $("#frmAddUnit").serialize(),
+        url: "ajax/add_project.php",
+        data: $("#frmAddProject").serialize(),
         success: function(result) {
             if (result.status == 1) // Success
             {
@@ -96,15 +92,15 @@ $("#frmAddUnit").submit(function(e) {
 
 });
 
-$("#frmEditUnit").submit(function(e) {
+$("#frmEditProject").submit(function(e) {
     e.preventDefault();
     $(':disabled').each(function(e) {
         $(this).removeAttr('disabled');
     })
     $.ajax({
         type: "POST",
-        url: "ajax/edit_unit.php",
-        data: $("#frmEditUnit").serialize(),
+        url: "ajax/edit_project.php",
+        data: $("#frmEditProject").serialize(),
         success: function(result) {
 
             if (result.status == 1) // Success

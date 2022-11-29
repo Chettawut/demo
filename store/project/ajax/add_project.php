@@ -5,8 +5,8 @@
     
     $StrSQL = "INSERT INTO project (projectcode,projectname,status,s_date,s_time,s_user) ";
     $StrSQL .= "VALUES (";
-    $StrSQL .= "'".$_POST["add_projectcode"]."','".$_POST["add_projectcode"]."','".$_POST["add_projectcode"]."' ";
-    $StrSQL .= "'".$_POST["add_projectcode"]."','".$_POST["add_projectcode"]."','".$_POST["add_projectcode"]."' ";
+    $StrSQL .= "'".$_POST["add_projectcode"]."','".$_POST["add_projectname"]."','Y' ";
+    $StrSQL .= ",'".date("Y-m-d"). "','".date("H:i:s"). "','chayapat' ";
     $StrSQL .= ")";
     $query = mysqli_query($conn,$StrSQL);
     
@@ -15,7 +15,7 @@
 
 
         if($query) {
-            echo json_encode(array('status' => '1','message'=> 'เพิ่มหน่วยวัสดุ '.$_POST["add_unit"].' สำเร็จ'));
+            echo json_encode(array('status' => '1','message'=> 'เพิ่มโปรเจ็ค '.$_POST["add_projectname"].' สำเร็จ'));
         }
         else
         {

@@ -1,7 +1,7 @@
 <script type="text/javascript">
 $(function() {
 
-    $("#sideStore").show()
+    $("#sidePurchase").show()
     
     $.ajax({
         type: "POST",

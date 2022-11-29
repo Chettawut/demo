@@ -75,24 +75,21 @@ include_once('../../conn.php');
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-12">
-                            <div id="mainStock">
-                                <table name="tableSupplier" id="tableSupplier"
-                                    class="table table-bordered table-striped">
-                                    <thead style=" background-color:#D6EAF8;">
-                                        <tr>
-                                            <th width="10%">รหัสผู้ขาย</th>
-                                            <th width="40%">ชื่อผู้ขาย</th>
-                                            <th width="20%">จังหวัด</th>
-                                            <th width="20%">ที่อยู่</th>
-                                            <th width="10%" style="text-align:center">สถานะการใช้งาน</th>
+                            <table name="tableSupplier" id="tableSupplier" class="table table-bordered table-striped">
+                                <thead style=" background-color:#D6EAF8;">
+                                    <tr>
+                                        <th width="10%">รหัสผู้ขาย</th>
+                                        <th width="40%">ชื่อผู้ขาย</th>
+                                        <th width="20%">จังหวัด</th>
+                                        <th width="20%">ที่อยู่</th>
+                                        <th width="10%" style="text-align:center">สถานะการใช้งาน</th>
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                                    </tbody>
-                                </table>
-                            </div>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 

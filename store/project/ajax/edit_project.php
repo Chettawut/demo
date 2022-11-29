@@ -4,15 +4,11 @@
     
     date_default_timezone_set("Asia/Bangkok");
     
-    
-	// $strSQL = "UPDATE user SET ";
-    // $strSQL .= "username='".$_POST["editusername"]."',password='".$_POST["editpassword"]."',firstname='".$_POST["editfirstname"]."',lastname='".$_POST["editlastname"]."',tel='".$_POST["edittel"]."' ";
-    // $strSQL .= ",email='".$_POST["editemail"]."',type='".$_POST["edittype"]."',bankcode='".$_POST["editbankcode"]."',bankname='".$_POST["editbankname"]."',date='' ";
-    // $strSQL .= "WHERE username= '".$_POST["editusername"]."' ";
 
-    $strSQL = "UPDATE unit SET ";
-    $strSQL .= "unit='".$_POST["unit"]."',status='".$_POST["status"]."' ";
-    $strSQL .= "WHERE unitcode= '".$_POST["unitcode"]."' ";
+    $strSQL = "UPDATE project SET ";
+    $strSQL .= "projectcode='".$_POST["projectcode"]."',projectname='".$_POST["projectname"]."',status='".$_POST["status"]."' ";
+    $strSQL .= ",s_date= '".date("Y-m-d")."',s_time= '".date("H:i:s")."',s_user='chayapat' ";
+    $strSQL .= "WHERE projectcode= '".$_POST["projectcode"]."' ";
 
     
 	$query = mysqli_query($conn,$strSQL);
@@ -21,7 +17,7 @@
 
 
         if($query) {
-            echo json_encode(array('status' => '1','message'=> 'แก้ไขหน่วยวัสดุ '.$_POST["unit"].' สำเร็จ'));
+            echo json_encode(array('status' => '1','message'=> 'แก้ไขโปรเจ็ค'.$_POST["projectname"].' สำเร็จ'));
         }
         else
         {
