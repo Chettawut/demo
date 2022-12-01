@@ -3,8 +3,6 @@ $(function() {
 
     $("#sidePurchase").show()
 
-
-
     getPO();
 
     $.ajax({
@@ -192,14 +190,12 @@ function getTotal(row) {
 
 }
 
-function onSelectPO(pocode) {
+$('#modal_edit').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) 
+  var pocode = button.data('whatever') 
 
     $("#editpocode").val(pocode);
     $("#printpocode").val(pocode);
-    $("#btnPrint").show();
-    $("#tablePoDetail tbody").empty();
-    $("#tableEditPoDetail").show();
-
 
     $.ajax({
         type: "POST",
@@ -291,24 +287,7 @@ function onSelectPO(pocode) {
         }
     });
 
-    $("#divfrmEditPO").show();
-
-    $("#txtHead").text('แก้ไขใบสั่งซื้อ (Edit Purchase Order)');
-
-    $('#divtablePO').hide();
-    $("#btnBack").show();
-    $('#btnAddPO').hide();
-    $("#btnRefresh").hide();
-    $("#tableEditPoDetail tbody").empty();
-
-
-
-
-
-
-    // $("#tableEditPoDetail").show();
-
-}
+})
 
 function getPO() {
     $.ajax({

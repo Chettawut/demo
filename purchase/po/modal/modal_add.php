@@ -1,6 +1,6 @@
 <div class="modal fade bd-example-modal-xl" tabindex="-1" id="modal_add" role="dialog"
     aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
         <div class="modal-content w3-flat-turquoise">
             <div class="modal-header bg-gradient-secondary">
                 <h5 class="modal-title">เพิ่มข้อมูลใบสั่งซื้อ</h5>
@@ -8,8 +8,9 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form name="frmPO" id="frmPO" onkeydown="return event.key != 'Enter';">
-                <div class="modal-body">
+
+            <div class="modal-body">
+                <form name="frmPO" id="frmPO" onkeydown="return event.key != 'Enter';">
                     <div class="form-row">
                         <div class="form-group col-md-2">
                             <label>เลขที่ใบสั่งซื้อ</label>
@@ -26,31 +27,31 @@
                             </div>
                         </div>
                         <div class="form-group col-md-6">
-                            <label >ชื่อผู้ขาย</label>
+                            <label>ชื่อผู้ขาย</label>
                             <input type="text" class="form-control" name="tdname" id="tdname" disabled>
                         </div>
 
                     </div>
 
                     <div class="form-row">
-                    <div class="form-group col-md-12">
-                        <label >ที่อยู่ผู้ขาย</label>
-                        <input type="text" class="form-control" size="4" name="address" id="address" disabled>
-                    </div>
+                        <div class="form-group col-md-12">
+                            <label>ที่อยู่ผู้ขาย</label>
+                            <input type="text" class="form-control" size="4" name="address" id="address" disabled>
+                        </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                            <label >วันที่สั่งซื้อ</label>
+                            <label>วันที่สั่งซื้อ</label>
                             <input type="date" class="form-control" size="4" name="podate" id="podate">
                         </div>
                         <div class="form-group col-md-4">
-                            <label >วันที่นัดส่งของ</label>
+                            <label>วันที่นัดส่งของ</label>
                             <input type="date" class="form-control" name="deldate" id="deldate">
                         </div>
 
                         <div class="form-group col-md-4">
-                            <label >การชำระเงิน</label>
+                            <label>การชำระเงิน</label>
                             <select class="form-control" name="payment" id="payment">
                                 <option value="เงินสด" selected>เงินสด</option>
                                 <option value="30 วัน">30 วัน</option>
@@ -66,12 +67,12 @@
                     <div class="form-row">
 
                         <div class="form-group col-md-4">
-                            <label >ใบเสนอราคา</label>
+                            <label>ใบเสนอราคา</label>
                             <input type="text" class="form-control" name="poqua" id="poqua">
                         </div>
 
                         <div class="form-group col-md-4">
-                            <label >สกุลเงิน</label>
+                            <label>สกุลเงิน</label>
                             <select class="form-control" name="currency" id="currency">
                                 <option value="บาท" selected>บาท</option>
                                 <option value="ดอลล่า">ดอลล่า</option>
@@ -79,7 +80,7 @@
                             </select>
                         </div>
                         <div class="form-group col-md-4">
-                            <label >ภาษี </label>
+                            <label>ภาษี </label>
                             <div class="radio">
                                 <label class="radio-inline">
                                     <input type="radio" name="vat" value="Y" checked> มี
@@ -121,14 +122,15 @@
 
                         </tbody>
                     </table>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="col text-center">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                    <button type="submit" id="btnAddSo" form="frmAddStock" class="btn btn-primary">ตกลง</button>
                 </div>
-                <div class="modal-footer">
-                    <div class="col text-center">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                        <button type="submit" id="btnAddSo" form="frmAddStock" class="btn btn-primary">ตกลง</button>
-                    </div>
-                </div>
-            </form>
+            </div>
+
         </div>
     </div>
 </div>

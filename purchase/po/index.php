@@ -112,7 +112,7 @@ include_once('../../conn.php');
         include_once('modal/modal_edit.php');
         include_once('modal/modal_stock.php');
         include_once('modal/modal_supplier.php');   
-        include_once('modal/unit.php');        
+        include_once('modal/modal_unit.php');        
         ?>
         
     </div>
