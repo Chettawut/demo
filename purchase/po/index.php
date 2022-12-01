@@ -1,3 +1,6 @@
+<?php
+include_once('../../conn.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,7 +57,7 @@
                                 <div data-role="fieldcontain">
 
                                     <div class="btn-group" id="btnAddSO" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-success"><i class="fa fa fa-tags"
+                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_add"><i class="fa fa fa-tags"
                                                 aria-hidden="true"></i>
                                             เพิ่มใบสั่งซื้อ</button>
                                     </div>
@@ -82,16 +85,15 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-12">
-                            <table name="tablePurchase" id="tablePurchase" class="table table-bordered table-striped">
+                            <table name="tablePO" id="tablePO" class="table table-bordered table-striped">
                                 <thead style=" background-color:#D6EAF8;">
-                                    <tr>
-                                        <th width="10%">รหัสผู้ขาย</th>
-                                        <th>เลขที่ใบสั่งซื้อ</th>
-                                        <th>วันที่สั่งซื้อ</th>
-                                        <th>รหัสพัสดุ</th>
-                                        <th>รายงานสินค้า</th>
-                                        <th>ผู้ขาย</th>
-                                        <th>สถานะ</th>
+                                    <tr>                                        
+                                        <th width="15%">เลขที่ใบสั่งซื้อ</th>
+                                        <th width="15%">วันที่สั่งซื้อ</th>
+                                        <th width="15%">รหัสพัสดุ</th>
+                                        <th width="15%">รายงานสินค้า</th>
+                                        <th width="15%">ผู้ขาย</th>
+                                        <th width="15%">สถานะ</th>
 
                                     </tr>
                                 </thead>
@@ -105,7 +107,14 @@
             </section>
         </div>
 
-
+        <?php 
+        include_once('modal/modal_add.php');
+        include_once('modal/modal_edit.php');
+        include_once('modal/modal_stock.php');
+        include_once('modal/modal_supplier.php');   
+        include_once('modal/unit.php');        
+        ?>
+        
     </div>
     <?php
     include_once ROOT . '/import_js.php';
