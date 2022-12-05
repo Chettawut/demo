@@ -8,7 +8,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" style="max-height: 700px;">
                 <form name="frmEditPO" id="frmEditPO" onkeydown="return event.key != 'Enter';">
 
                     <div class="form-row">
@@ -98,6 +98,7 @@
                                 <th>ราคาขาย</th>
                                 <th>ส่วนลด</th>
                                 <th>จำนวนเงิน (บาท)</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>

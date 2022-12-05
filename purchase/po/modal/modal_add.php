@@ -9,7 +9,7 @@
                 </button>
             </div>
 
-            <div class="modal-body">
+            <div class="modal-body" style="max-height: 700px;overflow-y: auto;">
                 <form name="frmPO" id="frmPO" onkeydown="return event.key != 'Enter';">
                     <div class="form-row">
                         <div class="form-group col-md-2">
@@ -96,25 +96,23 @@
                     <div class="form-group col-md-12">
                         <button type="button" id="btnAddPOdetail" class="btn btn-success" data-toggle="modal"
                             data-target="#modal_stock"><i class="fa fa fa-tags" aria-hidden="true"></i>
-                            เพิ่มรายการ</button>
-                        <button type="button" id="btnClearPOdetail" style="display:none;" class="btn btn-danger"
-                            onClick="onDeleteDetail();"><i class="fa fa fa-times" aria-hidden="true"></i>
-                            ลบรายการ</button>
+                            เพิ่มรายการ</button>                        
                     </div>
 
 
 
                     <table name="tablePoDetail" id="tablePoDetail" class="table table-bordered table-striped">
-                        <thead style="background-color:#D6EAF8;">
-                            <tr>
+                        <thead style="background-color:#D6EAF8;" >
+                            <tr style="font-size: 14px;">
                                 <th>ลำดับ</th>
                                 <th>รหัสสินค้า</th>
-                                <th>รายการสินค้า</th>
+                                <th  width="15%">รายการสินค้า</th>
                                 <th>จำนวน</th>
                                 <th>หน่วย</th>
                                 <th>ราคาขาย</th>
                                 <th>ส่วนลด</th>
-                                <th>จำนวนเงิน (บาท)</th>
+                                <th>จำนวนเงิน</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>

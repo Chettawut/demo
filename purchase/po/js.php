@@ -196,6 +196,7 @@ $('#modal_edit').on('show.bs.modal', function (event) {
 
     $("#editpocode").val(pocode);
     $("#printpocode").val(pocode);
+    $('#tableEditPoDetail tbody').empty();
 
     $.ajax({
         type: "POST",
@@ -256,7 +257,9 @@ $('#modal_edit').on('show.bs.modal', function (event) {
                             result.discount[count] +
                             '"><div class="input-group-addon">%</div></div></td><td ><p name="total" id="total' +
                             result.pono[count] +
-                            '" class="form-control-static" style="text-align:right">0</p></td><td></td></tr>'
+                            '" class="form-control-static" style="text-align:right">0</p></td><td><button type="button" onClick="onDelete_MainTable(\'' + $(
+                    '#tablePoDetail tr').length +
+            '\',\'edit\')"; class="btn btn-danger form-control" ><i class="fa fa fa-times" aria-hidden="true"></i class=></button></td></tr>'
                         );
                         getTotal(result.pono[count]);
 
@@ -478,7 +481,7 @@ $("#table_stock").delegate('tr', 'click', function() {
             // console.log(today);
 
             $('#tablePoDetail').append(
-                '<tr id="' + result.stcode +
+                '<tr id="new ' + $('#tablePoDetail tr').length +
                 '" ><td name="pono" id="pono" ><p class="form-control-static" style="text-align:center">' +
                 $('#tablePoDetail tr').length +
                 '</p></td><td><p class="form-control-static" style="text-align:center">' +
@@ -502,10 +505,12 @@ $("#table_stock").delegate('tr', 'click', function() {
                 '"></td><td><div class="input-group"><input type="text" class="form-control" name="discount" id="discount' +
                 $(
                     '#tablePoDetail tr').length +
-                '" value="0"><div class="input-group-addon">%</div></div></td><td ><p name="total" id="total' +
+                '" value="0 %"</div></td><td ><p name="total" id="total' +
                 $('#tablePoDetail tr')
                 .length +
-                '" class="form-control-static" style="text-align:right">0</p></td></tr>'
+                '" class="form-control-static" style="text-align:right">0.00</p></td><td><button type="button" onClick="onDelete_MainTable(\'' + $(
+                    '#tablePoDetail tr').length +
+            '\',\'add\')"; class="btn btn-danger form-control" ><i class="fa fa fa-times" aria-hidden="true"></i class=></button></td></tr>'
             );
 
 
@@ -558,6 +563,36 @@ $("#table_stock").delegate('tr', 'click', function() {
 
 });
 
+function onDelete_MainTable(id, type) {
+
+// alert(id)
+if (confirm("ยืนยันการลบรายการ")) {
+    if (type == 'get') {
+
+        // alert(id.replace("detail", ""))
+        $.ajax({
+            type: "POST",
+            url: "ajax/deletesup_so.php",
+            data: "id=" + id.replace("detail", ""),
+            success: function(result) {
+                if (result.status == 1) // Success
+                {
+                    // alert(result.sql);
+                    // alert(result.message);
+                    $("#" + id).remove();
+                } else // Err
+                {
+                    alert(result.message);
+                }
+                // alert(result);
+            }
+        });
+
+    } else
+        $("#new\\ " + id).remove();
+}
+}
+
 
 
 //Refresh
@@ -565,65 +600,4 @@ $("#btnRefresh").click(function() {
     RefreshPage();
 });
 
-// ลบค่าในฟอร์ม
-$("#btnAddClear").click(function() {
-    $("#tdcode").val('');
-    $("#tdname").val('');
-    $("#idno").val('');
-    $("#road").val('');
-    $("#subdistrict").val('');
-    $("#district").val('');
-    $("#province").val('');
-    $("#country").val('');
-    $("#zipcode").val('');
-    $("#tel").val('');
-    $("#fax").val('');
-    $("#email").val('');
-});
-
-
-// ย้ายไปหน้า เพิ่ม PO
-$("#btnAddPO").click(function() {
-
-    $("#pocode").val('');
-    $("#supcode").val('');
-    $("#tdname").val('');
-    $("#address").val('');
-    $("#podate").val(formatDate(new Date()));
-    $("#deldate").val(formatDate(new Date()));
-    $("#tablePoDetail tbody").empty();
-    previewPOcode();
-
-    $("#tableEditPoDetail").hide();
-    $("#tablePoDetail").show();
-
-    $("#txtHead").text('เพิ่มใบสั่งซื้อ (Add Purchase Order)');
-    $("#frmPO").show();
-    $("#divfrmPO").show();
-    $("#divfrmEditPO").hide();
-    $('#divtablePO').hide();
-    $('#btnAddPO').hide();
-    $("#btnPrint").hide();
-    $("#btnAddSubmit").show();
-    $("#btnBack").show();
-    $("#btnRefresh").hide();
-
-});
-
-// ย้อนกลับไปหน้าหลัก
-$("#btnBack").click(function() {
-    // $("#tablePO tbody").empty();
-
-    $("#txtHead").text('ใบสั่งซื้อ (Purchase Order)');
-    $("#divfrmPO").hide();
-    $("#divfrmEditPO").hide();
-    $('#divtablePO').show();
-    $(this).hide();
-    $("#btnAddClear").hide();
-    $("#btnPrint").hide();
-    $("#btnEditSubmit").hide();
-    $("#btnAddSubmit").hide();
-    $("#btnAddPO").show();
-    $("#btnRefresh").show();
-});
 </script>

@@ -94,7 +94,6 @@ include_once('../../conn.php');
                                         <th width="15%">รายงานสินค้า</th>
                                         <th width="15%">ผู้ขาย</th>
                                         <th width="15%">สถานะ</th>
-
                                     </tr>
                                 </thead>
                                 <tbody>
