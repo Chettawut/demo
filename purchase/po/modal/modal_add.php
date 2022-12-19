@@ -43,11 +43,11 @@
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label>วันที่สั่งซื้อ</label>
-                            <input type="date" class="form-control" size="4" name="podate" id="podate">
+                            <input type="date" class="form-control" size="4" name="podate" id="podate" required>
                         </div>
                         <div class="form-group col-md-4">
                             <label>วันที่นัดส่งของ</label>
-                            <input type="date" class="form-control" name="deldate" id="deldate">
+                            <input type="date" class="form-control" name="deldate" id="deldate" required>
                         </div>
 
                         <div class="form-group col-md-4">
@@ -125,7 +125,7 @@
             <div class="modal-footer">
                 <div class="col text-center">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                    <button type="submit" id="btnAddSo" form="frmAddStock" class="btn btn-primary">ตกลง</button>
+                    <button type="submit" id="btnAddSo" form="frmPO" class="btn btn-primary">ตกลง</button>
                 </div>
             </div>
 

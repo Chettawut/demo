@@ -23,8 +23,8 @@ include_once('../../conn.php');
     <div class="wrapper">
 
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="<?php echo PATH; ?>/AdminLTE-3.2.0/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60"
-                width="60">
+            <img class="animation__shake" src="<?php echo PATH; ?>/AdminLTE-3.2.0/dist/img/AdminLTELogo.png"
+                alt="AdminLTELogo" height="60" width="60">
         </div>
 
         <?php include_once ROOT . '/menu_head.php'; ?>
@@ -32,9 +32,9 @@ include_once('../../conn.php');
         <?php include_once ROOT . '/menu_left.php'; ?>
 
 
-        
+
         <div class="content-wrapper">
-            
+
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
@@ -86,6 +86,25 @@ include_once('../../conn.php');
 
                                 </div>
                             </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-12">
+                            <table name="tableRR" id="tableRR" class="table table-bordered table-striped">
+                                <thead style=" background-color:#D6EAF8;">
+                                    <tr>
+                                        <th style="width:13%;text-align:center">เลขที่ใบรับ</th>
+                                        <th style="width:10%;text-align:center">วันที่รับ</th>
+                                        <th style="width:12%;text-align:center">รหัสพัสดุ</th>
+                                        <th style="width:29%;text-align:center">รายงานสินค้า</th>
+                                        <th style="width:33%;text-align:center">ผู้ขาย</th>
+                                        <th style="width:3%;text-align:center">สถานะ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

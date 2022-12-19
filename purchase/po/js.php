@@ -190,9 +190,14 @@ function getTotal(row) {
 
 }
 
-$('#modal_edit').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) 
-  var pocode = button.data('whatever') 
+
+$('#modal_add').on('show.bs.modal', function(event) {
+    previewPOcode();
+})
+
+$('#modal_edit').on('show.bs.modal', function(event) {
+    var button = $(event.relatedTarget)
+    var pocode = button.data('whatever')
 
     $("#editpocode").val(pocode);
     $("#printpocode").val(pocode);
@@ -251,20 +256,23 @@ $('#modal_edit').on('show.bs.modal', function (event) {
                             result.pono[count] + '" value="' +
                             result.price[count] +
                             '"></td><td><div class="input-group"><input type="text" class="form-control" onChange="getTotal(' +
-                            result.pono[count] + ');" name="discount" id="discount' +
+                            result.pono[count] +
+                            ');" name="discount" id="discount' +
                             result.pono[count] +
                             '" value="' +
                             result.discount[count] +
                             '"><div class="input-group-addon">%</div></div></td><td ><p name="total" id="total' +
                             result.pono[count] +
-                            '" class="form-control-static" style="text-align:right">0</p></td><td><button type="button" onClick="onDelete_MainTable(\'' + $(
-                    '#tablePoDetail tr').length +
-            '\',\'edit\')"; class="btn btn-danger form-control" ><i class="fa fa fa-times" aria-hidden="true"></i class=></button></td></tr>'
+                            '" class="form-control-static" style="text-align:right">0</p></td><td><button type="button" onClick="onDelete_MainTable(\'' +
+                            $(
+                                '#tablePoDetail tr').length +
+                            '\',\'edit\')"; class="btn btn-danger form-control" ><i class="fa fa fa-times" aria-hidden="true"></i class=></button></td></tr>'
                         );
                         getTotal(result.pono[count]);
 
                         // $disable = '';
-                        if (result.supstatus[count] == '03' || result.supstatus[count] == 'C') {
+                        if (result.supstatus[count] == '03' || result.supstatus[
+                            count] == 'C') {
 
                             $("#frmEditPO input").prop("disabled", true);
                             $("#frmEditPO select").prop("disabled", true);
@@ -279,7 +287,8 @@ $('#modal_edit').on('show.bs.modal', function (event) {
                             $('#edittdname').prop("disabled", true);
                             $('#editaddress').prop("disabled", true);
                             $('#editpocode').prop("disabled", true);
-                            $("#tableEditPoDetail tbody input[name*='unit']").prop("disabled",
+                            $("#tableEditPoDetail tbody input[name*='unit']").prop(
+                                "disabled",
                                 true);
                         }
 
@@ -351,6 +360,7 @@ function getPO() {
 $("#frmPO").submit(function(event) {
     event.preventDefault();
 
+    var id = [];
     var amount = [];
     var stcode = [];
     var unit = [];
@@ -359,8 +369,13 @@ $("#frmPO").submit(function(event) {
 
 
     $('#tablePoDetail tbody tr').each(function() {
-        stcode.push($(this).attr("id"));
+        id.push($(this).attr("id"));
     });
+
+    $('#tablePoDetail tbody tr').each(function(key) {
+        stcode.push($(this).find("td #stcode" + (++key)).text());
+    });
+
     $('#tablePoDetail tbody tr').each(function(key) {
         amount.push($(this).find("td #amount" + (++key)).val());
     });
@@ -373,12 +388,12 @@ $("#frmPO").submit(function(event) {
     $('#tablePoDetail tbody tr').each(function(key) {
         discount.push($(this).find("td #discount" + (++key)).val());
     });
-
+    // alert(stcode)
     if (stcode != 0) {
         $(':disabled').each(function(event) {
             $(this).removeAttr('disabled');
         });
-
+        // alert(stcode)
         $.ajax({
             type: "POST",
             url: "ajax/add_po.php",
@@ -484,7 +499,9 @@ $("#table_stock").delegate('tr', 'click', function() {
                 '<tr id="new ' + $('#tablePoDetail tr').length +
                 '" ><td name="pono" id="pono" ><p class="form-control-static" style="text-align:center">' +
                 $('#tablePoDetail tr').length +
-                '</p></td><td><p class="form-control-static" style="text-align:center">' +
+                '</p></td><td><p class="form-control-static" id="stcode' +
+                $('#tablePoDetail tr').length +
+                '" style="text-align:center">' +
                 result
                 .stcode +
                 '</p></td><td> <p class="form-control-static" style="text-align:left">' +
@@ -508,9 +525,10 @@ $("#table_stock").delegate('tr', 'click', function() {
                 '" value="0 %"</div></td><td ><p name="total" id="total' +
                 $('#tablePoDetail tr')
                 .length +
-                '" class="form-control-static" style="text-align:right">0.00</p></td><td><button type="button" onClick="onDelete_MainTable(\'' + $(
+                '" class="form-control-static" style="text-align:right">0.00</p></td><td><button type="button" onClick="onDelete_MainTable(\'' +
+                $(
                     '#tablePoDetail tr').length +
-            '\',\'add\')"; class="btn btn-danger form-control" ><i class="fa fa fa-times" aria-hidden="true"></i class=></button></td></tr>'
+                '\',\'add\')"; class="btn btn-danger form-control" ><i class="fa fa fa-times" aria-hidden="true"></i class=></button></td></tr>'
             );
 
 
@@ -565,32 +583,32 @@ $("#table_stock").delegate('tr', 'click', function() {
 
 function onDelete_MainTable(id, type) {
 
-// alert(id)
-if (confirm("ยืนยันการลบรายการ")) {
-    if (type == 'get') {
+    // alert(id)
+    if (confirm("ยืนยันการลบรายการ")) {
+        if (type == 'get') {
 
-        // alert(id.replace("detail", ""))
-        $.ajax({
-            type: "POST",
-            url: "ajax/deletesup_so.php",
-            data: "id=" + id.replace("detail", ""),
-            success: function(result) {
-                if (result.status == 1) // Success
-                {
-                    // alert(result.sql);
-                    // alert(result.message);
-                    $("#" + id).remove();
-                } else // Err
-                {
-                    alert(result.message);
+            // alert(id.replace("detail", ""))
+            $.ajax({
+                type: "POST",
+                url: "ajax/deletesup_so.php",
+                data: "id=" + id.replace("detail", ""),
+                success: function(result) {
+                    if (result.status == 1) // Success
+                    {
+                        // alert(result.sql);
+                        // alert(result.message);
+                        $("#" + id).remove();
+                    } else // Err
+                    {
+                        alert(result.message);
+                    }
+                    // alert(result);
                 }
-                // alert(result);
-            }
-        });
+            });
 
-    } else
-        $("#new\\ " + id).remove();
-}
+        } else
+            $("#new\\ " + id).remove();
+    }
 }
 
 
@@ -599,5 +617,4 @@ if (confirm("ยืนยันการลบรายการ")) {
 $("#btnRefresh").click(function() {
     RefreshPage();
 });
-
 </script>
