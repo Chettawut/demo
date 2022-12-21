@@ -59,7 +59,7 @@ include_once('../../conn.php');
                                 <div data-role="fieldcontain">
 
                                     <div class="btn-group" id="btnAddSO" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-success"><i class="fa fa fa-tags"
+                                        <button type="button" data-toggle="modal" data-target="#modal_add" class="btn btn-success"><i class="fa fa fa-tags"
                                                 aria-hidden="true"></i>
                                             เพิ่มใบรับของ</button>
                                     </div>
@@ -111,6 +111,12 @@ include_once('../../conn.php');
             </section>
         </div>
 
+
+
+        <?php 
+        include_once('modal/modal_edit.php');
+        ?>
+        <?php include_once('modal/modal_add.php');?>
 
     </div>
     <?php

@@ -58,12 +58,14 @@ function previewRRcode() {
 
 }
 
-function onSelectRR(rrcode) {
+$('#modal_edit').on('show.bs.modal', function(event) {
+    var button = $(event.relatedTarget)
+    var rrcode = button.data('whatever')
 
     $("#editrrcode").val(rrcode);
     $("#printrrcode").val(rrcode);
     $("#tableRRDetail tbody").empty();
-    $("#tableEditRRDetail").show();
+    // $("#tableEditRRDetail").show();
     $.ajax({
         type: "POST",
         url: "ajax/getsup_rr.php",
@@ -89,10 +91,6 @@ function onSelectRR(rrcode) {
     $("#txtHead").text('Edit Goods Receive');
 
     $('#divtableRR').hide();
-    $("#btnBack").show();
-    $('#btnAddRR').hide();
-    $("#btnRefresh").hide();
-    $("#btnPrint").show();
     $("#tableEditRRDetail tbody").empty();
     $("#tableEditRRGiveaway tbody").empty();
     $('#tableEditRRGiveaway').hide();
@@ -162,16 +160,19 @@ function onSelectRR(rrcode) {
                             '"  value="' +
                             result.amount[count] +
                             '" disabled></td><td><input type="text" class="form-control" onChange="getTotal(' +
-                            result.rrno[count] + ');" name="recamount1" id="recamount1' +
+                            result.rrno[count] +
+                            ');" name="recamount1" id="recamount1' +
                             result.rrno[count] + '" value="' +
                             result.recamount[count] +
                             '" disabled></td><td><select class="form-control" style="text-align:left" name="places1" id="places1' +
-                            $('#tableEditRRDetail tr').length + '" disabled>' + option +
+                            $('#tableEditRRDetail tr').length + '" disabled>' +
+                            option +
                             '</select ></td><td><p style="text-align:center" class="form-control-static" title="' +
                             title + '" >' + status +
                             '</p></td></tr>'
                         );
-                        $('#places1' + $('#tableEditRRDetail tbody tr').length).val(result
+                        $('#places1' + $('#tableEditRRDetail tbody tr').length).val(
+                            result
                             .places[count]);
 
 
@@ -204,15 +205,18 @@ function onSelectRR(rrcode) {
                             '" disabled><span class="input-group-btn"><button class="btn btn-default" data-toggle="modal" data-target="#modal_unit2" data-whatever="' +
                             result.rrno[count] +
                             ',tableEditRRGiveaway," type="button"><span class="fa fa-search"></span></button></span></div></td><td><input type="text" class="form-control" onChange="getTotal(' +
-                            result.rrno[count] + ');" name="recamount2" id="recamount2' +
+                            result.rrno[count] +
+                            ');" name="recamount2" id="recamount2' +
                             result.rrno[count] + '" value="' +
                             result.recamount[count] +
                             '" disabled></td><td><select class="form-control" style="text-align:left" name="places2" id="places2' +
-                            $('#tableEditRRGiveaway tr').length + '" disabled>' + option +
+                            $('#tableEditRRGiveaway tr').length + '" disabled>' +
+                            option +
                             '</select ></td></tr>'
                         );
                         // alert($('#tableEditRRGiveaway tr').length);
-                        $('#places2' + $('#tableEditRRGiveaway tbody tr').length).val(result
+                        $('#places2' + $('#tableEditRRGiveaway tbody tr').length).val(
+                            result
                             .places[count]);
 
                     }
@@ -222,12 +226,7 @@ function onSelectRR(rrcode) {
         }
     });
 
-
-
-
-    // $("#tableEditPoDetail").show();
-
-}
+})
 
 function getRR() {
     $.ajax({
@@ -254,7 +253,8 @@ function getRR() {
 
                 $('#tableRR').append(
                     '<tr id="' + result.rrcode[
-                        count] + '" onClick="onSelectRR(this.id);" ><td>' + result.rrcode[count] +
+                        count] + '" data-toggle="modal" data-target="#modal_edit" ><td>' + result
+                    .rrcode[count] +
                     '</td><td>' + result
                     .rrdate[count] + '</td><td>' + result
                     .stcode[count] + '</td><td>' + result.stname1[count] + '</td><td>' + result
@@ -292,6 +292,7 @@ $(function() {
     // $(document).ajaxStart(function() {
     // Pace.restart()
     // });
+    $("#sideStore").show()
     getRR();
 
     $.ajax({
@@ -305,7 +306,9 @@ $(function() {
                 $('#table_id tbody').append(
                     '<tr data-toggle="modal" data-dismiss="modal"  id="' + result
                     .supcode[count] + '" onClick="onClick_tr(this.id,\'' + result.supname[
-                        count] + '\',\'' + result.address[count] + '\');"><td>' + result.code[
+                        count] + '\',\'' + result.address[count] + '\');" data-whatever="' +
+                    result.code[
+                        count] + '"><td>' + result.code[
                         count] + '</td><td>' +
                     result.supcode[count] + '</td><td>' +
                     result.supname[count] + '</td></tr>');
@@ -599,7 +602,7 @@ $(function() {
                         var row = [];
                         row[i] = target.split(',')[1];
                         $('#btnClearRRdetail').show();
-                        
+
 
 
                         for (count = 0; count < result.places.length; count++) {
@@ -609,7 +612,7 @@ $(function() {
 
 
                         }
-                        
+
                         $.ajax({
                             type: "POST",
                             url: "ajax/getsup_podetail.php",
