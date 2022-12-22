@@ -253,7 +253,8 @@ function getRR() {
 
                 $('#tableRR').append(
                     '<tr id="' + result.rrcode[
-                        count] + '" data-toggle="modal" data-target="#modal_edit" ><td>' + result
+                        count] + '" data-toggle="modal" data-target="#modal_edit" data-whatever="' + result.rrcode[
+                        count] + '"><td>' + result
                     .rrcode[count] +
                     '</td><td>' + result
                     .rrdate[count] + '</td><td>' + result

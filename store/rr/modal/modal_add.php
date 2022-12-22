@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-scrollable modal-xl">
         <div class="modal-content w3-flat-turquoise">
             <div class="modal-header bg-gradient-secondary">
-                <h5 class="modal-title">เพิ่มข้อมูลใบสั่งซื้อ</h5>
+                <h5 class="modal-title">เพิ่มข้อมูลใบรับสินค้า</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -12,47 +12,49 @@
             <div class="modal-body" style="max-height: 700px;overflow-y: auto;">
                 <form name="frmPO" id="frmPO" onkeydown="return event.key != 'Enter';">
                     <div class="form-row">
-                        <div class="form-group col-md-2">
-                            <label>เลขที่ใบสั่งซื้อ</label>
-                            <input type="text" class="form-control" name="pocode" id="pocode" disabled>
+                        <div class="form-group col-md-6">
+                            <label>เลขที่ใบรับสินค้า</label>
+                            <input type="text" class="form-control" name="addrrcode" id="addrrcode">
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-6">
+                            <label>วันที่รับสินค้า</label>
+                            <input type="date" class="form-control" name="addrrdate" id="addrrdate">
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
                             <label>รหัสผู้ขาย</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" name="supcode" id="supcode" disabled>
+                                <input type="text" class="form-control" name="addsupcode" id="addsupcode">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" data-toggle="modal" data-target="#modal_supplier"
+                                    <button class="btn btn-default" data-toggle="modal" data-target="#modal_one"
                                         type="button"><span class="fa fa-search"></span></button>
                                 </span>
                             </div>
                         </div>
                         <div class="form-group col-md-6">
                             <label>ชื่อผู้ขาย</label>
-                            <input type="text" class="form-control" name="tdname" id="tdname" disabled>
+                            <input type="text" class="form-control" name="addtdname" id="addtdname" disabled>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="recipient-name" class="col-form-label">Invoice No.</label>
+                            <input type="text" class="form-control" name="addinvcode" id="addinvcode" disabled>
+                        </div>
+                        <div class="form-group col-md-6  offset-md-2">
+                            <label for="recipient-name" class="col-form-label">วันที่ออก Invoice</label>
+                            <input type="date" class="form-control" size="4" name="addinvdate" id="addinvdate" disabled>
                         </div>
 
                     </div>
 
                     <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <label>ที่อยู่ผู้ขาย</label>
-                            <input type="text" class="form-control" size="4" name="address" id="address" disabled>
-                        </div>
-                    </div>
 
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label>วันที่สั่งซื้อ</label>
-                            <input type="date" class="form-control" size="4" name="podate" id="podate" required>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label>วันที่นัดส่งของ</label>
-                            <input type="date" class="form-control" name="deldate" id="deldate" required>
-                        </div>
-
-                        <div class="form-group col-md-4">
-                            <label>การชำระเงิน</label>
-                            <select class="form-control" name="payment" id="payment">
+                        <div class="form-group col-md-5">
+                            <label for="recipient-name" class="col-form-label">การชำระเงิน</label>
+                            <select class="form-control" name="addpayment" id="addpayment" disabled>
                                 <option value="เงินสด" selected>เงินสด</option>
                                 <option value="30 วัน">30 วัน</option>
                                 <option value="45 วัน">45 วัน</option>
@@ -61,58 +63,28 @@
                                 <option value="120 วัน">120 วัน</option>
                             </select>
                         </div>
-
-                    </div>
-
-                    <div class="form-row">
-
-                        <div class="form-group col-md-4">
-                            <label>ใบเสนอราคา</label>
-                            <input type="text" class="form-control" name="poqua" id="poqua">
-                        </div>
-
-                        <div class="form-group col-md-4">
-                            <label>สกุลเงิน</label>
-                            <select class="form-control" name="currency" id="currency">
-                                <option value="บาท" selected>บาท</option>
-                                <option value="ดอลล่า">ดอลล่า</option>
-                                <option value="เยน">เยน</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label>ภาษี </label>
-                            <div class="radio">
-                                <label class="radio-inline">
-                                    <input type="radio" name="vat" value="Y" checked> มี
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="vat" value="N"> ไม่มี
-                                </label>
-                            </div>
-                        </div>
-
                     </div>
 
                     <div class="form-group col-md-12">
                         <button type="button" id="btnAddPOdetail" class="btn btn-success" data-toggle="modal"
-                            data-target="#modal_stock"><i class="fa fa fa-tags" aria-hidden="true"></i>
-                            เพิ่มรายการ</button>                        
+                            data-target="#modal_po"><i class="fa fa fa-tags" aria-hidden="true"></i>
+                            เพิ่มรายการ</button>
                     </div>
 
 
 
                     <table name="tablePoDetail" id="tablePoDetail" class="table table-bordered table-striped">
-                        <thead style="background-color:#D6EAF8;" >
-                            <tr style="font-size: 14px;">
-                                <th>ลำดับ</th>
-                                <th>รหัสสินค้า</th>
-                                <th  width="15%">รายการสินค้า</th>
-                                <th>จำนวน</th>
-                                <th>หน่วย</th>
-                                <th>ราคาขาย</th>
-                                <th>ส่วนลด</th>
-                                <th>จำนวนเงิน</th>
-                                <th></th>
+                        <thead style="background-color:#D6EAF8;">
+                            <tr >
+                                <th style="width:3%;">ลำดับ</th>
+                                <th style="width:8%;">ใบสั่งซื้อ</th>
+                                <th style="width:9%;">รหัสสินค้า</th>
+                                <th>รายการสินค้า</th>
+                                <th style="width:12%;">หน่วย</th>
+                                <th style="width:9%;">จำนวนซื้อ</th>
+                                <th style="width:9%;">จำนวนรับ</th>
+                                <th style="width:15%;">คลังสินค้า</th>
+                                <th>สถานะ</th>
                             </tr>
                         </thead>
                         <tbody>
