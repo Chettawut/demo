@@ -85,16 +85,16 @@ include_once('../../conn.php');
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-12">
-                            <table name="tablePO" id="tablePO" class="table table-bordered table-striped">
+                            <table name="tableWD" id="tableWD" class="table table-bordered table-striped">
                                 <thead style=" background-color:#D6EAF8;">
                                     <tr>                                        
-                                        <th width="15%">เลขที่ใบเบิก</th>
-                                        <th width="15%">วันที่แจ้งเบิก</th>
-                                        <th width="15%">รหัสพัสดุ</th>
-                                        <th width="15%">ชื่อพัสดุ</th>
-                                        <th width="15%">จำนวนเบิก</th>
-                                        <th width="15%">ผู้เบิก</th>
-                                        <th width="15%">Cost Project</th>
+                                        <th width="13%">เลขที่ใบเบิก</th>
+                                        <th width="13%">วันที่แจ้งเบิก</th>
+                                        <th width="10%">รหัสพัสดุ</th>
+                                        <th width="20%">ชื่อพัสดุ</th>
+                                        <th width="11%">จำนวนเบิก</th>
+                                        <th width="12%">ผู้เบิก</th>
+                                        <th width="12%">Cost Project</th>
                                         <th width="15%">สถานะ</th>
                                     </tr>
                                 </thead>

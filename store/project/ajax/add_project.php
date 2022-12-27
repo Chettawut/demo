@@ -3,9 +3,9 @@
     include('../../../conn.php');
     date_default_timezone_set('Asia/Bangkok');
     
-    $StrSQL = "INSERT INTO project (projectcode,projectname,status,s_date,s_time,s_user) ";
+    $StrSQL = "INSERT INTO project (projectname,status,s_date,s_time,s_user) ";
     $StrSQL .= "VALUES (";
-    $StrSQL .= "'".$_POST["add_projectcode"]."','".$_POST["add_projectname"]."','Y' ";
+    $StrSQL .= "'".$_POST["add_projectname"]."','Y' ";
     $StrSQL .= ",'".date("Y-m-d"). "','".date("H:i:s"). "','chayapat' ";
     $StrSQL .= ")";
     $query = mysqli_query($conn,$StrSQL);

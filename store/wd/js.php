@@ -3,39 +3,8 @@ $(function() {
 
     $("#sideStore").show()
 
-    getPO();
+    getWD();
 
-    $.ajax({
-        type: "POST",
-        url: "ajax/get_supplier.php",
-
-        success: function(result) {
-
-            for (count = 0; count < result.code.length; count++) {
-
-                $('#table_id tbody').append(
-                    '<tr data-toggle="modal" data-dismiss="modal"  id="' + result
-                    .supcode[count] + '" onClick="onClick_tr(this.id,\'' + result.supname[
-                        count] + '\',\'' + result.address[count] + '\');"><td>' + result.code[
-                        count] + '</td><td>' +
-                    result.supcode[count] + '</td><td>' +
-                    result.supname[count] + '</td></tr>');
-
-
-            }
-
-            $('#table_id').DataTable({
-                "dom": '<"pull-left"f>rt<"bottom"p><"clear">',
-                "ordering": true
-            });
-
-
-            $(".dataTables_filter input[type='search']").attr({
-                size: 40,
-                maxlength: 40
-            });
-        }
-    });
 
     $.ajax({
         type: "POST",
@@ -197,41 +166,33 @@ $('#modal_add').on('show.bs.modal', function(event) {
 
 $('#modal_edit').on('show.bs.modal', function(event) {
     var button = $(event.relatedTarget)
-    var pocode = button.data('whatever')
+    var wdcode = button.data('whatever')
 
-    $("#editpocode").val(pocode);
-    $("#printpocode").val(pocode);
-    $('#tableEditPoDetail tbody').empty();
+    $('#tableEditwdDetail tbody').empty();
 
     $.ajax({
         type: "POST",
-        url: "ajax/getsup_po.php",
-        data: "idcode=" + pocode,
+        url: "ajax/getsup_wd.php",
+        data: "idcode=" + wdcode,
         success: function(result) {
-
-            $("#editpocode").val(result.pocode);
-            $("#editsupcode").val(result.supcode);
-            $("#edittdname").val(result.supname);
-            $("#editaddress").val(result.address);
-            $("#editpodate").val(result.podate);
-            $("#editdeldate").val(result.deldate);
-            $("#editpayment").val(result.payment);
-            $("#editpoqua").val(result.poqua);
-            $("#editcurrency").val(result.currency);
-            $("input[name=editvat][value=" + result.vat + "]").prop('checked', true);
-
-
+            // alert(result)
+            $("#wdcode").val(result.wdcode[0]);
+            $("#wddate").val(result.wddate[0]);
+            $("#wdtime").val(result.wdtime[0]);
+            $("#remark").val(result.remark[0]);
+            
             $.ajax({
                 type: "POST",
-                url: "ajax/getsup_podetail.php",
-                data: "idcode=" + pocode,
+                url: "ajax/getsup_wddetail.php",
+                data: "idcode=" + wdcode,
                 success: function(result) {
-                    for (count = 0; count < result.stcode.length; count++) {
+                        // alert(result)
+                    for (count = 0; count < result.wdcode.length; count++) {
 
-                        $('#tableEditPoDetail').append(
+                        $('#tableEditwdDetail').append(
                             '<tr id="' + result.stcode[count] +
-                            '" ><td name="pono" id="pono" ><p class="form-control-static" style="text-align:center">' +
-                            result.pono[count] +
+                            '" ><td name="wdno" id="wdno" ><p class="form-control-static" style="text-align:center">' +
+                            result.wdno[count] +
                             '</p></td><td><p class="form-control-static" style="text-align:center">' +
                             result
                             .stcode[count] +
@@ -239,58 +200,23 @@ $('#modal_edit').on('show.bs.modal', function(event) {
                             result.stname1[count] +
                             '</p></td><td><input type="text" class="form-control" onChange="getTotal(' +
                             result
-                            .pono[count] + ');" name="amount"  id="amount' +
-                            result.pono[count] +
+                            .wdno[count] + ');" name="amount"  id="amount' +
+                            result.wdno[count] +
                             '"  value="' +
                             result.amount[count] +
                             '"></td><td><div class="input-group"><input type="text" class="form-control" name="unit" id="unit' +
-                            result.pono[count] + '" value="' +
+                            result.wdno[count] + '" value="' +
                             result.unit[count] +
                             '" disabled><span class="input-group-btn"><button class="btn btn-default" data-toggle="modal" data-target="#modal_unit" data-whatever="' +
-                            result.pono[count] +
+                            result.wdno[count] +
                             ',tableEditPoDetail,' +
                             result
                             .stcode[count] +
-                            '" type="button"><span class="fa fa-search"></span></button></span></div></td><td><input type="text" class="form-control" onChange="getTotal(' +
-                            result.pono[count] + ');" name="price" id="price' +
-                            result.pono[count] + '" value="' +
-                            result.price[count] +
-                            '"></td><td><div class="input-group"><input type="text" class="form-control" onChange="getTotal(' +
-                            result.pono[count] +
-                            ');" name="discount" id="discount' +
-                            result.pono[count] +
-                            '" value="' +
-                            result.discount[count] +
-                            '"><div class="input-group-addon">%</div></div></td><td ><p name="total" id="total' +
-                            result.pono[count] +
-                            '" class="form-control-static" style="text-align:right">0</p></td><td><button type="button" onClick="onDelete_MainTable(\'' +
+                            '" type="button"><span class="fa fa-search"></span></button></span></div></td><td><button type="button" onClick="onDelete_MainTable(\'' +
                             $(
-                                '#tablePoDetail tr').length +
+                                '#tableEditwdDetail tr').length +
                             '\',\'edit\')"; class="btn btn-danger form-control" ><i class="fa fa fa-times" aria-hidden="true"></i class=></button></td></tr>'
                         );
-                        getTotal(result.pono[count]);
-
-                        // $disable = '';
-                        if (result.supstatus[count] == '03' || result.supstatus[
-                            count] == 'C') {
-
-                            $("#frmEditPO input").prop("disabled", true);
-                            $("#frmEditPO select").prop("disabled", true);
-                            $("#tableEditPoDetail tbody input").prop("disabled", true);
-                            // $disable = 'disabled';
-                        } else {
-                            $("#frmEditPO input").prop("disabled", false);
-                            $("#frmEditPO select").prop("disabled", false);
-                            $("#tableEditPoDetail tbody input").prop("disabled", false);
-                            $('#editpocode').prop("disabled", true);
-                            $('#editsupcode').prop("disabled", true);
-                            $('#edittdname').prop("disabled", true);
-                            $('#editaddress').prop("disabled", true);
-                            $('#editpocode').prop("disabled", true);
-                            $("#tableEditPoDetail tbody input[name*='unit']").prop(
-                                "disabled",
-                                true);
-                        }
 
                     }
 
@@ -301,43 +227,45 @@ $('#modal_edit').on('show.bs.modal', function(event) {
 
 })
 
-function getPO() {
+function getWD() {
     $.ajax({
         type: "POST",
-        url: "ajax/get_po.php",
+        url: "ajax/get_wd.php",
         success: function(result) {
             var supstatus, suptitle;
 
-            for (count = 0; count < result.pocode.length; count++) {
+            for (count = 0; count < result.wdcode.length; count++) {
 
-                if (result.supstatus[count] == '01') {
+                if (result.status[count] == '01') {
                     supstatus = 'R'
                     suptitle = 'รอรับของ'
-                } else if (result.supstatus[count] == '02') {
+                } else if (result.status[count] == '02') {
                     supstatus = 'N'
                     suptitle = 'ยังรับของไม่ครบ'
-                } else if (result.supstatus[count] == '03') {
-                    supstatus = 'Y'
-                    suptitle = 'รับของครบแล้ว'
-                } else if (result.supstatus[count] == 'C') {
+                } else if (result.status[count] == '03') {
+                    supstatus = 'ตัดเบิกแล้ว'
+                    suptitle = 'ตัดเบิกแล้ว'
+                } else if (result.status[count] == 'C') {
                     supstatus = 'C'
                     suptitle = 'ยกเลิกการใช้งาน'
                 }
 
-                $('#tablePO').append(
-                    '<tr id="' + result.pocode[
+                $('#tableWD').append(
+                    '<tr id="' + result.wdcode[
                         count] + '" data-toggle="modal" data-target="#modal_edit" id="' + result
-                    .pocode[
-                        count] + '" data-whatever="' + result.pocode[
-                        count] + '" ><td>' + result.pocode[count] +
+                    .wdcode[
+                        count] + '" data-whatever="' + result.wdcode[
+                        count] + '" ><td>' + result.wdcode[count] +
                     '</td><td>' + result
-                    .podate[count] + '</td><td>' + result
+                    .wddate[count] + '</td><td>' + result
                     .stcode[count] + '</td><td>' + result.stname1[count] + '</td><td>' + result
-                    .supname[count] + '</td><td><span title="' + suptitle + '">' + supstatus +
+                    .amount[count] + '</td><td>' + result
+                    .name[count] + '</td><td>' + result
+                    .projectname[count] + '</td><td><span title="' + suptitle + '">' + supstatus +
                     '</span></td></tr>');
             }
 
-            var table = $('#tablePO').DataTable({
+            var table = $('#tableWD').DataTable({
                 "dom": '<"pull-right"f>rt<"bottom"p><"clear">',
                 "order": [],
                 "pageLength": 20
@@ -356,8 +284,8 @@ function getPO() {
 
 
 
-// กดยืนยันเพิ่ม PO
-$("#frmPO").submit(function(event) {
+// กดยืนยันเพิ่ม WD
+$("#frmWD").submit(function(event) {
     event.preventDefault();
 
     var id = [];
@@ -390,35 +318,35 @@ $("#frmPO").submit(function(event) {
     });
     // alert(stcode)
     if (stcode != 0) {
-        $(':disabled').each(function(event) {
-            $(this).removeAttr('disabled');
-        });
-        // alert(stcode)
-        $.ajax({
-            type: "POST",
-            url: "ajax/add_po.php",
-            data: $("#frmPO").serialize() + "&amount=" + amount + "&stcode=" + stcode +
-                "&unit=" + unit +
-                "&price=" + price +
-                "&discount=" + discount,
-            success: function(result) {
-                if (result.status == 1) {
-                    alert(result.message);
-                    window.location.reload();
-                    // console.log(result.sql);
-                } else {
-                    alert('err');
-                    console.log(result.message);
-                }
-            }
-        });
+        // $(':disabled').each(function(event) {
+        //     $(this).removeAttr('disabled');
+        // });
+        // // alert(stcode)
+        // $.ajax({
+        //     type: "POST",
+        //     url: "ajax/add_po.php",
+        //     data: $("#frmPO").serialize() + "&amount=" + amount + "&stcode=" + stcode +
+        //         "&unit=" + unit +
+        //         "&price=" + price +
+        //         "&discount=" + discount,
+        //     success: function(result) {
+        //         if (result.status == 1) {
+        //             alert(result.message);
+        //             window.location.reload();
+        //             // console.log(result.sql);
+        //         } else {
+        //             alert('err');
+        //             console.log(result.message);
+        //         }
+        //     }
+        // });
     } else {
         alert('กรุณาเพิ่มรายการ');
     }
 });
 
-// กดยืนยันแก้ไข PO
-$("#frmEditPO").submit(function(event) {
+// กดยืนยันแก้ไข WD
+$("#frmEditWD").submit(function(event) {
     event.preventDefault();
 
     var amount = [];
@@ -495,85 +423,35 @@ $("#table_stock").delegate('tr', 'click', function() {
             today = yyyy + '-' + mm + '-' + dd;
             // console.log(today);
 
-            $('#tablePoDetail').append(
-                '<tr id="new ' + $('#tablePoDetail tr').length +
-                '" ><td name="pono" id="pono" ><p class="form-control-static" style="text-align:center">' +
-                $('#tablePoDetail tr').length +
+            $('#tablewddetail').append(
+                '<tr id="new ' + $('#tablewddetail tr').length +
+                '" ><td name="wdno" id="wdno" ><p class="form-control-static" style="text-align:center">' +
+                $('#tablewddetail tr').length +
                 '</p></td><td><p class="form-control-static" id="stcode' +
-                $('#tablePoDetail tr').length +
+                $('#tablewddetail tr').length +
                 '" style="text-align:center">' +
                 result
                 .stcode +
                 '</p></td><td> <p class="form-control-static" style="text-align:left">' +
                 result.stname1 +
                 '</p></td><td><input type="text" class="form-control" name="amount"  id="amount' +
-                $('#tablePoDetail tr').length +
+                $('#tablewddetail tr').length +
                 '"  value="0"></td><td><div class="input-group"><input type="text" class="form-control" name="unit" id="unit' +
-                $('#tablePoDetail tr').length + '" value="' +
+                $('#tablewddetail tr').length + '" value="' +
                 result.unit +
                 '" disabled><span class="input-group-btn"><button class="btn btn-default" data-toggle="modal" data-target="#modal_unit" data-whatever="' +
-                $('#tablePoDetail tr').length +
-                ',tablePoDetail,' +
+                $('#tablewddetail tr').length +
+                ',tablewddetail,' +
                 result
                 .stcode +
-                '" type="button"><span class="fa fa-search"></span></button></span></div></td><td><input type="text" class="form-control" name="price" id="price' +
-                $('#tablePoDetail tr').length + '" value="' +
-                result.sellprice +
-                '"></td><td><div class="input-group"><input type="text" class="form-control" name="discount" id="discount' +
+                '" type="button"><span class="fa fa-search"></span></button></span></div></td><td><button type="button" onClick="onDelete_MainTable(\'' +
                 $(
-                    '#tablePoDetail tr').length +
-                '" value="0 %"</div></td><td ><p name="total" id="total' +
-                $('#tablePoDetail tr')
-                .length +
-                '" class="form-control-static" style="text-align:right">0.00</p></td><td><button type="button" onClick="onDelete_MainTable(\'' +
-                $(
-                    '#tablePoDetail tr').length +
+                    '#tablewddetail tr').length +
                 '\',\'add\')"; class="btn btn-danger form-control" ><i class="fa fa fa-times" aria-hidden="true"></i class=></button></td></tr>'
             );
 
 
-            var row = $('#tablePoDetail tbody tr').length;
-
-            $('#amount' + row).change(function() {
-                $('#total' + row).html(formatMoney(($('#amount' + row).val() *
-                    $('#price' +
-                        row).val()) - ((($('#amount' + row).val() *
-                    $(
-                        '#price' + row).val()) * $(
-                    '#discount' +
-                    row).val()) / 100), 2));
-            });
-
-            $('#price' + row).change(function() {
-                $('#total' + row).html(formatMoney(($('#amount' + row).val() *
-                    $('#price' +
-                        row).val()) - ((($('#amount' + row).val() *
-                    $(
-                        '#price' + row).val()) * $(
-                    '#discount' +
-                    row).val()) / 100), 2));
-            });
-
-            $('#discount' + row).change(function() {
-                $('#total' + row).html(formatMoney(($('#amount' + row).val() *
-                    $('#price' +
-                        row).val()) - ((($('#amount' + row).val() *
-                    $(
-                        '#price' + row).val()) * $(
-                    '#discount' +
-                    row).val()) / 100), 2));
-            });
-
-            $('input[type=text]').on('keydown', function(e) {
-                $('#total' + row).html(formatMoney(($('#amount' + row).val() *
-                    $('#price' +
-                        row).val()) - ((($('#amount' + row).val() *
-                    $(
-                        '#price' + row).val()) * $(
-                    '#discount' +
-                    row).val()) / 100), 2));
-            });
-
+            var row = $('#tablewdDetail tbody tr').length;
 
         }
     });

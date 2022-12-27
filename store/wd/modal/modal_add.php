@@ -10,44 +10,47 @@
             </div>
 
             <div class="modal-body" style="max-height: 700px;overflow-y: auto;">
-                <form name="frmPO" id="frmPO" onkeydown="return event.key != 'Enter';">
+                <form name="frmWD" id="frmWD" onkeydown="return event.key != 'Enter';">
                     <div class="form-row">
-                        <div class="form-group col-md-2">
+                        <div class="form-group col-md-4">
                             <label>เลขที่ใบเบิก</label>
-                            <input type="text" class="form-control" name="pocode" id="pocode" disabled>
+                            <input type="text" class="form-control" name="add_wdcode" id="add_wdcode" disabled>
                         </div>
                         <div class="form-group col-md-4">
                             <label>วันที่เบิก</label>
-                            <input type="date" class="form-control" size="4" name="podate" id="podate" required>
+                            <input type="date" class="form-control" size="4" name="add_wddate" id="add_wddate" required>
                         </div>
                         <div class="form-group col-md-4">
                             <label>เวลาเบิก</label>
-                            <input type="date" class="form-control" size="4" name="podate" id="podate" required>
+                            <input type="time" class="form-control" size="4" name="add_wdtime" id="add_wdtime" required>
                         </div>
-
                     </div>
 
                     <div class="form-row">
 
-                        <div class="form-group col-md-4">
+                    <div class="form-group col-md-8">
                             <label>Cost Project</label>
-                            <select class="form-control" name="payment" id="payment">
-                                <option value="เงินสด" selected>เงินสด</option>
-                                <option value="30 วัน">30 วัน</option>
-                                <option value="45 วัน">45 วัน</option>
-                                <option value="60 วัน">60 วัน</option>
-                                <option value="90 วัน">90 วัน</option>
-                                <option value="120 วัน">120 วัน</option>
+                            <select class="form-control" name="add_project" id="add_project">
+                                <?php 
+                                            
+                                        	$sql = "SELECT * FROM `project` where status = 'Y' ";
+                                            $query = mysqli_query($conn,$sql);
+                                        
+                                            while($row = $query->fetch_assoc()) {
+                                                echo '<option value="'.$row["projectcode"].'">'.$row["projectname"].'</option>';
+                                            }
+                            ?>
                             </select>
                         </div>
+                        
 
-                        <div class="form-group col-md-4">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
                             <label>หมายเหตุ</label>
-                            <input type="date" class="form-control" name="deldate" id="deldate" required>
+                            <textarea id="add_remark" name="add_remark" class="form-control">
+                            </textarea>
                         </div>
-
-
-
                     </div>
 
                     <div class="form-group col-md-12">
@@ -58,16 +61,15 @@
 
 
 
-                    <table name="tablePoDetail" id="tablePoDetail" class="table table-bordered table-striped">
+                    <table name="tablewddetail" id="tablewddetail" class="table table-bordered table-striped">
                         <thead style="background-color:#D6EAF8;">
-                            <tr >
-                                <th>ลำดับ</th>
-                                <th>รหัสสินค้า</th>
-                                <th width="15%">ชื่อพัสดุ</th>
-                                <th>Cost Project ที่ใช้</th>
-                                <th>จำนวนเบิก</th>
-                                <th>หน่วย</th>
-                                <th></th>
+                            <tr>
+                                <th width="5%">ลำดับ</th>
+                                <th width="10%">รหัสสินค้า</th>
+                                <th width="45%">ชื่อพัสดุ</th>
+                                <th width="15%">จำนวนเบิก</th>
+                                <th width="15%">หน่วย</th>
+                                <th width="10%"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -80,7 +82,7 @@
             <div class="modal-footer">
                 <div class="col text-center">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                    <button type="submit" id="btnAddSo" form="frmPO" class="btn btn-primary">ตกลง</button>
+                    <button type="submit" id="btnAddWD" form="frmWD" class="btn btn-primary">ตกลง</button>
                 </div>
             </div>
 

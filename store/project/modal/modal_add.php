@@ -10,11 +10,7 @@
             </div>
             <form name="frmAddProject" id="frmAddProject" method="POST" style="padding:10px;" action="javascript:void(0);">
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="form-group col-lg-4 col-12">
-                            <label class="col-form-label">รหัส Project</label>
-                            <input type="text" class="form-control" name="add_projectcode" id="add_projectcode" required>
-                        </div>
+                    <div class="row">                        
                         <div class="form-group col-lg-8 col-12">
                             <label class="col-form-label">ชื่อ Project</label>
                             <input type="text" class="form-control" name="add_projectname" id="add_projectname" required>
