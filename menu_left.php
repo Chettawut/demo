@@ -71,7 +71,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?php echo PATH; ?>" class="nav-link">
+                    <a href="<?php echo PATH; ?>/store/reports" class="nav-link">
                         <i class="nav-icon 	fa fa-book"></i>
                         <p>
                             รายงาน (Reports)
