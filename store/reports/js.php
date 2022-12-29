@@ -11,9 +11,9 @@ $('#btnprint2').click(function() {
 
     let year = $('#toolyear').val()
 
-    $('#myModalLabel').text('รายงานการผลิตรายเดือน ปี ' + (parseInt(year) + 543))
+    $('#myModalLabel').text('รายงานสรุปยอดเบิกแยก Project')
 
-    $('#printf').attr('src', '../PD_Month/index.php?year=' + year)
+    $('#printf').attr('src', 'WD_byproject/index.php?year=' + year)
 
     setTimeout(function() {
         window.frames["printf"].focus();

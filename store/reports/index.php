@@ -60,8 +60,8 @@ include_once('../../conn.php');
                                 <span class="info-box-icon"><i class="fas fa-tag"></i></span>
 
                                 <div id="month" class="info-box-content">
-                                    <span class="info-box-text">รายงานใบเบิก</span>
-                                    <span class="info-box-number">23,443.323 ตัน</span>
+                                    <span class="info-box-text">รายงานสรุปยอดเบิกแยก Project</span>
+                                    <!-- <span class="info-box-number">23,443.323 ตัน</span> -->
                                 </div>
                             </div>
                             <div class="info-box mb-3 bg-secondary">

@@ -2,8 +2,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?php echo PATH; ?>" class="brand-link">
-        <img src="<?php echo PATH; ?>/AdminLTE-3.2.0/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
-            class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="<?php echo PATH; ?>/img/logo1.png" 
+            class="brand-image img-circle elevation-3" style="background-color:white;">
         <span class="brand-text font-weight-light">Demo</span>
     </a>
 
