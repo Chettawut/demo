@@ -5,6 +5,10 @@ $(function() {
 
     getWD();
 
+    let d = new Date();
+    $("#add_wddate").val(d.toISOString().substring(0, 10))
+    d.setMinutes(d.getMinutes() - d.getTimezoneOffset());
+    $("#add_wdtime").val(d.toISOString().slice(11, 16))
 
     $.ajax({
         type: "POST",
@@ -180,13 +184,13 @@ $('#modal_edit').on('show.bs.modal', function(event) {
             $("#wddate").val(result.wddate[0]);
             $("#wdtime").val(result.wdtime[0]);
             $("#remark").val(result.remark[0]);
-            
+
             $.ajax({
                 type: "POST",
                 url: "ajax/getsup_wddetail.php",
                 data: "idcode=" + wdcode,
                 success: function(result) {
-                        // alert(result)
+                    // alert(result)
                     for (count = 0; count < result.wdcode.length; count++) {
 
                         $('#tableEditwdDetail').append(
@@ -288,58 +292,50 @@ function getWD() {
 $("#frmWD").submit(function(event) {
     event.preventDefault();
 
-    var id = [];
     var amount = [];
     var stcode = [];
     var unit = [];
-    var price = [];
-    var discount = [];
+    var cost = [];
 
 
-    $('#tablePoDetail tbody tr').each(function() {
-        id.push($(this).attr("id"));
-    });
-
-    $('#tablePoDetail tbody tr').each(function(key) {
+    $('#tablewddetail tbody tr').each(function(key) {
         stcode.push($(this).find("td #stcode" + (++key)).text());
     });
 
-    $('#tablePoDetail tbody tr').each(function(key) {
+    $('#tablewddetail tbody tr').each(function(key) {
         amount.push($(this).find("td #amount" + (++key)).val());
     });
-    $('#tablePoDetail tbody tr').each(function(key) {
+    $('#tablewddetail tbody tr').each(function(key) {
         unit.push($(this).find("td #unit" + (++key)).val());
     });
-    $('#tablePoDetail tbody tr').each(function(key) {
-        price.push($(this).find("td #price" + (++key)).val());
+    $('#tablewddetail tbody tr').each(function(key) {
+        cost.push($(this).find("td #cost" + (++key)).val());
     });
-    $('#tablePoDetail tbody tr').each(function(key) {
-        discount.push($(this).find("td #discount" + (++key)).val());
-    });
-    // alert(stcode)
+
+
+    // alert(cost)
     if (stcode != 0) {
-        // $(':disabled').each(function(event) {
-        //     $(this).removeAttr('disabled');
-        // });
-        // // alert(stcode)
-        // $.ajax({
-        //     type: "POST",
-        //     url: "ajax/add_po.php",
-        //     data: $("#frmPO").serialize() + "&amount=" + amount + "&stcode=" + stcode +
-        //         "&unit=" + unit +
-        //         "&price=" + price +
-        //         "&discount=" + discount,
-        //     success: function(result) {
-        //         if (result.status == 1) {
-        //             alert(result.message);
-        //             window.location.reload();
-        //             // console.log(result.sql);
-        //         } else {
-        //             alert('err');
-        //             console.log(result.message);
-        //         }
-        //     }
-        // });
+        $(':disabled').each(function(event) {
+            $(this).removeAttr('disabled');
+        });
+        // alert(stcode)
+        $.ajax({
+            type: "POST",
+            url: "ajax/add_wd.php",
+            data: $("#frmWD").serialize() + "&amount=" + amount + "&stcode=" + stcode +
+                "&unit=" + unit +
+                "&cost=" + cost,
+            success: function(result) {
+                if (result.status == 1) {
+                    alert(result.message);
+                    window.location.reload();
+                    // console.log(result.sql);
+                } else {
+                    alert('err');
+                    console.log(result.message);
+                }
+            }
+        });
     } else {
         alert('กรุณาเพิ่มรายการ');
     }
@@ -398,7 +394,7 @@ $("#frmEditWD").submit(function(event) {
 
 });
 
-// เพิ่ม po detail เมื่อเลือกสต๊อก
+// เพิ่ม wd detail เมื่อเลือกสต๊อก
 $("#table_stock").delegate('tr', 'click', function() {
     var id = $(this).attr("id");
     $('#btnClearPOdetail').show();
@@ -444,7 +440,10 @@ $("#table_stock").delegate('tr', 'click', function() {
                 ',tablewddetail,' +
                 result
                 .stcode +
-                '" type="button"><span class="fa fa-search"></span></button></span></div></td><td><button type="button" onClick="onDelete_MainTable(\'' +
+                '" type="button"><span class="fa fa-search"></span></button></span></div></td><td><input type="hidden" class="form-control" name="cost" id="cost' +
+                $('#tablewddetail tr').length + '" value="' +
+                result.sellprice +
+                '" disabled><button type="button" onClick="onDelete_MainTable(\'' +
                 $(
                     '#tablewddetail tr').length +
                 '\',\'add\')"; class="btn btn-danger form-control" ><i class="fa fa fa-times" aria-hidden="true"></i class=></button></td></tr>'

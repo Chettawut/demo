@@ -31,6 +31,8 @@ function getData(date) {
             $('#tableData tbody').empty();
             // alert(result.projectname)
 
+            let total= 0,vat= 0,totalvat = 0
+
             for (count = 0; count < result.projectname.length; count++) {
 
 
@@ -47,41 +49,21 @@ function getData(date) {
                     formatMoney((parseFloat(result.total[count])+parseFloat(result.total[count]*7)/100),2) +
                     '</td></tr>');
 
-
+                    total+=parseFloat(result.total[count])
+                    vat+=parseFloat((result.total[count]*7)/100)
+                    totalvat+=parseFloat(result.total[count])+parseFloat(result.total[count]*7)/100
             }
 
-            // $('#tableData tbody').append(
-            //     '<tr id="' +
-            //     count +
-            //     '" data-toggle="modal" data-target="#modal_edit" data-whatever="' +
-            //     (count + 1) + ',' + year +
-            //     '" ><td class="table03" align="center" bgcolor=\"#83e9e9\">TOTAL</td><td class="table03" align="right" style=\"color:#004080;\" bgcolor=\"#83e9e9\">' +
-            //     formatMoney(pdJan, 3) +
-            //     '</td><td class="table03" align="right" bgcolor=\"#83e9e9\">' +
-            //     formatMoney(pdFeb, 3) +
-            //     '</td><td class="table03" align="right" bgcolor=\"#83e9e9\">' +
-            //     formatMoney(pdMar, 3) +
-            //     '</td><td class="table03" align="right" bgcolor=\"#83e9e9\">' +
-            //     formatMoney(pdApr, 3) +
-            //     '</td><td class="table03" align="right" bgcolor=\"#83e9e9\">' +
-            //     formatMoney(pdMay, 3) +
-            //     '</td><td class="table03" align="right" bgcolor=\"#83e9e9\">' +
-            //     formatMoney(pdJun, 3) +
-            //     '</td><td class="table03" align="right" bgcolor=\"#83e9e9\">' +
-            //     formatMoney(pdJul, 3) +
-            //     '</td><td class="table03" align="right" bgcolor=\"#83e9e9\" >' +
-            //     formatMoney(pdAug, 3) +
-            //     '</td><td class="table03" align="right" bgcolor=\"#83e9e9\" >' +
-            //     formatMoney(pdSep, 3) +
-            //     '</td><td class="table03" align="right" bgcolor=\"#83e9e9\" >' +
-            //     formatMoney(pdOct, 3) +
-            //     '</td><td class="table03" align="right" bgcolor=\"#83e9e9\">' +
-            //     formatMoney(pdNov, 3) +
-            //     '</td><td class="table03" align="right" bgcolor=\"#83e9e9\" >' +
-            //     formatMoney(pdDec, 3) +
-            //     '</td><td class="table03" align="right" bgcolor=\"#d7eefc\">' +
-            //     formatMoney(pdTotal, 3) +
-            //     '</td></tr>');
+             $('#tableData tfoot').append(
+                    '<tr id="' +
+                    count +
+                    '"  ><td class="table03" align="center" bgcolor=\"#83E8E9\">ยอดรวม</td><td class="table03" align="right" style=\"color:#004080;\" bgcolor=\"#83E8E9\">' +
+                    formatMoney(total,2) +
+                    '</td><td class="table03" align="right" style=\"color:#004080;\" bgcolor=\"#83E8E9\">' +
+                    formatMoney(vat,2) +
+                    '</td><td class="table03" align="right" style=\"color:#004080;\" bgcolor=\"#83E8E9\">' +
+                    formatMoney(totalvat,2) +
+                    '</td></tr>');
 
             var table = $("#tableData").DataTable({
                 "ordering": false,

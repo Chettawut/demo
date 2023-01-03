@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
 .modal-header {
     background: #6c757d linear-gradient(180deg, #828a91, #6c757d) repeat-x !important;
     color: #fff;
@@ -49,4 +49,4 @@ a:focus {
     text-decoration: none;
     color: #2a6384;
 }
-</style>
+</style> -->

@@ -48,18 +48,17 @@ $year = date("Y");
             <!-- <H5 class="text-right">บาท -->
                 <!-- ล้านบาท -->
             </H5>
-            <table id="tableData" width="100%" align="center" cellpadding="0" style="padding:10px;" cellspacing="0"
-                border="0">
+            <table id="tableData" width="100%" align="center"  class="table table-bordered table-hover">
                 <thead>
                     <tr bgcolor="#3c8536">
                         <td class="table03" bgcolor="#cecece" align="center">Products</td>                        
-                        <td class="table03" align="center" bgcolor="#c2f8be">
+                        <td class="table03" align="right" bgcolor="#c2f8be">
                             <a target="_blank">มูลค่า</a>
                         </td>
-                        <td class="table03" align="center" bgcolor="#c2f8be">
+                        <td class="table03" align="right" bgcolor="#c2f8be">
                             <a target="_blank">VAT</a>
                         </td>
-                        <td class="table03" align="center" bgcolor="#c2f8be">
+                        <td class="table03" align="right" bgcolor="#c2f8be">
                             <a target="_blank">มูลค่า + VAT</a>
                         </td>                        
                     </tr>
@@ -67,6 +66,9 @@ $year = date("Y");
                 <tbody>
 
                 </tbody>
+                <tfoot>
+                    
+                </tfoot>
             </table>
         </div>
 

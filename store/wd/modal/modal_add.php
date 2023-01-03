@@ -30,7 +30,7 @@
 
                     <div class="form-group col-md-8">
                             <label>Cost Project</label>
-                            <select class="form-control" name="add_project" id="add_project">
+                            <select class="form-control" name="add_projectcode" id="add_projectcode">
                                 <?php 
                                             
                                         	$sql = "SELECT * FROM `project` where status = 'Y' ";

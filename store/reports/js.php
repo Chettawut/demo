@@ -3,6 +3,9 @@ $(function() {
 
 
     $("#sideStore").show()
+
+    $("#toolyear").val(new Date().toISOString().slice(0, 10))
+    
     
 
 })
