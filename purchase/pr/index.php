@@ -85,14 +85,14 @@ include_once('../../conn.php');
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-12">
-                            <table name="tablePO" id="tablePO" class="table table-bordered table-striped">
+                            <table name="tablePR" id="tablePR" class="table table-bordered table-striped">
                                 <thead style=" background-color:#D6EAF8;">
                                     <tr>                                        
-                                        <th width="15%">เลขที่ใบสั่งซื้อ</th>
-                                        <th width="15%">วันที่สั่งซื้อ</th>
+                                        <th width="15%">เลขที่ใบแจ้งซื้อ</th>
+                                        <th width="15%">วันที่แจ้งซื้อ</th>
                                         <th width="15%">รหัสพัสดุ</th>
-                                        <th width="15%">รายงานสินค้า</th>
-                                        <th width="15%">ผู้ขาย</th>
+                                        <th width="15%">ชื่อรายการ</th>
+                                        <th width="15%">จำนวนแจ้งซื้อ</th>                                        
                                         <th width="15%">สถานะ</th>
                                     </tr>
                                 </thead>

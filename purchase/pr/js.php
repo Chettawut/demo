@@ -324,7 +324,7 @@ function getPO() {
                     suptitle = 'ยกเลิกการใช้งาน'
                 }
 
-                $('#tablePO').append(
+                $('#tablePR').append(
                     '<tr id="' + result.pocode[
                         count] + '" data-toggle="modal" data-target="#modal_edit" id="' + result
                     .pocode[
@@ -337,7 +337,7 @@ function getPO() {
                     '</span></td></tr>');
             }
 
-            var table = $('#tablePO').DataTable({
+            var table = $('#tablePR').DataTable({
                 "dom": '<"pull-right"f>rt<"bottom"p><"clear">',
                 "order": [],
                 "pageLength": 20
