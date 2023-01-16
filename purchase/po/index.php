@@ -88,12 +88,13 @@ include_once('../../conn.php');
                             <table name="tablePO" id="tablePO" class="table table-bordered table-striped">
                                 <thead style=" background-color:#D6EAF8;">
                                     <tr>                                        
-                                        <th width="15%">เลขที่ใบสั่งซื้อ</th>
-                                        <th width="15%">วันที่สั่งซื้อ</th>
-                                        <th width="15%">รหัสพัสดุ</th>
-                                        <th width="15%">รายงานสินค้า</th>
+                                        <th width="14%">เลขที่ใบสั่งซื้อ</th>
+                                        <th width="14%">เลขที่ใบแจ้งซื้อ</th>
+                                        <th width="10%">วันที่สั่งซื้อ</th>
+                                        <th width="10%">รหัสพัสดุ</th>
+                                        <th width="27%">รายงานสินค้า</th>
                                         <th width="15%">ผู้ขาย</th>
-                                        <th width="15%">สถานะ</th>
+                                        <th width="10%">สถานะ</th>
                                     </tr>
                                 </thead>
                                 <tbody>

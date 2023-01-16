@@ -3,7 +3,7 @@ $(function() {
 
     $("#sidePurchase").show()
 
-    getPO();
+    getPR();
 
     $.ajax({
         type: "POST",
@@ -301,39 +301,42 @@ $('#modal_edit').on('show.bs.modal', function(event) {
 
 })
 
-function getPO() {
+function getPR() {
     $.ajax({
         type: "POST",
-        url: "ajax/get_po.php",
+        url: "ajax/get_pr.php",
         success: function(result) {
             var supstatus, suptitle;
 
-            for (count = 0; count < result.pocode.length; count++) {
+            for (count = 0; count < result.prcode.length; count++) {
 
                 if (result.supstatus[count] == '01') {
-                    supstatus = 'R'
+                    supstatus = 'รออนุมัติ'
+                    suptitle = 'รออนุมัติ'
+                } else if (result.supstatus[count] == 'APO') {
+                    supstatus = 'รอออก PO'
+                    suptitle = 'รอออก PO'
+                } else if (result.supstatus[count] == 'R') {
+                    supstatus = 'รอรับของ'
                     suptitle = 'รอรับของ'
-                } else if (result.supstatus[count] == '02') {
-                    supstatus = 'N'
-                    suptitle = 'ยังรับของไม่ครบ'
-                } else if (result.supstatus[count] == '03') {
-                    supstatus = 'Y'
-                    suptitle = 'รับของครบแล้ว'
+                } else if (result.supstatus[count] == 'Y') {
+                    supstatus = 'รอของแล้ว'
+                    suptitle = 'รอของแล้ว'
                 } else if (result.supstatus[count] == 'C') {
-                    supstatus = 'C'
+                    supstatus = 'ยกเลิกการใช้งาน'
                     suptitle = 'ยกเลิกการใช้งาน'
                 }
 
                 $('#tablePR').append(
-                    '<tr id="' + result.pocode[
+                    '<tr id="' + result.prcode[
                         count] + '" data-toggle="modal" data-target="#modal_edit" id="' + result
-                    .pocode[
-                        count] + '" data-whatever="' + result.pocode[
-                        count] + '" ><td>' + result.pocode[count] +
+                    .prcode[
+                        count] + '" data-whatever="' + result.prcode[
+                        count] + '" ><td>' + result.prcode[count] +
                     '</td><td>' + result
-                    .podate[count] + '</td><td>' + result
+                    .prdate[count] + '</td><td>' + result
                     .stcode[count] + '</td><td>' + result.stname1[count] + '</td><td>' + result
-                    .supname[count] + '</td><td><span title="' + suptitle + '">' + supstatus +
+                    .amount[count] + '</td><td><span title="' + suptitle + '">' + supstatus +
                     '</span></td></tr>');
             }
 

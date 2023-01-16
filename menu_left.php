@@ -113,14 +113,6 @@
                         </p>
                     </a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a href="<?php echo PATH; ?>" class="nav-link">
-                        <i class="nav-icon fas fa fa-users"></i>
-                        <p>
-                            บุคคล (HR)
-                        </p>
-                    </a>
-                </li> -->
 
 
             </ul>
@@ -137,23 +129,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?php echo PATH; ?>" class="nav-link">
-                        <i class="nav-icon fas fa-light fa-cubes"></i>
-                        <p>
-                            คลังสินค้า (Store)
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?php echo PATH; ?>" class="nav-link">
-                        <i class="nav-icon fas fa fa-shopping-cart"></i>
-                        <p>
-                            จัดซื้อ (Purchase)
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?php echo PATH; ?>" class="nav-link">
+                    <a href="<?php echo PATH; ?>/hr/person" class="nav-link">
                         <i class="nav-icon fas fa fa-users"></i>
                         <p>
                             บุคคล (HR)

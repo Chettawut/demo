@@ -234,6 +234,9 @@ $('#modal_edit').on('show.bs.modal', function(event) {
                             result.pono[count] +
                             '</p></td><td><p class="form-control-static" style="text-align:center">' +
                             result
+                            .prcode[count] +
+                            '</p></td><td><p class="form-control-static" style="text-align:center">' +
+                            result
                             .stcode[count] +
                             '</p></td><td> <p class="form-control-static" style="text-align:left">' +
                             result.stname1[count] +
@@ -261,7 +264,7 @@ $('#modal_edit').on('show.bs.modal', function(event) {
                             result.pono[count] +
                             '" value="' +
                             result.discount[count] +
-                            '"><div class="input-group-addon">%</div></div></td><td ><p name="total" id="total' +
+                            '"><div class="input-group-addon"></div></div></td><td ><p name="total" id="total' +
                             result.pono[count] +
                             '" class="form-control-static" style="text-align:right">0</p></td><td><button type="button" onClick="onDelete_MainTable(\'' +
                             $(
@@ -330,6 +333,7 @@ function getPO() {
                     .pocode[
                         count] + '" data-whatever="' + result.pocode[
                         count] + '" ><td>' + result.pocode[count] +
+                    '</td><td>' + result.prcode[count] +
                     '</td><td>' + result
                     .podate[count] + '</td><td>' + result
                     .stcode[count] + '</td><td>' + result.stname1[count] + '</td><td>' + result

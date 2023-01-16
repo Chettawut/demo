@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION["menu"] = "store";
+$_SESSION["menu"] = "hr";
 include_once('../conn.php');
 ?>
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ include_once('../conn.php');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Store</title>
+    <title>HR</title>
 
     <?php 
     include_once('css.php'); 
@@ -39,12 +39,12 @@ include_once('../conn.php');
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Store</h1>
+                            <h1 class="m-0">HR</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Store</a></li>
-                                <li class="breadcrumb-item active">ระบบวัสดุ</li>
+                                <li class="breadcrumb-item"><a href="#">HR</a></li>
+                                <li class="breadcrumb-item active">ระบบทรัพยากรบุคคล</li>
                             </ol>
                         </div>
                     </div>
@@ -61,6 +61,7 @@ include_once('../conn.php');
             </section>
         </div>
 
+        <?php include_once ROOT . '/menu_footer.php'; ?>
 
         <?php include_once ROOT . '/menu_right.php'; ?>
 

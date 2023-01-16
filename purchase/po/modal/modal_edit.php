@@ -90,15 +90,16 @@
                     <table name="tableEditPoDetail" id="tableEditPoDetail" class="table table-bordered table-striped">
                         <thead style="background-color:#D6EAF8;">
                             <tr>
-                                <th>ลำดับ</th>
-                                <th>รหัสสินค้า</th>
-                                <th>รายการสินค้า</th>
-                                <th>จำนวน</th>
-                                <th>หน่วย</th>
-                                <th>ราคาขาย</th>
-                                <th>ส่วนลด</th>
-                                <th>จำนวนเงิน (บาท)</th>
-                                <th></th>
+                                <th width="5%" style="text-align:center;">ลำดับ</th>
+                                <th width="10%" style="text-align:center;">ใบแจ้งซื้อ</th>
+                                <th width="10%" style="text-align:center;">รหัสสินค้า</th>
+                                <th width="15%" style="text-align:center;">รายการสินค้า</th>
+                                <th width="10%" style="text-align:center;">จำนวน</th>
+                                <th width="15%" style="text-align:center;">หน่วย</th>
+                                <th width="10%" style="text-align:center;">ราคาขาย</th>
+                                <th width="10%" style="text-align:center;">ส่วนลด</th>
+                                <th width="10%" style="text-align:center;">จำนวนเงิน</th>
+                                <th width="5%" style="text-align:center;"></th>
                             </tr>
                         </thead>
                         <tbody>
