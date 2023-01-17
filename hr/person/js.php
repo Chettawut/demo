@@ -7,14 +7,9 @@ $(document).on('show.bs.modal', '.modal', function() {
         'modal-stack'));
 });
 
-$(document).ajaxStart(function() {
-    Pace.restart()
-})
-
 $(function() {
 
     $("#sideHR").show()
-
 
     // $.ajax({
     //     type: "POST",

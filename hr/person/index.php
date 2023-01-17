@@ -23,9 +23,9 @@ include_once('../../conn.php');
 <body class="hold-transition sidebar-mini sidebar-collapse">
     <div class="wrapper">
 
-        <!-- <div class="preloader flex-column justify-content-center align-items-center">
+        <div class="preloader flex-column justify-content-center align-items-center">
             <img class="animation__shake" src="<?php echo PATH; ?>/AdminLTE-3.2.0/dist/img/AdminLTELogo.png" height="80" width="80">
-        </div> -->
+        </div>
 
         <?php include_once ROOT . '/menu_head.php'; ?>
 
@@ -47,7 +47,7 @@ include_once('../../conn.php');
                 </section>
                 <section class="content panel-info">
                     <div class="row">
-                        <div class="col-md-12" id="frmList">
+                        <div class="col-md-4" id="frmList">
                             <ul id="ulList" class="nav nav-pills nav-sidebar flex-column sidenav">
                                 <ul class="sidebar-menu">
                                     <div class="row">
@@ -84,49 +84,49 @@ include_once('../../conn.php');
                                         <?php 
                                         // $conn= sql_pdo() ;
 
-                                        $strSQL = "SELECT [empcode],[empname],[lastname],[etitlename],[depid],[depname],[iddep]  ";
+                                        $strSQL = "SELECT empcode,etitlename,firstname,lastname,a.dpcode,dpname,iddep  ";
                                         $strSQL .= "FROM employee as a ";
-                                        $strSQL .= "inner join [RWI_DATACENTER].[dbo].[Au_Department] as b on(a.depcode=b.depid) ";
-                                        $strSQL .= "where a.EmpEnd = '' order by b.iddep,a.empcode";
-                                    
-                                        $obj = $conn->prepare($strSQL);
-                                        $obj->execute(); 
+                                        $strSQL .= "inner join department as b on(a.dpcode=b.dpcode) ";
+                                        $strSQL .= " order by b.iddep,a.empcode";
+
+                                        // echo $strSQL;
+                                        $query = mysqli_query($conn,$strSQL);
 
                                         $json_result=array(
-                                            "depid" => array(),
-                                            "depname" => array(),
+                                            "dpcode" => array(),
+                                            "dpname" => array(),
                                             "empcode" => array(),
-                                            "empname" => array(),
+                                            "firstname" => array(),
                                             "lastname" => array(),
                                             "etitlename" => array()
                                             );
                                     
-                                        while($row = $obj->fetch( PDO::FETCH_ASSOC ))
+                                        while($row = $query->fetch_assoc()) 
                                         {
                                             
-                                            array_push($json_result['depid'],$row['depid']);
-                                            array_push($json_result['depname'],$row['depname']);
+                                            array_push($json_result['dpcode'],$row['dpcode']);
+                                            array_push($json_result['dpname'],$row['dpname']);
                                             array_push($json_result['empcode'],$row['empcode']);
-                                            array_push($json_result['empname'],$row['empname']);
+                                            array_push($json_result['firstname'],$row['firstname']);
                                             array_push($json_result['lastname'],$row['lastname']);
                                             array_push($json_result['etitlename'],$row['etitlename']);
                                                
                                         }
 
-                                        $depid='';
+                                        $dpcode='';
                                         $html='';
 
-                                        for ($count = 0; $count < count($json_result['depid']); $count++) {
+                                        for ($count = 0; $count < count($json_result['dpcode']); $count++) {
                                             
                                             
-                                            if ($depid != $json_result['depid'][$count] && $count!=0) 
+                                            if ($dpcode != $json_result['dpcode'][$count] && $count!=0) 
                                             $html .='</tbody></table></div></td></tr>';
                                             
-                                            if ($depid != $json_result['depid'][$count]) {
-                                                $html .='<tr data-widget="expandable-table" aria-expanded="false"><td><i class = "expandable-table-caret fas fa-caret-right fa-fw"></i>'.$json_result['depname'][$count].'</td></tr> <tr class="expandable-body"><td><div class="p-0"><table class="table"><tbody>';
+                                            if ($dpcode != $json_result['dpcode'][$count]) {
+                                                $html .='<tr data-widget="expandable-table" aria-expanded="false"><td><i class = "expandable-table-caret fas fa-caret-right fa-fw"></i>'.$json_result['dpname'][$count].'</td></tr> <tr class="expandable-body"><td><div class="p-0"><table class="table"><tbody>';
                                             }
-                                            $depid = $json_result['depid'][$count];
-                                            $html .= '<tr onclick="onclickEditEmployee(\''.$json_result['empcode'][$count].'\')" ><td>'.$json_result['etitlename'][$count].' '.$json_result['empname'][$count].' '.$json_result['lastname'][$count].'</td></tr>';
+                                            $dpcode = $json_result['dpcode'][$count];
+                                            $html .= '<tr onclick="onclickEditEmployee(\''.$json_result['empcode'][$count].'\')" ><td>'.$json_result['etitlename'][$count].' '.$json_result['firstname'][$count].' '.$json_result['lastname'][$count].'</td></tr>';
                             
                                         }
                                         $html .= '</td></tr></tbody></table>';
@@ -244,11 +244,11 @@ include_once('../../conn.php');
                                                                     name="DepCode" required>
                                                                     <option value=""></option>
                                                                     <?php 
-                                                                $StrSQL = " SELECT [DepID],[DepName],[iddep] FROM [RWI_DATACENTER].[dbo].[Au_Department] order by iddep "; 
-                                                                $obj = sql_pdo()->prepare($StrSQL);
-                                                                $obj->execute();  
-                                                                while($row = $obj->fetch( PDO::FETCH_ASSOC ))                                        
-                                                                echo '<option value="'.$row['DepID'].'">'.$row['DepName'].'</option>' ;                                            
+                                                                // $StrSQL = " SELECT [DepID],[DepName],[iddep] FROM [RWI_DATACENTER].[dbo].[Au_Department] order by iddep "; 
+                                                                // $obj = sql_pdo()->prepare($StrSQL);
+                                                                // $obj->execute();  
+                                                                // while($row = $obj->fetch( PDO::FETCH_ASSOC ))                                        
+                                                                // echo '<option value="'.$row['DepID'].'">'.$row['DepName'].'</option>' ;                                            
                                                             ?>
                                                                 </select>
                                                             </div>
@@ -258,11 +258,11 @@ include_once('../../conn.php');
                                                                     required>
                                                                     <option value=""></option>
                                                                     <?php 
-                                                            $StrSQL = " SELECT [SectionCode],[SectionName],DepCode FROM [RWI_DATACENTER].[dbo].[Au_Section] order by SectionCode asc";
-                                                            $obj = sql_pdo()->prepare($StrSQL);
-                                                            $obj->execute();  
-                                                            while($row = $obj->fetch( PDO::FETCH_ASSOC ))     
-                                                            echo  '<option value="'.$row['SectionCode'].'">'.$row['SectionName'].'</option>' ;
+                                                            // $StrSQL = " SELECT [SectionCode],[SectionName],DepCode FROM [RWI_DATACENTER].[dbo].[Au_Section] order by SectionCode asc";
+                                                            // $obj = sql_pdo()->prepare($StrSQL);
+                                                            // $obj->execute();  
+                                                            // while($row = $obj->fetch( PDO::FETCH_ASSOC ))     
+                                                            // echo  '<option value="'.$row['SectionCode'].'">'.$row['SectionName'].'</option>' ;
                                                         ?>
                                                                 </select>
                                                             </div>
@@ -273,11 +273,11 @@ include_once('../../conn.php');
                                                                     <option value=""></option>
                                                                     <option value="P00">นักศึกษาฝึกงาน :</option>
                                                                     <?php 
-                                                            $StrSQL = " SELECT [PositionCode] ,[PositionName],[PositionOrder] FROM [RWI_DATACENTER].[dbo].[Au_Position] order by PositionOrder,PositionCode asc";
-                                                            $obj = sql_pdo()->prepare($StrSQL);
-                                                             $obj->execute();  
-                                                             while($row = $obj->fetch( PDO::FETCH_ASSOC ))     
-                                                            echo  '<option value="'.$row['PositionCode'].'">'.$row['PositionName'].'</option>' ;
+                                                            // $StrSQL = " SELECT [PositionCode] ,[PositionName],[PositionOrder] FROM [RWI_DATACENTER].[dbo].[Au_Position] order by PositionOrder,PositionCode asc";
+                                                            // $obj = sql_pdo()->prepare($StrSQL);
+                                                            //  $obj->execute();  
+                                                            //  while($row = $obj->fetch( PDO::FETCH_ASSOC ))     
+                                                            // echo  '<option value="'.$row['PositionCode'].'">'.$row['PositionName'].'</option>' ;
                                                         ?>
                                                                 </select>
                                                             </div>
@@ -1549,14 +1549,13 @@ include_once('../../conn.php');
                 </section>
             </section>
         </div>
-        </div>
+    </div>
+    <?php
+    include_once ROOT.'/import_js.php';
+    
 
-<?php
-include_once ROOT . '/import_js.php';
-
-
-include_once('js.php'); 
-?>
+    include_once('js.php'); 
+    ?>
 
 </body>
 
