@@ -45,10 +45,10 @@ include_once('../../conn.php');
                         Person
                     </ol>
                 </section>
-                <section class="content panel-info">
+                <section class="content panel-info" >
                     <div class="row">
-                        <div class="col-md-4" id="frmList">
-                            <ul id="ulList" class="nav nav-pills nav-sidebar flex-column sidenav">
+                        <div class="col-md-4" id="frmList" >
+                            <ul id="ulList" class="nav nav-pills nav-sidebar flex-column sidenav" style="overflow-x: hidden;">
                                 <ul class="sidebar-menu">
                                     <div class="row">
                                         <div class="col-md-12">
@@ -140,7 +140,7 @@ include_once('../../conn.php');
 
                         <!-- ข้อมูลทางด้านขวา -->
 
-                        <div class="col-9">
+                        <div class="col-8">
                             <div class="card card-primary card-outline card-outline-tabs">
                                 <div class="card-header p-0 border-bottom-0">
                                     <div id="frmMenu" style="display:none;" class="">

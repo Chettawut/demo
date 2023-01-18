@@ -22,7 +22,7 @@
 
         <nav class="mt-2" id="sideStore" style="display:none;">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <li class="nav-header">Systems</li>
+                <li class="nav-header">Systems</li>
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/store/rr" class="nav-link">
                         <i class="nav-icon fa fa-truck"></i>
@@ -97,6 +97,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/purchase/pr_approve" class="nav-link">
+                        <i class="nav-icon fas fa-clipboard-check"></i>
+                        <p>
+                            อนุมัติใบแจ้งซื้อ (Approve PR)
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="<?php echo PATH; ?>/purchase/po" class="nav-link">
                         <i class="nav-icon fas fa-light fa-book"></i>
                         <p>
@@ -120,14 +128,24 @@
 
         <nav class="mt-2" id="sideHR" style="display:none;">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-header">Systems</li>
                 <li class="nav-item">
-                    <a href="<?php echo PATH; ?>" class="nav-link">
-                        <i class="nav-icon fas fa-home"></i>
+                    <a href="<?php echo PATH; ?>/hr/time" class="nav-link">
+                        <i class="nav-icon fas fa-clock"></i>
                         <p>
-                            หน้าหลัก (Dashboard)
+                            จัดการเวลาทำงาน (Time attendance)
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/hr/time" class="nav-link">
+                        <i class="nav-icon fas fa-money-check-alt"></i>
+                        <p>
+                            ระบบบัญชีเงินเดือน (PayRoll)
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-header">Data</li>
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/hr/person" class="nav-link">
                         <i class="nav-icon fas fa fa-users"></i>
