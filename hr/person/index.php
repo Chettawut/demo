@@ -243,6 +243,7 @@ include_once('../../conn.php');
                                                                 <select class="custom-select" id="DepCode"
                                                                     name="DepCode" required>
                                                                     <option value=""></option>
+                                                                    <option value="">เทคโนโลยีสารสนเทศ</option>
                                                                     <?php 
                                                                 // $StrSQL = " SELECT [DepID],[DepName],[iddep] FROM [RWI_DATACENTER].[dbo].[Au_Department] order by iddep "; 
                                                                 // $obj = sql_pdo()->prepare($StrSQL);
@@ -257,6 +258,7 @@ include_once('../../conn.php');
                                                                 <select class="custom-select" id="SECODE" name="SECODE"
                                                                     required>
                                                                     <option value=""></option>
+                                                                    <option value="">IT</option>
                                                                     <?php 
                                                             // $StrSQL = " SELECT [SectionCode],[SectionName],DepCode FROM [RWI_DATACENTER].[dbo].[Au_Section] order by SectionCode asc";
                                                             // $obj = sql_pdo()->prepare($StrSQL);
@@ -271,6 +273,7 @@ include_once('../../conn.php');
                                                                 <select class="custom-select" id="EmpPosition"
                                                                     name="EmpPosition" required>
                                                                     <option value=""></option>
+                                                                    <option value="P00">โปรแกรมเมอร์ </option>
                                                                     <option value="P00">นักศึกษาฝึกงาน :</option>
                                                                     <?php 
                                                             // $StrSQL = " SELECT [PositionCode] ,[PositionName],[PositionOrder] FROM [RWI_DATACENTER].[dbo].[Au_Position] order by PositionOrder,PositionCode asc";
@@ -326,17 +329,17 @@ include_once('../../conn.php');
                                                         </div>
 
                                                         <div class="form-row">
-                                                            <div class="col-md-2 mb-3">
+                                                            <div class="col-md-3 mb-4">
                                                                 <label for="EmpBirth">วันเกิด :</label>
                                                                 <input type="date" class="form-control" name="EmpBirth"
                                                                     id="EmpBirth" required>
                                                             </div>
-                                                            <div class="col-md-2 mb-3">
+                                                            <div class="col-md-3 mb-4">
                                                                 <label for="Age">อายุ :</label>
                                                                 <input type="text" class="form-control" name="Age"
                                                                     id="Age" value="">
                                                             </div>
-                                                            <div class="col-md-2 mb-3">
+                                                            <div class="col-md-3 mb-4">
                                                                 <label>ที่ทำงาน :</label>
                                                                 <select class="form-control" name="WorkAt" id="WorkAt"
                                                                     required>
@@ -349,13 +352,13 @@ include_once('../../conn.php');
 
 
                                                         <div class="form-row">
-                                                            <div class="col-md-2 mb-3">
+                                                            <div class="col-md-3 mb-4">
                                                                 <label for="EmpTestDate">วันที่เริ่มงาน :</label>
                                                                 <input type="date" class="form-control"
                                                                     name="EmpTestDate" id="EmpTestDate" value=""
                                                                     required>
                                                             </div>
-                                                            <div class="col-md-2 mb-3">
+                                                            <div class="col-md-3 mb-4">
                                                                 <label for="EmpFirstDate">วันที่บรรจุ :</label>
                                                                 <input type="date" class="form-control"
                                                                     name="EmpFirstDate" id="EmpFirstDate" value="">

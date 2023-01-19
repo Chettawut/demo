@@ -138,7 +138,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/hr/time" class="nav-link">
+                    <a href="<?php echo PATH; ?>/hr/payroll" class="nav-link">
                         <i class="nav-icon fas fa-money-check-alt"></i>
                         <p>
                             ระบบบัญชีเงินเดือน (PayRoll)

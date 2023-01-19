@@ -81,7 +81,7 @@ $("#frmEmployee").submit(function() {
 
     // alert($("#frmEmployee").serialize())
     if ($("#lbCheck").text() == 'สามารถใช้รหัสพนักงานนี้ได้') {
-        
+
         $.ajax({
             type: "POST",
             url: "ajax/addEmployee.php",
@@ -98,9 +98,7 @@ $("#frmEmployee").submit(function() {
                 // alert(result);
             }
         });
-    }
-    else
-    {
+    } else {
         alert('รหัสพนักงานซ้ำ!!');
         $("#txtCode").focus();
     }
@@ -218,7 +216,6 @@ function onclickEditEmployee(empcode) {
             $("#DepCode").val(result.DepCode);
             $("#WorkAt").val(result.WorkAt.replace(/^\s+|\s+$/gm, ''));
             $("#EmpTestDate").val(result.EmpTestDate);
-            setEmpFirstDate();
             $("#EmpNickName").val(result.EmpNickName);
             $("#EmpBirth").val(result.EmpBirth);
             $("#Weight").val(result.Weight);
@@ -242,49 +239,31 @@ function onclickEditEmployee(empcode) {
             $("#TypingTH").val(result.TypingTH);
             $("#TypingEN").val(result.TypingEN);
 
-            
+
 
         }
     });
 
+
+    let time = ['08:17', '17:00','07:38', '17:01','07:52', '17:23','07:39', '17:06']
+    let date = ['10/01/2023', '10/01/2023','11/01/2023', '11/01/2023','12/01/2023', '12/01/2023','13/01/2023', '13/01/2023']
+    
+    for (count = 0; count < time.length; count++) {
+        $("#tabletime").append('<tr><td>' + date[count] + '</td><td>610718001</td><td></td><td>' + time[count] + '</td><td></td><td>เครื่องรูดบัตร</td><td></td><td>' + date[count] + '</td><td><button type="button" onClick="onApprove(\'' +
+                    [count] +
+                    '\')"; class="btn btn-primary form-control"><i class="fas fa-edit"></i></button></td></tr>')
+    }
+
     $("#frmMenu").show();
     $("#frmList").removeClass();
-    $("#frmList").addClass("col-md-4");
+    $("#frmList").addClass("col-md-3");
 
     // $("#frmList").removeClass();
     // $("#frmList").addClass("col-md-3");
     // $("#btnReset").show()
     // $("#frmMenu").show()
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     $("#txtCode").prop('disabled', true);
-    
-}
 
-$("#EmpTestDate").change(function() {
-    setEmpFirstDate();
-});
-
-function setEmpFirstDate() {
-    var EmpTestDate = new Date(document.getElementById("EmpTestDate").value);
-    EmpTestDate.setDate(EmpTestDate.getDate() + 119);
-    let formatted_date;
-    if (EmpTestDate.getMonth() < 9) {
-        if (EmpTestDate.getDate() < 10)
-            formatted_date = EmpTestDate.getFullYear() + "-0" + (EmpTestDate.getMonth() + 1) + "-0" +
-            EmpTestDate
-            .getDate();
-        else
-            formatted_date = EmpTestDate.getFullYear() + "-0" + (EmpTestDate.getMonth() + 1) + "-" + EmpTestDate
-            .getDate();
-    } else {
-        if (EmpTestDate.getDate() < 10)
-            formatted_date = EmpTestDate.getFullYear() + "-" + (EmpTestDate.getMonth() + 1) + "-0" + EmpTestDate
-            .getDate();
-        else
-            formatted_date = EmpTestDate.getFullYear() + "-" + (EmpTestDate.getMonth() + 1) + "-" + EmpTestDate
-            .getDate();
-    }
-
-    $("#EmpFirstDate").val(formatted_date);
 }
 </script>

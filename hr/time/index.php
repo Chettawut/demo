@@ -48,7 +48,7 @@ include_once('../../conn.php');
                 </section>
                 <section class="content panel-info" style="padding:20px;">
                     <div class="row">
-                        <div class="col-md-4" id="frmList">
+                        <div class="col-md-3" id="frmList">
                             <ul id="ulList" class="nav nav-pills nav-sidebar flex-column sidenav"
                                 style="overflow-x: hidden;">
                                 <ul class="sidebar-menu">
@@ -66,13 +66,13 @@ include_once('../../conn.php');
                                                         </button>
                                                     </span>
 
-                                                    <span class="input-group-btn">
+                                                    <!-- <span class="input-group-btn">
                                                         <button id="btnAdd" class="btn btn-success" data-toggle="modal"
                                                             data-target="#modal_unit" type="button">
                                                             <span class="fa fa-user-plus">
                                                             </span>
                                                         </button>
-                                                    </span>
+                                                    </span> -->
                                                 </form>
                                             </div>
                                         </div>
@@ -140,7 +140,7 @@ include_once('../../conn.php');
 
                         <!-- ข้อมูลทางด้านขวา -->
 
-                        <div class="col-md-8" id="frmMenu" style="display:none;">
+                        <div class="col-md-9" id="frmMenu" style="display:none;">
                             <div class="card card-primary card-outline card-outline-tabs" style="padding:20px;">
                                 <div class="card-header p-0 border-bottom-0">
                                     <form name="frmEmployee" id="frmEmployee" method="post"
@@ -149,18 +149,18 @@ include_once('../../conn.php');
                                             <div class="col-md-3 mb-3">
                                                 <label for="txtCode">รหัสพนักงาน :</label>
                                                 <input type="text" class="form-control" name="txtCode" id="txtCode"
-                                                    required>
+                                                value="610718001"  required>
 
                                             </div>
                                             <div class="col-md-4 mb-3">
                                                 <label for="EmpName">ชื่อ :</label>
                                                 <input type="text" class="form-control" name="EmpName" id="EmpName"
-                                                    value="" required>
+                                                    value="ชยพัทธิ์" required>
                                             </div>
                                             <div class="col-md-4 mb-3">
                                                 <label for="LastName">นามสกุล :</label>
                                                 <input type="text" class="form-control" name="LastName" id="LastName"
-                                                    value="" required>
+                                                    value="นิโรภาส" required>
                                             </div>
                                         </div>
 
@@ -182,21 +182,20 @@ include_once('../../conn.php');
                                         </div>
                                         <br>
                                         <table name="tabletime" id="tabletime" class="table table-bordered table-striped">
-                                            <thead style=" background-color:#D6EAF8;">
+                                            <thead style=" background-color:#D6EAF8;font-size: 14px;text-align: center;">
                                                 <tr>
                                                     <th width="11%">วันที่</th>
                                                     <th width="11%">รหัสบัตร</th>
                                                     <th width="11%">รหัสเครื่อง</th>
-                                                    <th width="11%">เวลา</th>
-                                                    <th width="11%">สถานะอนุมัติ</th>
-                                                    <th width="11%">สถานะ</th>
-                                                    <th width="11%">หมายเหตุ</th>
-                                                    <th width="11%">ลบ</th>
+                                                    <th width="10%">เวลา</th>
+                                                    <th width="10%">สถานะอนุมัติ</th>
+                                                    <th width="16%">สถานะ</th>
+                                                    <th width="9%">หมายเหตุ</th>                                                    
                                                     <th width="10%">วันที่บันทึก</th>
+                                                    <th width="10%"></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-
                                             </tbody>
                                         </table>
                                     </form>
