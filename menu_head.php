@@ -13,7 +13,9 @@
         <li class="nav-item d-sm-inline-block">
             <a href="<?php echo PATH; ?>/hr" class="nav-link">HR</a>
         </li>
-
+        <li class="nav-item d-sm-inline-block">
+            <a href="<?php echo PATH; ?>/sale" class="nav-link">Sale</a>
+        </li>
     </ul>
 
     <!-- Right navbar links -->

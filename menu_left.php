@@ -158,6 +158,38 @@
 
             </ul>
         </nav>
+        <nav class="mt-2" id="sideSale" style="display:none;">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-header">Systems</li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/sale/so" class="nav-link">
+                        <i class="nav-icon fas fa-clock"></i>
+                        <p>
+                            เปิดใบสั่งขาย (Sale Order)
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/hr/payroll" class="nav-link">
+                        <i class="nav-icon fas fa-money-check-alt"></i>
+                        <p>
+                            ระบบบัญชีเงินเดือน (PayRoll)
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-header">Data</li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/hr/person" class="nav-link">
+                        <i class="nav-icon fas fa fa-users"></i>
+                        <p>
+                            บุคคล (HR)
+                        </p>
+                    </a>
+                </li>
+
+
+            </ul>
+        </nav>
         <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
