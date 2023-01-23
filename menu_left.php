@@ -169,25 +169,102 @@
                         </p>
                     </a>
                 </li>
+            </ul>
+        </nav>
+
+        <nav class="mt-2" id="sideProduct" style="display:none;">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-header">Systems</li>
                 <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/hr/payroll" class="nav-link">
-                        <i class="nav-icon fas fa-money-check-alt"></i>
+                    <a href="<?php echo PATH; ?>/product/wo" class="nav-link">
+                        <i class="nav-icon fas fa-clock"></i>
                         <p>
-                            ระบบบัญชีเงินเดือน (PayRoll)
+                            ใบสั่งงานผลิต(Work Order)
                         </p>
                     </a>
                 </li>
-                <li class="nav-header">Data</li>
+            </ul>
+        </nav>
+
+        <nav class="mt-2" id="sidePlanner" style="display:none;">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-header">Systems</li>
                 <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/hr/person" class="nav-link">
-                        <i class="nav-icon fas fa fa-users"></i>
+                    <a href="<?php echo PATH; ?>/planner/wo" class="nav-link">
+                        <i class="nav-icon fas fa-clock"></i>
                         <p>
-                            บุคคล (HR)
+                            ใบสั่งงานผลิต(Work Order)
                         </p>
                     </a>
                 </li>
+                
 
 
+            </ul>
+        </nav>
+
+        <nav class="mt-2" id="sideEngineer" style="display:none;">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-header">Systems</li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/sale/so" class="nav-link">
+                        <i class="nav-icon fas fa-clock"></i>
+                        <p>
+                            สูตรการผลิต(Bill of Materials)
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+
+        <nav class="mt-2" id="sideQC" style="display:none;">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-header">Systems</li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/sale/so" class="nav-link">
+                        <i class="nav-icon fas fa-clock"></i>
+                        <p>
+                            ระบบทดสอบคุณภาพ(OQC)
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <nav class="mt-2" id="sideWarehouse" style="display:none;">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-header">Systems</li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/sale/so" class="nav-link">
+                        <i class="nav-icon fas fa-clock"></i>
+                        <p>
+                            ระบบรับสินค้า(Goods Receipt )
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/sale/so" class="nav-link">
+                        <i class="nav-icon fas fa-clock"></i>
+                        <p>
+                            ระบบส่งของให้ลูกค้า(Shipping)
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <nav class="mt-2" id="sideAccounting" style="display:none;">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-header">Systems</li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/sale/so" class="nav-link">
+                        <i class="nav-icon fas fa-clock"></i>
+                        <p>
+                            ออกใบกำากับภาษี(Invoice)
+                        </p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
