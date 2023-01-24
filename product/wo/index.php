@@ -93,12 +93,14 @@ include_once('../../conn.php');
                                         <th width="15%">Company</th>
                                         <th width="15%">Service</th>
                                         <th width="15%">Orders</th>
-                                        <th width="15%">Booking Date</th>
+                                        <th width="17%">Booking Date</th>
                                         <th width="15%">Location</th>
                                         <th width="15%">State</th>
-                                        <th width="15%">CreatedAt</th>
+                                        <th width="15%">Created&nbsp;At</th>
                                     </tr>
-                                    <tr>
+                                </thead>
+                                <tbody>
+                                <tr>
                                         <th width="15%">001</th>
                                         <th width="15%">Sorranun.B</th>
                                         <th width="15%">Test000</th>
@@ -208,9 +210,6 @@ include_once('../../conn.php');
                                         <th width="15%">Pending</th>
                                         <th width="15%">04/02/66</th>
                                     </tr>
-                                </thead>
-                                <tbody>
-
                                 </tbody>
                             </table>
                         </div>

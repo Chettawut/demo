@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION["menu"] = "hr";
+$_SESSION["menu"] = "sale";
 include_once('../conn.php');
 ?>
 <!DOCTYPE html>
@@ -44,7 +44,7 @@ include_once('../conn.php');
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Sale</a></li>
-                                <li class="breadcrumb-item active">ระบบ</li>
+                                <li class="breadcrumb-item active"></li>
                             </ol>
                         </div>
                     </div>

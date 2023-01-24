@@ -7,23 +7,23 @@
             <i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-sm-inline-block">
-            <a href="<?php echo PATH; ?>/store" class="nav-link">Store</a>
+            <a href="<?php echo PATH; ?>/store" class="nav-link">Store</a><!-- / -->
         </li>
         <li class="nav-item d-sm-inline-block">
-            <a href="<?php echo PATH; ?>/purchase" class="nav-link">Purchase</a>
+            <a href="<?php echo PATH; ?>/purchase" class="nav-link">Purchase</a><!-- / -->
         </li>
         <li class="nav-item d-sm-inline-block">
-            <a href="<?php echo PATH; ?>/hr" class="nav-link">HR</a>
+            <a href="<?php echo PATH; ?>/hr" class="nav-link">HR</a><!-- / -->
         </li>
 
         <li class="nav-item d-sm-inline-block">
             <a href="<?php echo PATH; ?>/sale" class="nav-link">Sale</a>
         </li>
         <li class="nav-item d-sm-inline-block">
-            <a href="<?php echo PATH; ?>/product" class="nav-link">Product</a>
+            <a href="<?php echo PATH; ?>/product" class="nav-link">Product</a><!-- / -->
         </li>
         <li class="nav-item d-sm-inline-block">
-            <a href="<?php echo PATH; ?>/planner" class="nav-link">Planner</a>
+            <a href="<?php echo PATH; ?>/planner" class="nav-link">Planner</a> <!-- / -->
         </li>
         <li class="nav-item d-sm-inline-block">
             <a href="<?php echo PATH; ?>/engineer" class="nav-link">Engineer</a>

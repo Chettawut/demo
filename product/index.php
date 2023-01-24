@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION["menu"] = "hr";
+$_SESSION["menu"] = "product";
 include_once('../conn.php');
 ?>
 <!DOCTYPE html>

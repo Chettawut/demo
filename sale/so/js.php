@@ -1,7 +1,7 @@
 <script type="text/javascript">
 $(function() {
 
-    $("#sideProduct").show()
+    $("#sideSale").show()
 
     getPR();
 
