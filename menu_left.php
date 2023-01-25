@@ -179,7 +179,7 @@
                     <a href="<?php echo PATH; ?>/product/wo" class="nav-link">
                         <i class="nav-icon fas fa-clock"></i>
                         <p>
-                            ใบสั่งงานผลิต(Work Order)
+                            ใบสั่งงานผลิต (Work Order)
                         </p>
                     </a>
                 </li>
@@ -193,7 +193,7 @@
                     <a href="<?php echo PATH; ?>/planner/wo" class="nav-link">
                         <i class="nav-icon fas fa-clock"></i>
                         <p>
-                            ใบสั่งงานผลิต(Work Order)
+                            ใบสั่งงานผลิต (Work Order)
                         </p>
                     </a>
                 </li>
@@ -210,7 +210,7 @@
                     <a href="<?php echo PATH; ?>/sale/so" class="nav-link">
                         <i class="nav-icon fas fa-clock"></i>
                         <p>
-                            สูตรการผลิต(Bill of Materials)
+                            สูตรการผลิต (Bill of Materials)
                         </p>
                     </a>
                 </li>
@@ -222,10 +222,10 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-header">Systems</li>
                 <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/sale/so" class="nav-link">
+                    <a href="<?php echo PATH; ?>/qc/oqc" class="nav-link">
                         <i class="nav-icon fas fa-clock"></i>
                         <p>
-                            ระบบทดสอบคุณภาพ(OQC)
+                            ทดสอบคุณภาพส่งออก (OQC)
                         </p>
                     </a>
                 </li>
@@ -236,18 +236,18 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-header">Systems</li>
                 <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/sale/so" class="nav-link">
+                    <a href="<?php echo PATH; ?>/warehouse/gr" class="nav-link">
                         <i class="nav-icon fas fa-clock"></i>
                         <p>
-                            ระบบรับสินค้า(Goods Receipt )
+                            รับสินค้า (Goods Receipt )
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/sale/so" class="nav-link">
+                    <a href="<?php echo PATH; ?>/warehouse/shipment" class="nav-link">
                         <i class="nav-icon fas fa-clock"></i>
                         <p>
-                            ระบบส่งของให้ลูกค้า(Shipping)
+                            การส่งสินค้า (Shipment)
                         </p>
                     </a>
                 </li>
@@ -258,10 +258,10 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-header">Systems</li>
                 <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/sale/so" class="nav-link">
+                    <a href="<?php echo PATH; ?>/account/invoice" class="nav-link">
                         <i class="nav-icon fas fa-clock"></i>
                         <p>
-                            ออกใบกำากับภาษี(Invoice)
+                            ออกใบกำกับภาษี (Invoice)
                         </p>
                     </a>
                 </li>

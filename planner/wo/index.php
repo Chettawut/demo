@@ -7,7 +7,7 @@ include_once('../../conn.php');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ใบแจ้งซื้อ (Purchase Requisition)</title>
+    <title>ใบสั่งงานผลิต (Work Oreder)</title>
 
     <?php 
     include_once('css.php'); 
@@ -88,7 +88,7 @@ include_once('../../conn.php');
                             <table name="tableWD" id="tableWD" class="table table-bordered table-striped">
                                 <thead>
                                     <tr style=" background-color:#D6EAF8;">
-                                        <th width="15%">Number</th>
+                                        <th width="15%">Work No.</th>
                                         <th width="15%">Customer</th>
                                         <th width="15%">Company</th>
                                         <th width="15%">Service</th>
@@ -98,7 +98,9 @@ include_once('../../conn.php');
                                         <th width="15%">State</th>
                                         <th width="15%">CreatedAt</th>
                                     </tr>
-                                    <tr>
+                                </thead>
+                                <tbody>
+                                <tr>
                                         <th width="15%">001</th>
                                         <th width="15%">Sorranun.B</th>
                                         <th width="15%">Test000</th>
@@ -208,9 +210,6 @@ include_once('../../conn.php');
                                         <th width="15%">Pending</th>
                                         <th width="15%">04/02/66</th>
                                     </tr>
-                                </thead>
-                                <tbody>
-
                                 </tbody>
                             </table>
                         </div>

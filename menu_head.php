@@ -35,7 +35,7 @@
             <a href="<?php echo PATH; ?>/warehouse" class="nav-link">Warehouse</a>
         </li>
         <li class="nav-item d-sm-inline-block">
-            <a href="<?php echo PATH; ?>/accounting" class="nav-link">Accounting</a>
+            <a href="<?php echo PATH; ?>/account" class="nav-link">Account</a>
         </li>
         
     </ul>

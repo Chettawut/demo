@@ -7,7 +7,7 @@ include_once('../../conn.php');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ใบแจ้งซื้อ (Purchase Requisition)</title>
+    <title>ใบเปิดสั่งขาย (Sale Order)</title>
 
     <?php 
     include_once('css.php'); 
@@ -37,12 +37,12 @@ include_once('../../conn.php');
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">ใบเปิดสั่งขาย (Sale Oreder)</h1>
+                            <h1 class="m-0">ใบเปิดสั่งขาย (Sale Order)</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Sale</a></li>
-                                <li class="breadcrumb-item active">Sale Oreder</li>
+                                <li class="breadcrumb-item active">Sale Order</li>
                             </ol>
                         </div>
                     </div>
@@ -88,17 +88,19 @@ include_once('../../conn.php');
                             <table name="tableWD" id="tableWD" class="table table-bordered table-striped">
                                 <thead>
                                     <tr style=" background-color:#D6EAF8;">
-                                        <th width="15%">วันที่ออกเอกสาร</th>
                                         <th width="15%">เลขที่ออกเอกสาร</th>
+                                        <th width="15%">วันที่ออกเอกสาร</th>
                                         <th width="15%">รหัสลูกค้า</th>
                                         <th width="15%">ชื่อลูกค้า</th>
                                         <th width="15%">จำนวนเงินทั้งสิ้น</th>
                                         <th width="15%">สถานะ</th>
                                         <th width="15%">ผู้รับผิดชอบ</th>
                                     </tr>
+                                </thead>
+                                <tbody>
                                     <tr>
-                                        <th width="15%">10/01/66</th>
-                                        <th width="15%">000001</th>
+                                        <th width="15%">SO000001</th>
+                                        <th width="15%">10/01/2566</th>
                                         <th width="15%">C1001</th>
                                         <th width="15%">Sorranun.B</th>
                                         <th width="15%">10,000-</th>
@@ -106,8 +108,35 @@ include_once('../../conn.php');
                                         <th width="15%">MR.Josh</th>
                                     </tr>
                                     <tr>
-                                        <th width="15%">11/01/66</th>
-                                        <th width="15%">005901</th>
+                                        <th width="15%">SO000002</th>
+                                        <th width="15%">12/01/2566</th>
+                                        <th width="15%">C1001</th>
+                                        <th width="15%">Sorranun.B</th>
+                                        <th width="15%">10,000-</th>
+                                        <th width="15%">Completed</th>
+                                        <th width="15%">MR.Josh</th>
+                                    </tr>
+                                    <tr>
+                                        <th width="15%">SO000003</th>
+                                        <th width="15%">13/01/2566</th>
+                                        <th width="15%">C1001</th>
+                                        <th width="15%">Sorranun.B</th>
+                                        <th width="15%">10,000-</th>
+                                        <th width="15%">Completed</th>
+                                        <th width="15%">MR.Josh</th>
+                                    </tr>
+                                    <tr>
+                                        <th width="15%">SO000004</th>
+                                        <th width="15%">14/01/2566</th>
+                                        <th width="15%">C1001</th>
+                                        <th width="15%">Sorranun.B</th>
+                                        <th width="15%">10,000-</th>
+                                        <th width="15%">Completed</th>
+                                        <th width="15%">MR.Josh</th>
+                                    </tr>
+                                    <tr>
+                                        <th width="15%">SO005901</th>
+                                        <th width="15%">11/01/2566</th>
                                         <th width="15%">C1002</th>
                                         <th width="15%">Srrirat.T</th>
                                         <th width="15%">10,000-</th>
@@ -115,8 +144,8 @@ include_once('../../conn.php');
                                         <th width="15%">MR.Josh</th>
                                     </tr>
                                     <tr>
-                                        <th width="15%">20/01/66</th>
-                                        <th width="15%">058001</th>
+                                        <th width="15%">SO058001</th>
+                                        <th width="15%">20/01/2566</th>
                                         <th width="15%">C1003</th>
                                         <th width="15%">Peerapong.C</th>
                                         <th width="15%">10,000-</th>
@@ -124,17 +153,32 @@ include_once('../../conn.php');
                                         <th width="15%">MR.Josh</th>
                                     </tr>
                                     <tr>
-                                        <th width="15%">21/01/66</th>
-                                        <th width="15%">059501</th>
+                                        <th width="15%">SO059501</th>
+                                        <th width="15%">21/01/2566</th>
                                         <th width="15%">C1004</th>
                                         <th width="15%">Teerapat.P</th>
                                         <th width="15%">10,000-</th>
                                         <th width="15%">Completed</th>
                                         <th width="15%">MR.Josh</th>
                                     </tr>
-                                </thead>
-                                <tbody>
-
+                                    <tr>
+                                        <th width="15%">SO059502</th>
+                                        <th width="15%">22/01/2566</th>
+                                        <th width="15%">C1004</th>
+                                        <th width="15%">Teerapat.P</th>
+                                        <th width="15%">10,000-</th>
+                                        <th width="15%">Completed</th>
+                                        <th width="15%">MR.Josh</th>
+                                    </tr>
+                                    <tr>
+                                        <th width="15%">SO059503</th>
+                                        <th width="15%">22/01/2566</th>
+                                        <th width="15%">C1004</th>
+                                        <th width="15%">Peerapong.C</th>
+                                        <th width="15%">10,000-</th>
+                                        <th width="15%">Completed</th>
+                                        <th width="15%">MR.Josh</th>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

@@ -7,7 +7,7 @@ include_once('../../conn.php');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ใบสั่งงานผลิต (Work Oreder)</title>
+    <title>ตรวจสอบคุณภาพส่งออก (Out-going Quality Control)</title>
 
     <?php 
     include_once('css.php'); 
@@ -37,7 +37,7 @@ include_once('../../conn.php');
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">ใบสั่งงานผลิต (Work Oreder)</h1>
+                            <h1 class="m-0">ตรวจสอบคุณภาพส่งออก (Out-going Quality Control)</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -88,15 +88,15 @@ include_once('../../conn.php');
                             <table name="tableWD" id="tableWD" class="table table-bordered table-striped">
                                 <thead>
                                     <tr style=" background-color:#D6EAF8;">
-                                        <th width="15%">Number</th>
+                                        <th width="15%">Work No.</th>
                                         <th width="15%">Customer</th>
                                         <th width="15%">Company</th>
                                         <th width="15%">Service</th>
                                         <th width="15%">Orders</th>
-                                        <th width="17%">Booking Date</th>
+                                        <th width="15%">Booking Date</th>
                                         <th width="15%">Location</th>
                                         <th width="15%">State</th>
-                                        <th width="15%">Created&nbsp;At</th>
+                                        <th width="15%">CreatedAt</th>
                                     </tr>
                                 </thead>
                                 <tbody>
