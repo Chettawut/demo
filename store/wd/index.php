@@ -7,7 +7,7 @@ include_once('../../conn.php');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ใบเบิกสินค้า (Goods Issued)</title>
+    <title>ใบเบิกวัตถุดิบ (Goods Issued)</title>
 
     <?php 
     include_once('css.php'); 
@@ -37,7 +37,7 @@ include_once('../../conn.php');
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">ใบเบิกสินค้า (Goods Issued)</h1>
+                            <h1 class="m-0">ใบเบิกวัตถุดิบ (Goods Issued)</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -59,7 +59,7 @@ include_once('../../conn.php');
                                     <div class="btn-group" id="btnAddSO" role="group" aria-label="Basic example">
                                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_add"><i class="fa fa fa-tags"
                                                 aria-hidden="true"></i>
-                                            เพิ่มใบเบิกสินค้า</button>
+                                            เพิ่มใบเบิกวัตถุดิบ</button>
                                     </div>
                                     <div class="btn-group" id="btnBack" style="display:none;" role="group"
                                         aria-label="Basic example">

@@ -59,7 +59,7 @@ include_once('../../conn.php');
                                     <div class="btn-group" id="btnAddSO" role="group" aria-label="Basic example">
                                         <button type="button" class="btn btn-success" data-toggle="modal"
                                             data-target="#modal_add"><i class="fa fa fa-tags" aria-hidden="true"></i>
-                                            เพิ่มใบสั่งผลิต</button>
+                                            เพิ่มใบส่งสินค้า</button>
                                     </div>
                                     <div class="btn-group" id="btnBack" style="display:none;" role="group"
                                         aria-label="Basic example">
@@ -68,7 +68,7 @@ include_once('../../conn.php');
                                             ย้อนกลับ</button>
                                     </div>
                                     <button type="button" id="btnRefresh" class="btn btn-primary"><i
-                                            class="fas fa-sync-alt" aria-hidden="true"></i> </button>
+                                            class="fas fa-sync-alt" aria-hidden="true"></i> Refresh</button>
                                     <button type="button" id="btnCancle" style="display:none;" class="btn btn-danger"><i
                                             class="fa fa-check-circle" aria-hidden="true"></i>
                                         ยกเลิกใบสั่งขาย</button>

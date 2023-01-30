@@ -39,12 +39,12 @@ include_once('../../conn.php');
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">ใบรับสินค้า</h1>
+                            <h1 class="m-0">รับสินค้า (Goods Receipt)</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Store</a></li>
-                                <li class="breadcrumb-item active">ใบรับสินค้า</li>
+                                <li class="breadcrumb-item"><a href="#">Warehouse</a></li>
+                                <li class="breadcrumb-item active">Goods Receipt</li>
                             </ol>
                         </div>
                     </div>
@@ -61,7 +61,7 @@ include_once('../../conn.php');
                                     <div class="btn-group" id="btnAddSO" role="group" aria-label="Basic example">
                                         <button type="button" data-toggle="modal" data-target="#modal_add" class="btn btn-success"><i class="fa fa fa-tags"
                                                 aria-hidden="true"></i>
-                                            เพิ่มใบรับของ</button>
+                                            เพิ่มใบรับสินค้า</button>
                                     </div>
                                     <div class="btn-group" id="btnBack" style="display:none;" role="group"
                                         aria-label="Basic example">
@@ -70,7 +70,7 @@ include_once('../../conn.php');
                                             ย้อนกลับ</button>
                                     </div>
                                     <button type="button" id="btnRefresh" class="btn btn-primary"><i
-                                            class="fas fa-sync-alt" aria-hidden="true"></i> </button>
+                                            class="fas fa-sync-alt" aria-hidden="true"></i> Refresh</button>
                                     <button type="button" id="btnCancle" style="display:none;" class="btn btn-danger"><i
                                             class="fa fa-check-circle" aria-hidden="true"></i>
                                         ยกเลิกใบสั่งขาย</button>
@@ -93,15 +93,18 @@ include_once('../../conn.php');
                             <table name="tableRR" id="tableRR" class="table table-bordered table-striped">
                                 <thead style=" background-color:#D6EAF8;">
                                     <tr>
-                                        <th style="width:13%;text-align:center">เลขที่ใบรับ</th>
-                                        <th style="width:10%;text-align:center">วันที่รับ</th>
-                                        <th style="width:12%;text-align:center">รหัสพัสดุ</th>
-                                        <th style="width:29%;text-align:center">รายงานสินค้า</th>
-                                        <th style="width:33%;text-align:center">ผู้ขาย</th>
-                                        <th style="width:3%;text-align:center">สถานะ</th>
+                                        <th style="width:15%;text-align:center">เลขที่ใบรับ</th>
+                                        <th style="width:15%;text-align:center">วันที่รับ</th>
+                                        <th style="width:15%;text-align:center">ใบสั่งผลิต</th>
+                                        <th style="width:15%;text-align:center">รหัสพัสดุ</th>
+                                        <th style="width:25%;text-align:center">รายงานสินค้า</th>
+                                        <th style="width:15%;text-align:center">สถานะ</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                
+                                
+
 
                                 </tbody>
                             </table>

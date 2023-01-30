@@ -257,9 +257,8 @@ function getRR() {
                         count] + '"><td>' + result
                     .rrcode[count] +
                     '</td><td>' + result
-                    .rrdate[count] + '</td><td>' + result
-                    .stcode[count] + '</td><td>' + result.stname1[count] + '</td><td>' + result
-                    .supname[count] + '</td><td><span title="' + suptitle + '">' + supstatus +
+                    .rrdate[count] + '</td><td>SO00000'+(count+1)+'</td><td>' + result.stcode[count] + '</td><td>' + result
+                    .stname1[count] + '</td><td><span title="' + suptitle + '">' + suptitle +
                     '</span></td></tr>');
             }
 

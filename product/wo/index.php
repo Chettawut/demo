@@ -7,7 +7,7 @@ include_once('../../conn.php');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ใบสั่งงานผลิต (Work Oreder)</title>
+    <title>ใบสั่งงานผลิต (Work Order)</title>
 
     <?php 
     include_once('css.php'); 
@@ -37,12 +37,12 @@ include_once('../../conn.php');
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">ใบสั่งงานผลิต (Work Oreder)</h1>
+                            <h1 class="m-0">ใบสั่งงานผลิต (Work Order)</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Product</a></li>
-                                <li class="breadcrumb-item active">Work Oreder</li>
+                                <li class="breadcrumb-item"><a href="#">Production</a></li>
+                                <li class="breadcrumb-item active">Work Order</li>
                             </ol>
                         </div>
                     </div>
@@ -56,11 +56,11 @@ include_once('../../conn.php');
                             <form data-ajax="false" target="_blank" method="post">
                                 <div data-role="fieldcontain">
 
-                                    <div class="btn-group" id="btnAddSO" role="group" aria-label="Basic example">
+                                    <!-- <div class="btn-group" id="btnAddSO" role="group" aria-label="Basic example">
                                         <button type="button" class="btn btn-success" data-toggle="modal"
                                             data-target="#modal_add"><i class="fa fa fa-tags" aria-hidden="true"></i>
                                             เพิ่มใบสั่งผลิต</button>
-                                    </div>
+                                    </div> -->
                                     <div class="btn-group" id="btnBack" style="display:none;" role="group"
                                         aria-label="Basic example">
                                         <button type="button" class="btn btn-success"><i class="fa fa fa-tags"
@@ -68,7 +68,7 @@ include_once('../../conn.php');
                                             ย้อนกลับ</button>
                                     </div>
                                     <button type="button" id="btnRefresh" class="btn btn-primary"><i
-                                            class="fas fa-sync-alt" aria-hidden="true"></i> </button>
+                                            class="fas fa-sync-alt" aria-hidden="true"></i> Refresh</button>
                                     <button type="button" id="btnCancle" style="display:none;" class="btn btn-danger"><i
                                             class="fa fa-check-circle" aria-hidden="true"></i>
                                         ยกเลิกใบสั่งขาย</button>

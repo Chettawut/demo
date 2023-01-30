@@ -1,34 +1,26 @@
 <script type="text/javascript">
 $(function() {
 
-    $("#sideHR").show()
+    $("#sideEngineer").show()
 
     $.ajax({
         type: "POST",
-        url: "ajax/get_pp.php",
+        url: "ajax/get_stock.php",
         //    data: $("#frmMain").serialize(),
         success: function(result) {
+            // alert(result)
+            for (count = 0; count < result.stcodemain.length; count++) {
 
-            for (count = 0; count < result.ppcode.length; count++) {
 
-                let status
-                if (result.status[count] == 'N')
-                    status = 'รอดำเนินการ'
-                else
-                    status = 'ดำเนินการแล้ว'
-                $('#tablePP').append(
+                $('#tableStock').append(
                     '<tr data-toggle="modal" data-target="#modal_edit" id="' + result
-                    .ppcode[
-                        count] + '" data-whatever="' + result.ppcode[
-                        count] + '"><td>' + result.ppcode[count] + '</td><td>' + convertDateTH(result.ppstart[
-                        count])+' ถึง '+convertDateTH(result.ppstop[
-                        count]) + '</td><td>' + convertDateTH(result.ppdate[
-                        count]) + '</td><td style="text-align:right">' + formatMoney(result.ppsum[
-                        count],2) + '</td><td style="text-align:right">' + formatMoney(result.ppnet[
-                        count],2) + '</td><td  style="text-align:center">' + status + '</td></tr>');
+                    .stcodemain[
+                        count] + '" data-whatever="' + result.stcodemain[
+                        count] + '">.<td>' + result.stcodemain[count] + '</td><td>' +
+                    result.stname1[count] + '</td></tr>');
             }
 
-            var table = $('#tablePP').DataTable({
+            var table = $('#tableStock').DataTable({
                 "paging": true,
                 "lengthChange": false,
                 "searching": true,
@@ -39,8 +31,8 @@ $(function() {
             });
 
             $(".dataTables_filter input[type='search']").attr({
-                size: 60,
-                maxlength: 60
+                size: 30,
+                maxlength: 30
             });
 
 
@@ -56,15 +48,26 @@ $('#modal_edit').on('show.bs.modal', function(event) {
     var button = $(event.relatedTarget);
     var recipient = button.data('whatever');
     var modal = $(this);
+    $("#tableSO tbody").empty();
 
     $.ajax({
         type: "POST",
-        url: "ajax/getsup_unit.php",
+        url: "ajax/getsup_stock.php",
         data: "idcode=" + recipient,
         success: function(result) {
-            modal.find('.modal-body #unitcode').val(result.unitcode);
-            modal.find('.modal-body #unit').val(result.unit);
-            modal.find('.modal-body #status').val(result.status);
+            modal.find('.modal-body #stcode').val(result.stcode[0]);
+            modal.find('.modal-body #stname1').val(result.stname1[0]);
+            modal.find('.modal-body #unit').val(result.unit[0]);
+
+
+            for (count = 0; count < result.stcodemain.length; count++) {
+
+
+                $('#tableSO').append(
+                    '<tr ><td>' + result.stcode[count] + '</td><td>' +
+                    result.stname1[count] + '</td><td>' + result.amount[count] + '</td><td>' +
+                    result.unit[count] + '</td></tr>');
+            }
 
 
         }
@@ -80,12 +83,12 @@ $("#btnRefresh").click(function() {
 });
 
 //เพิ่มวัสดุ
-$("#frmAddUnit").submit(function(e) {
+$("#frmAddStock").submit(function(e) {
     e.preventDefault();
     $.ajax({
         type: "POST",
-        url: "ajax/add_unit.php",
-        data: $("#frmAddUnit").serialize(),
+        url: "ajax/add_stock.php",
+        data: $("#frmAddStock").serialize(),
         success: function(result) {
             if (result.status == 1) // Success
             {
@@ -101,15 +104,15 @@ $("#frmAddUnit").submit(function(e) {
 
 });
 
-$("#frmEditUnit").submit(function(e) {
+$("#frmEditStock").submit(function(e) {
     e.preventDefault();
     $(':disabled').each(function(e) {
         $(this).removeAttr('disabled');
     })
     $.ajax({
         type: "POST",
-        url: "ajax/edit_unit.php",
-        data: $("#frmEditUnit").serialize(),
+        url: "ajax/edit_stock.php",
+        data: $("#frmEditStock").serialize(),
         success: function(result) {
 
             if (result.status == 1) // Success

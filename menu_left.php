@@ -25,7 +25,7 @@
                 <li class="nav-header">Systems</li>
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/store/rr" class="nav-link">
-                        <i class="nav-icon fa fa-truck"></i>
+                        <i class="nav-icon fa fa-truck-loading"></i>
                         <p>
                             ใบรับสินค้า (Goods Receipt)
                         </p>
@@ -163,7 +163,7 @@
                 <li class="nav-header">Systems</li>
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/sale/so" class="nav-link">
-                        <i class="nav-icon fas fa-clock"></i>
+                        <i class="nav-icon fas fa-clipboard"></i>
                         <p>
                             เปิดใบสั่งขาย (Sale Order)
                         </p>
@@ -177,7 +177,7 @@
                 <li class="nav-header">Systems</li>
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/product/wo" class="nav-link">
-                        <i class="nav-icon fas fa-clock"></i>
+                        <i class="nav-icon fas fa-clipboard-list"></i>
                         <p>
                             ใบสั่งงานผลิต (Work Order)
                         </p>
@@ -191,7 +191,7 @@
                 <li class="nav-header">Systems</li>
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/planner/wo" class="nav-link">
-                        <i class="nav-icon fas fa-clock"></i>
+                        <i class="nav-icon fas fa-clipboard-list"></i>
                         <p>
                             ใบสั่งงานผลิต (Work Order)
                         </p>
@@ -207,8 +207,8 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-header">Systems</li>
                 <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/sale/so" class="nav-link">
-                        <i class="nav-icon fas fa-clock"></i>
+                    <a href="<?php echo PATH; ?>/engineer/bom" class="nav-link">
+                        <i class="nav-icon fas fa-book-open"></i>
                         <p>
                             สูตรการผลิต (Bill of Materials)
                         </p>
@@ -223,7 +223,7 @@
                 <li class="nav-header">Systems</li>
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/qc/oqc" class="nav-link">
-                        <i class="nav-icon fas fa-clock"></i>
+                        <i class="nav-icon fas fa-flask"></i>
                         <p>
                             ทดสอบคุณภาพส่งออก (OQC)
                         </p>
@@ -237,7 +237,7 @@
                 <li class="nav-header">Systems</li>
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/warehouse/gr" class="nav-link">
-                        <i class="nav-icon fas fa-clock"></i>
+                        <i class="nav-icon fas fa-truck-loading"></i>
                         <p>
                             รับสินค้า (Goods Receipt )
                         </p>
@@ -245,7 +245,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/warehouse/shipment" class="nav-link">
-                        <i class="nav-icon fas fa-clock"></i>
+                        <i class="nav-icon fas fa-truck"></i>
                         <p>
                             การส่งสินค้า (Shipment)
                         </p>
@@ -259,7 +259,7 @@
                 <li class="nav-header">Systems</li>
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/account/invoice" class="nav-link">
-                        <i class="nav-icon fas fa-clock"></i>
+                        <i class="nav-icon fas fa-file-invoice-dollar"></i>
                         <p>
                             ออกใบกำกับภาษี (Invoice)
                         </p>

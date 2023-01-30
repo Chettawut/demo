@@ -9,7 +9,7 @@ include_once('../../conn.php');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ใบรับสินค้า</title>
+    <title>ใบรับวัตถุดิบ (Goods Receipt)</title>
 
     <?php 
     include_once('css.php'); 
@@ -39,12 +39,12 @@ include_once('../../conn.php');
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">ใบรับสินค้า</h1>
+                            <h1 class="m-0">ใบรับวัตถุดิบ (Goods Receipt)</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Store</a></li>
-                                <li class="breadcrumb-item active">ใบรับสินค้า</li>
+                                <li class="breadcrumb-item active">Goods Receipt</li>
                             </ol>
                         </div>
                     </div>
@@ -61,7 +61,7 @@ include_once('../../conn.php');
                                     <div class="btn-group" id="btnAddSO" role="group" aria-label="Basic example">
                                         <button type="button" data-toggle="modal" data-target="#modal_add" class="btn btn-success"><i class="fa fa fa-tags"
                                                 aria-hidden="true"></i>
-                                            เพิ่มใบรับของ</button>
+                                            เพิ่มใบรับวัตถุดิบ</button>
                                     </div>
                                     <div class="btn-group" id="btnBack" style="display:none;" role="group"
                                         aria-label="Basic example">
