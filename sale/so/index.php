@@ -68,7 +68,7 @@ include_once('../../conn.php');
                                             ย้อนกลับ</button>
                                     </div>
                                     <button type="button" id="btnRefresh" class="btn btn-primary"><i
-                                            class="fas fa-sync-alt" aria-hidden="true"></i> </button>
+                                            class="fas fa-sync-alt" aria-hidden="true"></i> Refresh</button>
                                     <button type="button" id="btnCancle" style="display:none;" class="btn btn-danger"><i
                                             class="fa fa-check-circle" aria-hidden="true"></i>
                                         ยกเลิกใบสั่งขาย</button>

@@ -41,7 +41,7 @@ include_once('../../conn.php');
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Product</a></li>
+                                <li class="breadcrumb-item"><a href="#">Planner</a></li>
                                 <li class="breadcrumb-item active">Work Order</li>
                             </ol>
                         </div>
