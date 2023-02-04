@@ -2,26 +2,30 @@
 	header('Content-Type: application/json');
 	include('../../../conn.php');
 
-	$sql = "SELECT a.pocode,a.podate,a.deldate,a.payment,a.poqua,a.currency,a.vat,c.stcode,c.stname1,a.supcode,d.supname,d.idno,d.road,d.subdistrict,d.district,d.province,d.zipcode,b.supstatus ";
-	$sql .= "FROM `pomaster` as a inner join podetail as b on (a.pocode=b.pocode) inner join stock as c on (c.stcode=b.stcode) inner join supplier as d on (a.supcode=d.supcode) ";
-	$sql .= "where a.pocode = '".$_POST['idcode']."'  LIMIT 1";
+	$sql = "SELECT a.socode,a.sodate,a.deldate,a.paydate,a.paydate2,a.payment,a.currency,a.vat,a.remark,a.salecode,c.stcode,c.stname1,a.cuscode,d.cusname,d.idno,d.road,d.subdistrict,d.district,d.province,d.zipcode,d.tel,b.supstatus ";
+	$sql .= "FROM `somaster` as a inner join sodetail as b on (a.socode=b.socode) inner join stock as c on (c.stcode=b.stcode) inner join customer as d on (a.cuscode=d.cuscode) ";
+	$sql .= "where a.socode = '".$_POST['idcode']."'  LIMIT 1";
 	
 	$query = mysqli_query($conn,$sql);
 
 	
 	$json_result=array(
-        "pocode" => array(),
-		"podate" => array(),
+        "socode" => array(),
+		"sodate" => array(),
 		"deldate" => array(),
 		"payment" => array(),
-		"poqua" => array(),
+		"paydate" => array(),
+		"paydate2" => array(),
 		"currency" => array(),
 		"vat" => array(),
 		"stcode" => array(),
 		"stname1" => array(),
-		"supcode" => array(),
-		"supname" => array(),
+		"cuscode" => array(),
+		"cusname" => array(),
 		"address" => array(),
+		"tel" => array(),
+		"remark" => array(),
+		"salecode" => array(),
 		"supstatus" => array()
 		
 		);
@@ -31,17 +35,21 @@
 			$address .= ($row["subdistrict"] == '' ? '': 'ต.'.$row["subdistrict"].'  ').($row["district"] == '' ? '': 'อ.'.$row["district"].'  ');
 			$address .= ($row["province"] == '' ? '': 'จ.'.$row["province"].' ').($row["zipcode"] == '' ? '': ' '.$row["zipcode"]);
 
-            array_push($json_result['pocode'],$row["pocode"]);
-			array_push($json_result['podate'],$row["podate"]);
+            array_push($json_result['socode'],$row["socode"]);
+			array_push($json_result['sodate'],$row["sodate"]);
 			array_push($json_result['deldate'],$row["deldate"]);
 			array_push($json_result['payment'],$row["payment"]);
-			array_push($json_result['poqua'],$row["poqua"]);
+			array_push($json_result['paydate'],$row["paydate"]);
+			array_push($json_result['paydate2'],$row["paydate2"]);
 			array_push($json_result['currency'],$row["currency"]);
 			array_push($json_result['vat'],$row["vat"]);
 			array_push($json_result['stcode'],$row["stcode"]);
 			array_push($json_result['stname1'],$row["stname1"]);
-			array_push($json_result['supcode'],$row["supcode"]);
-			array_push($json_result['supname'],$row["supname"]);
+			array_push($json_result['cuscode'],$row["cuscode"]);
+			array_push($json_result['cusname'],$row["cusname"]);
+			array_push($json_result['tel'],$row["tel"]);
+			array_push($json_result['remark'],$row["remark"]);
+			array_push($json_result['salecode'],$row["salecode"]);
 			array_push($json_result['address'],$address);
 			array_push($json_result['supstatus'],$row["supstatus"]);
 			

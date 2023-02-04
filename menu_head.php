@@ -17,7 +17,7 @@
         </li>
 
         <li class="nav-item d-sm-inline-block">
-            <a href="<?php echo PATH; ?>/sale" class="nav-link">Sale</a>
+            <a href="<?php echo PATH; ?>/sales" class="nav-link">Sales</a>
         </li>
         <li class="nav-item d-sm-inline-block">
             <a href="<?php echo PATH; ?>/product" class="nav-link">Product</a><!-- / -->

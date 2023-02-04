@@ -158,14 +158,31 @@
 
             </ul>
         </nav>
-        <nav class="mt-2" id="sideSale" style="display:none;">
+        <nav class="mt-2" id="sideSales" style="display:none;">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-header">Systems</li>
                 <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/sale/so" class="nav-link">
+                    <a href="<?php echo PATH; ?>/sales/so" class="nav-link">
                         <i class="nav-icon fas fa-clipboard"></i>
                         <p>
                             เปิดใบสั่งขาย (Sale Order)
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/sales/so" class="nav-link">
+                    <i class="nav-icon fas fa-warehouse"></i>
+                        <p>
+                            เช็คคลังสินค้า (Warehouse)
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-header">Data</li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/sales/customer" class="nav-link">
+                    <i class="nav-icon fas fa fa-users"></i>
+                        <p>
+                            ลูกค้า (Customer)
                         </p>
                     </a>
                 </li>

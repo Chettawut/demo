@@ -2,7 +2,10 @@
 	header('Content-Type: application/json');
 	include('../../../conn.php');
 
-	$sql = "SELECT * FROM `supplier` ";
+	if($_POST["type"]=='Sales')
+	$sql = "SELECT * FROM `customer` where salecode = '".$_POST["salecode"]."' and status = 'Y' ";
+	else
+	$sql = "SELECT * FROM `customer` where status = 'Y' ";
 	$query = mysqli_query($conn,$sql);
 
 	// echo $sql;
@@ -10,9 +13,10 @@
 
 	$json_result=array(
 		"code" => array(),
-		"supcode" => array(),
-		"supname" => array(),
-		"address" => array()
+		"cuscode" => array(),
+		"cusname" => array(),
+		"address" => array(),
+		"tel" => array()
 		
 		);
 		
@@ -22,9 +26,10 @@
 			$address .= ($row["subdistrict"] == '' ? '': 'ต.'.$row["subdistrict"].'  ').($row["district"] == '' ? '': 'อ.'.$row["district"].'  ');
 			$address .= ($row["province"] == '' ? '': 'จ.'.$row["province"].' ').($row["zipcode"] == '' ? '': ' '.$row["zipcode"]);
 			array_push($json_result['code'],$row["code"]);
-			array_push($json_result['supcode'],$row["supcode"]);
-			array_push($json_result['supname'],$row["supname"]);
+			array_push($json_result['cuscode'],$row["cuscode"]);
+			array_push($json_result['cusname'],$row["cusname"]);
 			array_push($json_result['address'],$address);
+			array_push($json_result['tel'],$row["tel"]);
         }
         echo json_encode($json_result);
 

@@ -2,7 +2,7 @@
 $(function() {
 
     
-    $("#sideSale").show()
+    $("#sideSales").show()
 
     $.ajax({
         type: "POST",
