@@ -1,14 +1,14 @@
-<div class="modal fade bd-example-modal-lg" id="modal_supplier" tabindex="-1" role="dialog"
-    aria-labelledby="myModalLabel">
+<div class="modal fade bs-example-modal-lg" id="modal_customer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content w3-flat-turquoise">
+        <div class="modal-content">
             <div class="modal-header bg-gradient-secondary">
-                <h5 class="modal-title">เลือกผู้ขาย</h5>
+                <h5 class="modal-title">เลือกลูกค้า</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
@@ -16,8 +16,8 @@
                                 <thead style=" background-color:#D6EAF8;">
                                     <tr>
                                         <th>ลำดับ</th>
-                                        <th>รหัสผู้ขาย</th>
-                                        <th>ชื่อผู้ขาย</th>
+                                        <th>รหัสลูกค้า</th>
+                                        <th>ชื่อลูกค้า</th>
 
                                     </tr>
                                 </thead>

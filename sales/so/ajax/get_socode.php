@@ -10,9 +10,9 @@
 		
         );
         while($row = $query->fetch_assoc()) {
-			$code=sprintf("%03s", $row["maxsocode"]);
+			$code=sprintf("%03s", ($row["maxsocode"]+1));
             $yearsocode=$row["year"];
-            array_push($json_result['socode'],$yearsocode.'KM'.$code);
+            array_push($json_result['socode'],$yearsocode.'JR'.$code);
 			
         }
         echo json_encode($json_result);

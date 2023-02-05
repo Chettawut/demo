@@ -37,11 +37,11 @@ include_once('../../conn.php');
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">ใบสั่งงานผลิต (Work Order)</h1>
+                            <h1 class="m-0"><i class="fa fa-clipboard-list"></i> ใบสั่งงานผลิต (Work Order)</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Planner</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo PATH; ?>/planner">Planner</a></li>
                                 <li class="breadcrumb-item active">Work Order</li>
                             </ol>
                         </div>
@@ -52,188 +52,71 @@ include_once('../../conn.php');
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-6 col-6">
+                        <div class="col-lg-12 col-12">
                             <form data-ajax="false" target="_blank" method="post">
                                 <div data-role="fieldcontain">
 
-                                    <div class="btn-group" id="btnAddSO" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-success" data-toggle="modal"
-                                            data-target="#modal_add"><i class="fa fa fa-tags" aria-hidden="true"></i>
-                                            เพิ่มใบสั่งผลิต</button>
-                                    </div>
-                                    <div class="btn-group" id="btnBack" style="display:none;" role="group"
-                                        aria-label="Basic example">
-                                        <button type="button" class="btn btn-success"><i class="fa fa fa-tags"
+                                        <button type="button" id="btnAddSO" data-toggle="modal" data-target="#modal_add"  class="btn btn-success"><i class="fa fa fa-tags"
                                                 aria-hidden="true"></i>
-                                            ย้อนกลับ</button>
-                                    </div>
+                                            เพิ่มใบสั่งงานผลิต</button>
                                     <button type="button" id="btnRefresh" class="btn btn-primary"><i
                                             class="fas fa-sync-alt" aria-hidden="true"></i> Refresh</button>
-                                    <button type="button" id="btnCancle" style="display:none;" class="btn btn-danger"><i
-                                            class="fa fa-check-circle" aria-hidden="true"></i>
-                                        ยกเลิกใบสั่งขาย</button>
-                                    <button type="submit" formaction="invoice-print.php" id="btnPrint"
-                                        style="display:none;" class="btn btn-primary"><i class="fa fa-print"
-                                            aria-hidden="true"></i> Print ใบสั่งซื้อ </button>
+
                                     <input type="hidden" id="printsocode" class="btn btn-default" name="printsocode"
                                         value="John">
                                     <input type="hidden" id="editsalecode" class="btn btn-default" value="John">
 
                                 </div>
                             </form>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-12">
-                            <table name="tableWD" id="tableWD" class="table table-bordered table-striped">
-                                <thead>
-                                    <tr style=" background-color:#D6EAF8;">
-                                        <th width="15%">Work No.</th>
-                                        <th width="15%">Customer</th>
-                                        <th width="15%">Company</th>
-                                        <th width="15%">Service</th>
-                                        <th width="15%">Orders</th>
-                                        <th width="15%">Booking Date</th>
-                                        <th width="15%">Location</th>
-                                        <th width="15%">State</th>
-                                        <th width="15%">CreatedAt</th>
+
+                            <table name="tableSO" id="tableSO" class="table table-bordered table-striped">
+                                <thead style="background-color:#D6EAF8;">
+                                    <tr>
+                                        <th width="10%">Work No.</th>
+                                        <th width="10%">SO No.</th>
+                                        <th width="10%">Work Date </th>
+                                        <th width="15%">FG Code</th>
+                                        <th width="25%">FG Name</th>
+                                        <th width="15%">Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                        <th width="15%">001</th>
-                                        <th width="15%">Sorranun.B</th>
-                                        <th width="15%">Test000</th>
-                                        <th width="15%">build</th>
-                                        <th width="15%">Size S</th>
-                                        <th width="15%">25/01/66</th>
-                                        <th width="15%">Rayong</th>
-                                        <th width="15%">Pending</th>
-                                        <th width="15%">20/01/66</th>
-                                    </tr>
-                                    <tr>
-                                        <th width="15%">002</th>
-                                        <th width="15%">Mark</th>
-                                        <th width="15%">Test020</th>
-                                        <th width="15%">build</th>
-                                        <th width="15%">Size M</th>
-                                        <th width="15%">25/01/66</th>
-                                        <th width="15%">Bangkok</th>
-                                        <th width="15%">Completed</th>
-                                        <th width="15%">09/01/66</th>
-                                    </tr>
-                                    <tr>
-                                        <th width="15%">003</th>
-                                        <th width="15%">Jame</th>
-                                        <th width="15%">Test300</th>
-                                        <th width="15%">build</th>
-                                        <th width="15%">Size XL</th>
-                                        <th width="15%">19/01/66</th>
-                                        <th width="15%">Chonburi</th>
-                                        <th width="15%">Completed</th>
-                                        <th width="15%">10/01/66</th>
-                                    </tr>
-                                    <tr>
-                                        <th width="15%">004</th>
-                                        <th width="15%">Jason</th>
-                                        <th width="15%">Test860</th>
-                                        <th width="15%">build</th>
-                                        <th width="15%">Size L</th>
-                                        <th width="15%">10/02/66</th>
-                                        <th width="15%">Bangkok</th>
-                                        <th width="15%">Pending</th>
-                                        <th width="15%">29/01/66</th>
-                                    </tr>
-                                    <tr>
-                                        <th width="15%">005</th>
-                                        <th width="15%">Nemo</th>
-                                        <th width="15%">Test985</th>
-                                        <th width="15%">build</th>
-                                        <th width="15%">Size SS</th>
-                                        <th width="15%">02/02/66</th>
-                                        <th width="15%">Nan</th>
-                                        <th width="15%">Completed</th>
-                                        <th width="15%">20/01/66</th>
-                                    </tr>
-                                    <tr>
-                                        <th width="15%">006</th>
-                                        <th width="15%">Sirirat.T</th>
-                                        <th width="15%">Test069</th>
-                                        <th width="15%">build</th>
-                                        <th width="15%">Size X</th>
-                                        <th width="15%">03/03/66</th>
-                                        <th width="15%">Lao</th>
-                                        <th width="15%">Pending</th>
-                                        <th width="15%">05/01/66</th>
-                                    </tr>
-                                    <tr>
-                                        <th width="15%">007</th>
-                                        <th width="15%">Ron</th>
-                                        <th width="15%">Test885</th>
-                                        <th width="15%">build</th>
-                                        <th width="15%">Size S</th>
-                                        <th width="15%">27/02/66</th>
-                                        <th width="15%">Bangkok</th>
-                                        <th width="15%">Completed</th>
-                                        <th width="15%">20/01/66</th>
-                                    </tr>
-                                    <tr>
-                                        <th width="15%">008</th>
-                                        <th width="15%">Dang</th>
-                                        <th width="15%">Test225</th>
-                                        <th width="15%">build</th>
-                                        <th width="15%">Size S</th>
-                                        <th width="15%">08/02/66</th>
-                                        <th width="15%">Rayong</th>
-                                        <th width="15%">Completed</th>
-                                        <th width="15%">01/01/66</th>
-                                    </tr>
-                                    <tr>
-                                        <th width="15%">009</th>
-                                        <th width="15%">Gift</th>
-                                        <th width="15%">Test330</th>
-                                        <th width="15%">build</th>
-                                        <th width="15%">Size L</th>
-                                        <th width="15%">25/01/66</th>
-                                        <th width="15%">Bangkok</th>
-                                        <th width="15%">Completed</th>
-                                        <th width="15%">20/01/66</th>
-                                    </tr>
-                                    <tr>
-                                        <th width="15%">010</th>
-                                        <th width="15%">Gunman</th>
-                                        <th width="15%">Test650</th>
-                                        <th width="15%">build</th>
-                                        <th width="15%">Size SS</th>
-                                        <th width="15%">05/06/66</th>
-                                        <th width="15%">Bangkok</th>
-                                        <th width="15%">Pending</th>
-                                        <th width="15%">04/02/66</th>
-                                    </tr>
+
                                 </tbody>
+
                             </table>
+
+
                         </div>
                     </div>
                 </div>
             </section>
+
         </div>
 
+
         <?php 
-        include_once('modal/modal_add.php');
-        include_once('modal/modal_edit.php');
-        include_once('modal/modal_stock.php');
-        include_once('modal/modal_supplier.php');   
-        include_once('modal/modal_unit.php');        
-        ?>
+         include_once('modal/modal_add.php');
+         include_once('modal/modal_edit.php');
+         include_once('modal/modal_giveaway.php');
+         include_once('modal/modal_giveaway2.php');
+         include_once('modal/modal_customer.php');
+         include_once('modal/modal_stock.php');
+         include_once('modal/modal_stock2.php');
+         include_once('modal/modal_unit.php');
+         include_once('modal/modal_unit2.php');?>
+
+
+
 
     </div>
+
     <?php
     include_once ROOT . '/import_js.php';
     
 
     include_once('js.php'); 
     ?>
-
 </body>
 
 </html>

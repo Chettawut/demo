@@ -1,18 +1,18 @@
-<div class="modal fade bs-example-modal-lg" id="modal_stock" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade bs-example-modal-lg" id="modal_stock2" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-            <div class="modal-header bg-gradient-secondary">
-                <h5 class="modal-title">เพิ่มสินค้าที่ต้องการขาย</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">เพิ่มสินค้าที่ต้องการขาย</h4>
             </div>
             <div class="modal-body">
 
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <table id="table_stock" name="table_stock" class="table table-bordered table-striped">
+                            <table id="table_stock2" name="table_stock" class="table table-bordered table-striped">
                                 <thead style=" background-color:#D6EAF8;">
                                     <tr>
                                         <th width="10%">รหัสพัสดุ</th>

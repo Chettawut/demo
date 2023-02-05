@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content w3-flat-turquoise">
             <div class="modal-header bg-gradient-secondary">
-                <h5 class="modal-title">เพิ่มข้อมูลวัสดุ</h5>
+                <h5 class="modal-title">Add Inventory</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -12,12 +12,12 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="form-group col-lg-3 col-6">
-                            <label for="recipient-name" class="col-form-label">รหัสพัสดุ</label>
+                            <label for="recipient-name" class="col-form-label">ProductCode</label>
                             <input type="text" class="form-control" name="add_stcode" id="add_stcode" minlength="6"
                                 maxlength="9" required>
                         </div>
                         <div class="form-group col-lg-3 col-6">
-                            <label for="recipient-name" class="col-form-label">หน่วยพัสดุ</label>
+                            <label for="recipient-name" class="col-form-label">Unit</label>
                             <select class="form-control" name="add_unit" id="add_unit">
                                 <?php 
                                             
@@ -43,24 +43,22 @@
                     <div class="row">
 
                         <div class="form-group col-lg-6 col-12">
-                            <label class="col-form-label">ชื่อพัสดุ</label>
+                            <label class="col-form-label">ProductName</label>
                             <input type="text" class="form-control" name="add_stname1" id="add_stname1" required>
                         </div>
                         <div class="form-group col-lg-3 col-6">
-                            <label for="recipient-name" class="col-form-label">ราคาขาย</label>
-                            <div class="input-group mb-3">
-                                <input type="number" class="form-control" name="add_sellprice" id="add_sellprice">
-                                <div class="input-group-append">
-                                    <span class="input-group-text">บาท</span>
-                                </div>
-                            </div>
+                            <label for="recipient-name" class="col-form-label">ProductType</label>
+                            <select class="form-control" name="add_type" id="add_type">
+                                <option value="FG">Finish Goods</option>
+                                <option value="MAT">Material</option>
+                            </select>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <div class="col text-center">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                        <button type="submit" id="btnAddSo" form="frmAddStock" class="btn btn-primary">ตกลง</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" id="btnAddSo" form="frmAddStock" class="btn btn-primary">Add</button>
                     </div>
                 </div>
         </div>

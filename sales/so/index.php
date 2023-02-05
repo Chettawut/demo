@@ -56,54 +56,36 @@ include_once('../../conn.php');
                             <form data-ajax="false" target="_blank" method="post">
                                 <div data-role="fieldcontain">
 
-                                    <div class="btn-group" id="btnAddSO" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-success"><i class="fa fa fa-tags"
+                                        <button type="button" id="btnAddSO" data-toggle="modal" data-target="#modal_add"  class="btn btn-success"><i class="fa fa fa-tags"
                                                 aria-hidden="true"></i>
                                             เพิ่มใบสั่งขาย</button>
-                                    </div>
-                                    <div class="btn-group" id="btnBack" style="display:none;" role="group"
-                                        aria-label="Basic example">
-                                        <button type="button" class="btn btn-success"><i class="fa fa fa-tags"
-                                                aria-hidden="true"></i>
-                                            ย้อนกลับ</button>
-                                    </div>
                                     <button type="button" id="btnRefresh" class="btn btn-primary"><i
                                             class="fas fa-sync-alt" aria-hidden="true"></i> Refresh</button>
-                                    <button type="button" id="btnCancle" style="display:none;" class="btn btn-danger"><i
-                                            class="fa fa-check-circle" aria-hidden="true"></i>
-                                        ยกเลิกใบสั่งขาย</button>
-                                    <button type="submit" formaction="invoice-print.php" id="btnPrint"
-                                        style="display:none;" class="btn btn-primary"><i class="fa fa-print"
-                                            aria-hidden="true"></i> Print ใบสั่งขาย </button>
-                                    <button type="submit" formaction="../so_approve/invoice-print.php" id="btnInvoice"
-                                        style="display:none;" class="btn btn-primary"><i class="fa fa-print"
-                                            aria-hidden="true"></i> Print ใบกำกับภาษี
-                                    </button>
+
                                     <input type="hidden" id="printsocode" class="btn btn-default" name="printsocode"
                                         value="John">
                                     <input type="hidden" id="editsalecode" class="btn btn-default" value="John">
 
                                 </div>
                             </form>
-                            <div id="divtableSO" style="border: 1px solid #FAEBD7;">
-                                <table name="tableSO" id="tableSO" class="table table-bordered table-striped">
-                                    <thead style="background-color:#D6EAF8;">
-                                        <tr>
 
-                                            <th>เลขที่ใบสั่งขาย</th>
-                                            <th>วันที่สั่งซื้อ</th>
-                                            <th>รหัสพัสดุ</th>
-                                            <th>รายงานสินค้า</th>
-                                            <th>ลูกค้า</th>
-                                            <th>สถานะ</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+                            <table name="tableSO" id="tableSO" class="table table-bordered table-striped">
+                                <thead style="background-color:#D6EAF8;">
+                                    <tr>
 
-                                    </tbody>
+                                        <th width="10%">SO No.</th>
+                                        <th width="10%">SO Date</th>
+                                        <th width="10%">FG Code</th>
+                                        <th width="25%">FG Name</th>
+                                        <th width="25%">Cusname</th>
+                                        <th width="10%">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                                </table>
-                            </div>
+                                </tbody>
+
+                            </table>
 
 
                         </div>
@@ -112,14 +94,14 @@ include_once('../../conn.php');
             </section>
 
         </div>
-        
+
 
         <?php 
-        // include_once('modal/modal_add.php');
+         include_once('modal/modal_add.php');
          include_once('modal/modal_edit.php');
          include_once('modal/modal_giveaway.php');
          include_once('modal/modal_giveaway2.php');
-         include_once('modal/modal_one.php');
+         include_once('modal/modal_customer.php');
          include_once('modal/modal_stock.php');
          include_once('modal/modal_stock2.php');
          include_once('modal/modal_unit.php');

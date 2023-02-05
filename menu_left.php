@@ -186,6 +186,14 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/store/inventory" class="nav-link">
+                        <i class="nav-icon fa fa-cube"></i>
+                        <p>
+                            วัสดุพื้นฐาน (Inventory)
+                        </p>
+                    </a>
+                </li>
             </ul>
         </nav>
 
@@ -214,8 +222,31 @@
                         </p>
                     </a>
                 </li>
-                
-
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/sales/so" class="nav-link">
+                    <i class="nav-icon fas fa-warehouse"></i>
+                        <p>
+                            เช็คคลังสินค้า (Warehouse)
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/sales/so" class="nav-link">
+                    <i class="nav-icon fas fa-boxes"></i>
+                        <p>
+                            เช็ควัตถุดิบ (Materials)
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-header">Data</li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/store/inventory" class="nav-link">
+                        <i class="nav-icon fa fa-cube"></i>
+                        <p>
+                            วัสดุพื้นฐาน (Inventory)
+                        </p>
+                    </a>
+                </li>
 
             </ul>
         </nav>
