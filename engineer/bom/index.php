@@ -24,7 +24,8 @@ include_once('../../conn.php');
     <div class="wrapper">
 
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="<?php echo PATH; ?>/AdminLTE-3.2.0/dist/img/AdminLTELogo.png" height="80" width="80">
+            <img class="animation__shake" src="<?php echo PATH; ?>/AdminLTE-3.2.0/dist/img/AdminLTELogo.png" height="80"
+                width="80">
         </div>
 
         <?php include_once ROOT . '/menu_head.php'; ?>
@@ -59,19 +60,11 @@ include_once('../../conn.php');
                                 <div data-role="fieldcontain">
 
                                     <div class="btn-group" id="btnAddSO" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-success" data-toggle="modal"
-                                            data-target="#modal_add"><i class="fa fa fa-tags" aria-hidden="true"></i>
-                                            เพิ่มสูตรการผลิต</button>
+
                                         <button type="button" id="btnRefresh" class="btn btn-primary"><i
                                                 class="fas fa-sync-alt" aria-hidden="true"></i> Refresh</button>
                                     </div>
-                                    <div class="btn-group" id="btnBack" style="display:none;" role="group"
-                                        aria-label="Basic example">
-                                        <button type="button" class="btn btn-success"><i class="fa fa fa-tags"
-                                                aria-hidden="true"></i>
-                                            ย้อนกลับ</button>
-                                    </div>
-                                    
+
 
                                 </div>
                             </form>
@@ -79,22 +72,20 @@ include_once('../../conn.php');
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-12">
-                            <div id="mainStock">
-                                <table name="tableStock" id="tableStock" class="table table-bordered table-striped">
-                                    <thead style=" background-color:#D6EAF8;">
-                                        <tr>
-                                            <th width="30%">รหัสสินค้า</th>
-                                            <th width="70%">ชื่อสินค้า</th>
-                                            <!-- <th width="12%" style="text-align:right">จำนวนสต๊อก</th>
+                            <table name="tableStock" id="tableStock" class="table table-bordered table-striped">
+                                <thead style=" background-color:#D6EAF8;">
+                                    <tr>
+                                        <th width="30%">รหัสสินค้า</th>
+                                        <th width="70%">ชื่อสินค้า</th>
+                                        <!-- <th width="12%" style="text-align:right">จำนวนสต๊อก</th>
                                             <th width="14%" style="text-align:center">หน่วย</th> -->
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                                    </tbody>
-                                </table>
-                            </div>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 

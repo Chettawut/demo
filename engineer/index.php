@@ -9,7 +9,7 @@ include_once('../conn.php');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HR</title>
+    <title>Engineer</title>
 
     <?php 
     include_once('css.php'); 
@@ -43,8 +43,8 @@ include_once('../conn.php');
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Engineer</a></li>
-                                <li class="breadcrumb-item active">ระบบการผลิต</li>
+                                <!-- <li class="breadcrumb-item"><a href="#">Engineer</a></li> -->
+                                <!-- <li class="breadcrumb-item active"></li> -->
                             </ol>
                         </div>
                     </div>
