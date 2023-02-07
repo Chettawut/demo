@@ -39,7 +39,7 @@ include_once('../../conn.php');
             <section class="content">
                 <section class="content-header">
 
-                    <H1 id="menuName" style="margin-down:50px;">จัดการข้อมูลส่วนบุคคล</H1>
+                    <H1 id="menuName" style="margin-down:50px;"><i class="nav-icon fas fa fa-users"></i> จัดการข้อมูลส่วนบุคคล (Personal information management)</H1>
 
                     <ol class="text-right">
                         Person

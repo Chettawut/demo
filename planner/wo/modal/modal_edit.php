@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content w3-flat-turquoise">
             <div class="modal-header bg-gradient-secondary">
-                <h5 class="modal-title">แก้ไขใบสั่งขาย</h5>
+                <h5 class="modal-title">แก้ไขใบสั่งผลิต</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -12,7 +12,7 @@
                 <div class="modal-body">
                     <button type="button" id="btnCancle" style="display:none;" class="btn btn-danger"><i
                             class="fa fa-check-circle" aria-hidden="true"></i>
-                        ยกเลิกใบสั่งขาย</button>
+                        ยกเลิกใบสั่งผลิต</button>
                     <button type="submit" formaction="invoice-print.php" id="btnPrint" style="display:none;"
                         class="btn btn-primary"><i class="fa fa-print" aria-hidden="true"></i> Print ใบสั่งขาย </button>
                     <button type="submit" formaction="../so_approve/invoice-print.php" id="btnInvoice"

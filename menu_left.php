@@ -204,7 +204,7 @@
                     <a href="<?php echo PATH; ?>/product/wo" class="nav-link">
                         <i class="nav-icon fas fa-clipboard-list"></i>
                         <p>
-                            ใบสั่งงานผลิต (Work Order)
+                        ใบสั่งผลิต (Work Order)
                         </p>
                     </a>
                 </li>
@@ -218,7 +218,7 @@
                     <a href="<?php echo PATH; ?>/planner/wo" class="nav-link">
                         <i class="nav-icon fas fa-clipboard-list"></i>
                         <p>
-                            ใบสั่งงานผลิต (Work Order)
+                        ใบสั่งผลิต (Work Order)
                         </p>
                     </a>
                 </li>

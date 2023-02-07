@@ -6,13 +6,13 @@
 	$query = mysqli_query($conn,$sql);
 
 	$json_result=array(
-        "socode" => array()
+        "wocode" => array()
 		
         );
         while($row = $query->fetch_assoc()) {
-			$code=sprintf("%03s", ($row["maxsocode"]+1));
+			$code=sprintf("%03s", ($row["maxwocode"]+1));
             $yearsocode=$row["year"];
-            array_push($json_result['socode'],$yearsocode.'JR'.$code);
+            array_push($json_result['wocode'],'WD'.$yearsocode.$code);
 			
         }
         echo json_encode($json_result);

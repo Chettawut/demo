@@ -39,7 +39,7 @@ include_once('../../conn.php');
             <section class="content">
                 <section class="content-header">
 
-                    <H1 id="menuName" style="margin-down:50px;">จัดการเวลาทำงาน </H1>
+                    <H1 id="menuName" style="margin-down:50px;"><i class="nav-icon fas fa-clock"></i> จัดการเวลาทำงาน (Time attendance)</H1>
 
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Person</a></li>

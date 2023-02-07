@@ -38,7 +38,7 @@ include_once('../../conn.php');
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">ผู้ขาย(Supplier)</h1>
+                            <h1 class="m-0"><i class="nav-icon fas fa fa-shopping-cart"></i> ผู้ขาย (Supplier)</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">

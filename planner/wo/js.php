@@ -263,7 +263,7 @@ function previewSOcode() {
         url: "ajax/get_socode.php",
         success: function(result) {
 
-            $("#socode").val(result.socode);
+            $("#socode").val(result.wocode);
 
         }
     });
@@ -581,10 +581,9 @@ function getSO() {
                     '<tr data-toggle="modal" data-target="#modal_edit" id="' + result
                     .socode[
                         count] + '" data-whatever="' + result.socode[
-                        count] + '" ><td>' + result.socode[count] +
-                    '</td><td>' + sodate + '</td><td>' + result
-                    .stcode[count] + '</td><td>' + result.stname1[count] + '</td><td>' + result
-                    .cusname[count] + '</td><td><span title="' + suptitle + '">' + supstatus +
+                        count] + '" ><td>' + result.wocode[count] +
+                    '</td><td>' + result.socode[count] + '</td><td>' + sodate + '</td><td>' + result.stcode[count] + '</td><td>' + result
+                    .stname1[count] + '</td><td><span title="' + suptitle + '">' + supstatus +
                     '</span></td></tr>');
             }
 
