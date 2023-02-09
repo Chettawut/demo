@@ -170,6 +170,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/sales/so_approve" class="nav-link">
+                        <i class="nav-icon fas fa-check"></i>
+                        <p>
+                            อนุมัติใบสั่งขาย (Sale Order Approval)
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="<?php echo PATH; ?>/sales/so" class="nav-link">
                     <i class="nav-icon fas fa-warehouse"></i>
                         <p>
