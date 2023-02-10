@@ -314,10 +314,16 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-header">Systems</li>
                 <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/account/invoice" class="nav-link">
+                    <a href="<?php echo PATH; ?>/accounting/invoice" class="nav-link">
                         <i class="nav-icon fas fa-file-invoice-dollar"></i>
                         <p>
                             ออกใบกำกับภาษี (Invoice)
+                        </p>
+                    </a>
+                    <a href="<?php echo PATH; ?>/accounting/receivepayment" class="nav-link">
+                        <i class="nav-icon fas fa-file-invoice-dollar"></i>
+                        <p>
+                        รับชำระหนี้ (Receive Payment)
                         </p>
                     </a>
                 </li>
