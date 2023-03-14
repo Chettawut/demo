@@ -12,8 +12,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="<?php echo PATH; ?>/img/default.jpg" class="img-circle elevation-2"
-                    alt="User Image">
+                <img src="<?php echo PATH; ?>/img/default.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
                 <a href="#" class="d-block">Chayapat Niropas</a>
@@ -128,6 +127,15 @@
 
         <nav class="mt-2" id="sideHR" style="display:none;">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-header">Data</li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/hr/person" class="nav-link">
+                        <i class="nav-icon fas fa fa-users"></i>
+                        <p>
+                            บุคคล (HR)
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-header">Systems</li>
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/hr/time" class="nav-link">
@@ -145,15 +153,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-header">Data</li>
-                <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/hr/person" class="nav-link">
-                        <i class="nav-icon fas fa fa-users"></i>
-                        <p>
-                            บุคคล (HR)
-                        </p>
-                    </a>
-                </li>
+
 
 
             </ul>
@@ -179,7 +179,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/sales/so" class="nav-link">
-                    <i class="nav-icon fas fa-warehouse"></i>
+                        <i class="nav-icon fas fa-warehouse"></i>
                         <p>
                             เช็คคลังสินค้า (Warehouse)
                         </p>
@@ -188,7 +188,7 @@
                 <li class="nav-header">Data</li>
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/sales/customer" class="nav-link">
-                    <i class="nav-icon fas fa fa-users"></i>
+                        <i class="nav-icon fas fa fa-users"></i>
                         <p>
                             ลูกค้า (Customer)
                         </p>
@@ -212,7 +212,7 @@
                     <a href="<?php echo PATH; ?>/product/wo" class="nav-link">
                         <i class="nav-icon fas fa-clipboard-list"></i>
                         <p>
-                        ใบสั่งผลิต (Work Order)
+                            ใบสั่งผลิต (Work Order)
                         </p>
                     </a>
                 </li>
@@ -226,13 +226,13 @@
                     <a href="<?php echo PATH; ?>/planner/wo" class="nav-link">
                         <i class="nav-icon fas fa-clipboard-list"></i>
                         <p>
-                        ใบสั่งผลิต (Work Order)
+                            ใบสั่งผลิต (Work Order)
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/sales/so" class="nav-link">
-                    <i class="nav-icon fas fa-warehouse"></i>
+                        <i class="nav-icon fas fa-warehouse"></i>
                         <p>
                             เช็คคลังสินค้า (Warehouse)
                         </p>
@@ -240,7 +240,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/sales/so" class="nav-link">
-                    <i class="nav-icon fas fa-boxes"></i>
+                        <i class="nav-icon fas fa-boxes"></i>
                         <p>
                             เช็ควัตถุดิบ (Materials)
                         </p>
@@ -323,7 +323,7 @@
                     <a href="<?php echo PATH; ?>/accounting/receivepayment" class="nav-link">
                         <i class="nav-icon fas fa-file-invoice-dollar"></i>
                         <p>
-                        รับชำระหนี้ (Receive Payment)
+                            รับชำระหนี้ (Receive Payment)
                         </p>
                     </a>
                 </li>
